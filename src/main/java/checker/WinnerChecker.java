@@ -15,7 +15,8 @@ public class WinnerChecker {
   }
   
   public boolean isWinnerOnVertical() {
-    
+  
+    boolean t;
     return false;
   }
 }
