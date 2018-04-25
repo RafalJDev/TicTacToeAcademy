@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf06e6f9-f02a-49b7-871e-bcd95996d4ac" name="Default" comment="Merge branch 'master' of https://github.com/RafalJDev/TicTacToeAcademy&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.">
+    <list default="true" id="cf06e6f9-f02a-49b7-871e-bcd95996d4ac" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/table/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/table/Table.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/table/TableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/table/TableTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/player/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/player/Player$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/player/Player$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/player/Player$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/player/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/table/Table.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/table/Table.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/table/TableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/table/TableTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -15,119 +25,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PlayerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/player/PlayerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Table.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Table.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/table/Table.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+            <state relative-caret-position="480">
+              <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
               <folding>
-                <element signature="e#94#95#0" expanded="true" />
-                <element signature="e#144#145#0" expanded="true" />
-                <element signature="e#401#402#0" expanded="true" />
-                <element signature="e#427#428#0" expanded="true" />
+                <element signature="e#981#982#0" expanded="true" />
+                <element signature="e#1018#1019#0" expanded="true" />
+                <element signature="e#1429#1430#0" expanded="true" />
+                <element signature="e#1477#1478#0" expanded="true" />
+                <element signature="e#2059#2060#0" expanded="true" />
+                <element signature="e#2092#2093#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CoordinatesTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/coordinates/CoordinatesTest.java">
+      <file leaf-file-name="TableTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/table/TableTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/player/Player.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-              <folding>
-                <element signature="e#99#100#0" expanded="true" />
-                <element signature="e#121#122#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MessagePrinter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/messages/MessagePrinter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-              <folding>
-                <element signature="e#88#89#0" expanded="true" />
-                <element signature="e#118#119#0" expanded="true" />
-                <element signature="e#194#195#0" expanded="true" />
-                <element signature="e#231#232#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Messages.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/messages/Messages.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-              <folding>
-                <element signature="e#156#157#0" expanded="true" />
-                <element signature="e#187#188#0" expanded="true" />
-                <element signature="e#257#258#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WinnerChecker.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/checker/WinnerChecker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WinnerCheckerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/checker/WinnerCheckerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TicTacToeRules.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rules/TicTacToeRules.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+            <state relative-caret-position="503">
+              <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -137,16 +56,28 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
-        <option value="TestNG Test Class" />
         <option value="Class" />
+        <option value="TestNG Test Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>tostring</find>
+      <find>value</find>
+      <find>coordinates</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="REBASE" />
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="projectSyncType">
@@ -163,18 +94,31 @@
         <option value="$PROJECT_DIR$/src/main/java/InitialState.java" />
         <option value="$PROJECT_DIR$/src/test/java/InitialStateTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/table/TableTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/coordinates/Coordinated.java" />
-        <option value="$PROJECT_DIR$/src/main/java/table/Table.java" />
         <option value="$PROJECT_DIR$/src/main/java/messages/MessagePrinter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/java/player/Player.java" />
-        <option value="$PROJECT_DIR$/src/main/java/coordinates/Coordinates.java" />
         <option value="$PROJECT_DIR$/src/main/java/messages/Messages.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console_2.snippet" />
         <option value="$PROJECT_DIR$/src/test/java/coordinates/CoordinatesTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/output/Messages.java" />
         <option value="$PROJECT_DIR$/src/test/java/checker/WinnerCheckerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/checker/WinnerChecker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/input/Input.java" />
+        <option value="$PROJECT_DIR$/Estimates.md" />
+        <option value="$PROJECT_DIR$/src/main/java/output/message/MessagePrinter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/output/message/Messages.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/TicTacToe.java" />
+        <option value="$PROJECT_DIR$/src/main/java/input/InputReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/coordinates/Coordinates.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rows/VerticalRow.java" />
+        <option value="$PROJECT_DIR$/src/test/java/input/InputValidatorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rows/Row.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rows/RowProvider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/input/InputValidator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/test/java/player/PlayerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/table/TableTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/table/Table.java" />
       </list>
     </option>
   </component>
@@ -289,7 +233,41 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="messages" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToe" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToe" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToe" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+              <item name="message" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToe" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+              <item name="printer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proj" type="b2602c69:ProjectViewProjectNode" />
@@ -305,7 +283,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rules" type="462c0819:PsiDirectoryNode" />
+              <item name="rows" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="proj" type="b2602c69:ProjectViewProjectNode" />
@@ -350,7 +328,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="input" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToe" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="player" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="proj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TicTacToe" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="table" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -359,6 +353,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value=".md&#9;FILE&#9;file:///home/alphahanys/IdeaProjects/TicTacToe/Estimates.md" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
@@ -372,15 +367,129 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="input" />
       <recent name="checker" />
       <recent name="coordinates" />
       <recent name="table" />
       <recent name="player" />
-      <recent name="" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/classes/table/Table.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/target/test-classes/table/TableTest.class</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -394,7 +503,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.WinnerCheckerTest.isWinnerOnVertical">
+  <component name="RunManager" selected="TestNG.TableTest.createNewTable_shouldContainUnderscore_inTheMiddle">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="TicTacToe" />
@@ -419,49 +528,20 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="CoordinatesTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="InputValidatorTest.checkInput_numberAsUserInput_muchGreaterThanZero_thenValid" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TicTacToe" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="coordinates.*" />
+          <option name="PATTERN" value="input.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="coordinates" />
-      <option name="MAIN_CLASS_NAME" value="coordinates.CoordinatesTest" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="CoordinatesTest.createCoordinates_passNegativeXIndex_thenException" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TicTacToe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="coordinates.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="coordinates" />
-      <option name="MAIN_CLASS_NAME" value="coordinates.CoordinatesTest" />
-      <option name="METHOD_NAME" value="createCoordinates_passNegativeXIndex_thenException" />
+      <option name="PACKAGE_NAME" value="input" />
+      <option name="MAIN_CLASS_NAME" value="input.InputValidatorTest" />
+      <option name="METHOD_NAME" value="checkInput_numberAsUserInput_muchGreaterThanZero_thenValid" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -477,7 +557,65 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="TableTest.createNewTable_correctSize" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="InputValidatorTest.checkInput_numberAsUserInput_zero_thenValid (1)" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TicTacToe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="input.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="input" />
+      <option name="MAIN_CLASS_NAME" value="input.InputValidatorTest" />
+      <option name="METHOD_NAME" value="checkInput_numberAsUserInput_zero_thenValid" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="InputValidatorTest.checkInput_numberAsUserInput_zero_thenValid" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TicTacToe" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="input.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="input" />
+      <option name="MAIN_CLASS_NAME" value="input.InputValidatorTest" />
+      <option name="METHOD_NAME" value="checkInput_numberAsUserInput_zero_thenValid" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="TableTest.createNewTable_shouldContainUnderscore_inTheMiddle" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TicTacToe" />
       <extension name="coverage">
         <pattern>
@@ -490,36 +628,7 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="table" />
       <option name="MAIN_CLASS_NAME" value="table.TableTest" />
-      <option name="METHOD_NAME" value="createNewTable_correctSize" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="WinnerCheckerTest.isWinnerOnVertical" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="TicTacToe" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="checker.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="checker" />
-      <option name="MAIN_CLASS_NAME" value="checker.WinnerCheckerTest" />
-      <option name="METHOD_NAME" value="isWinnerOnVertical" />
+      <option name="METHOD_NAME" value="createNewTable_shouldContainUnderscore_inTheMiddle" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -558,19 +667,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="TestNG.TableTest.createNewTable_correctSize" />
-      <item itemvalue="TestNG.CoordinatesTest.createCoordinates_passNegativeXIndex_thenException" />
-      <item itemvalue="TestNG.CoordinatesTest" />
+      <item itemvalue="TestNG.InputValidatorTest.checkInput_numberAsUserInput_zero_thenValid" />
+      <item itemvalue="TestNG.InputValidatorTest.checkInput_numberAsUserInput_zero_thenValid (1)" />
+      <item itemvalue="TestNG.InputValidatorTest.checkInput_numberAsUserInput_muchGreaterThanZero_thenValid" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="TestNG.WinnerCheckerTest.isWinnerOnVertical" />
+      <item itemvalue="TestNG.TableTest.createNewTable_shouldContainUnderscore_inTheMiddle" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.WinnerCheckerTest.isWinnerOnVertical" />
+        <item itemvalue="TestNG.TableTest.createNewTable_shouldContainUnderscore_inTheMiddle" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="TestNG.CoordinatesTest" />
-        <item itemvalue="TestNG.CoordinatesTest.createCoordinates_passNegativeXIndex_thenException" />
-        <item itemvalue="TestNG.TableTest.createNewTable_correctSize" />
+        <item itemvalue="TestNG.InputValidatorTest.checkInput_numberAsUserInput_muchGreaterThanZero_thenValid" />
+        <item itemvalue="TestNG.InputValidatorTest.checkInput_numberAsUserInput_zero_thenValid (1)" />
+        <item itemvalue="TestNG.InputValidatorTest.checkInput_numberAsUserInput_zero_thenValid" />
       </list>
     </recent_temporary>
   </component>
@@ -584,7 +693,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1524563725201</updated>
-      <workItem from="1524563728955" duration="13918000" />
+      <workItem from="1524563728955" duration="30075000" />
     </task>
     <task id="LOCAL-00001" summary="Still trying">
       <created>1524585998825</created>
@@ -600,66 +709,88 @@
       <option name="project" value="LOCAL" />
       <updated>1524586596901</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Trying again">
+      <created>1524586893072</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1524586893072</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Trying again2">
+      <created>1524586928162</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1524586928162</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Commit to prevent git reset hard :D">
+      <created>1524661195524</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1524661195524</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PlayerTest_testGetOppositePlayer - 2018.04.24 at 15h 17m 55s.xml">
-      <configuration name="PlayerTest.testGetOppositePlayer" configurationId="TestNG" />
+    <history-entry file="WinnerCheckerTest_isWinnerOnVertical_(1) - 2018.04.25 at 10h 57m 44s.xml">
+      <configuration name="WinnerCheckerTest.isWinnerOnVertical (1)" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="PlayerTest_testGetOppositePlayer - 2018.04.24 at 15h 22m 15s.xml">
-      <configuration name="PlayerTest.testGetOppositePlayer" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="PlayerTest_testGetOppositePlayer_(1) - 2018.04.24 at 15h 23m 00s.xml">
-      <configuration name="PlayerTest.testGetOppositePlayer (1)" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="PlayerTest_getOppositePlayer_createOInvokeMethod_expectX - 2018.04.24 at 15h 23m 41s.xml">
-      <configuration name="PlayerTest.getOppositePlayer_createOInvokeMethod_expectX" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TableTest_createNewTable_withIllegalArgument - 2018.04.24 at 15h 33m 16s.xml">
-      <configuration name="TableTest.createNewTable_withIllegalArgument" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="TableTest_createNewTable_correctSize - 2018.04.24 at 15h 37m 25s.xml">
-      <configuration name="TableTest.createNewTable_correctSize" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="CoordinatesTest_createCoordinates_passNegativeXIndex_thenException - 2018.04.24 at 15h 53m 26s.xml">
+    <history-entry file="CoordinatesTest_createCoordinates_passNegativeXIndex_thenException - 2018.04.25 at 13h 27m 24s.xml">
       <configuration name="CoordinatesTest.createCoordinates_passNegativeXIndex_thenException" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="CoordinatesTest - 2018.04.24 at 15h 55m 41s.xml">
+    <history-entry file="CoordinatesTest - 2018.04.25 at 13h 27m 29s.xml">
       <configuration name="CoordinatesTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WinnerCheckerTest_isWinnerOnVertical - 2018.04.24 at 17h 43m 14s.xml">
-      <configuration name="WinnerCheckerTest.isWinnerOnVertical" configurationId="TestNG" />
+    <history-entry file="CoordinatesTest - 2018.04.25 at 13h 27m 40s.xml">
+      <configuration name="CoordinatesTest" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="WinnerCheckerTest_isWinnerOnVertical - 2018.04.24 at 17h 49m 14s.xml">
-      <configuration name="WinnerCheckerTest.isWinnerOnVertical" configurationId="TestNG" />
+    <history-entry file="InputValidatorTest_testCheckInput - 2018.04.25 at 13h 37m 32s.xml">
+      <configuration name="InputValidatorTest.testCheckInput" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="InputValidatorTest_checkInput_numberLessThenZero_thenNotValid - 2018.04.25 at 13h 40m 14s.xml">
+      <configuration name="InputValidatorTest.checkInput_numberLessThenZero_thenNotValid" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="InputValidatorTest_checkInput_numberAsUserInput_zero_thenValid - 2018.04.25 at 13h 41m 22s.xml">
+      <configuration name="InputValidatorTest.checkInput_numberAsUserInput_zero_thenValid" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="InputValidatorTest_checkInput_numberAsUserInput_zero_thenValid_(1) - 2018.04.25 at 13h 41m 27s.xml">
+      <configuration name="InputValidatorTest.checkInput_numberAsUserInput_zero_thenValid (1)" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="InputValidatorTest_checkInput_numberAsUserInput_muchGreaterThanZero_thenValid - 2018.04.25 at 13h 42m 44s.xml">
+      <configuration name="InputValidatorTest.checkInput_numberAsUserInput_muchGreaterThanZero_thenValid" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="TableTest_createNewTable_shouldContainUnderscore_inTheMiddle - 2018.04.25 at 15h 14m 04s.xml">
+      <configuration name="TableTest.createNewTable_shouldContainUnderscore_inTheMiddle" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13918000" />
+    <option name="totallyTimeSpent" value="30075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.32947367" />
+      <window_info anchor="bottom" id="Messages" weight="0.32876712" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50104165" side_tool="true" visible="true" weight="0.32982087" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50104165" side_tool="true" weight="0.22760801" />
       <window_info anchor="right" x="0" y="0" width="430" height="853" id="Documentation" side_tool="true" weight="0.3296875" />
       <window_info anchor="right" id="Maven Projects" weight="0.3296875" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32947367" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49895832" weight="0.22760801" />
       <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.49895832" visible="true" weight="0.32982087" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49931788" visible="true" weight="0.1640625" />
       <window_info anchor="right" id="Database" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32947367" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
+      <window_info id="Structure" order="1" sideWeight="0.5006821" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
       <window_info anchor="right" id="Theme Preview" />
@@ -671,6 +802,37 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info id="Designer" order="0" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.32947367" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
+      <window_info id="Image Layers" order="1" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32947367" />
+      <window_info anchor="right" x="0" y="0" width="430" height="853" id="Documentation" order="3" side_tool="true" weight="0.3296875" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49895832" visible="true" weight="0.32982087" />
+      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50104165" side_tool="true" visible="true" weight="0.32982087" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.32947367" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.3296875" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -682,7 +844,11 @@
     <MESSAGE value="Still trying" />
     <MESSAGE value="Push Man" />
     <MESSAGE value="Merge branch 'master' of https://github.com/RafalJDev/TicTacToeAcademy&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/RafalJDev/TicTacToeAcademy&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit." />
+    <MESSAGE value="Trying again" />
+    <MESSAGE value="Trying again2" />
+    <MESSAGE value="Commit to prevent git reset hard :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit to prevent git reset hard :D" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/GameState.java">
@@ -782,67 +948,212 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/coordinates/Coordinates.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console_2.snippet">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rules/TicTacToeRules.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="10" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
-          <folding>
-            <element signature="e#335#336#0" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#509#510#0" expanded="true" />
-            <element signature="e#527#528#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/table/TableTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/output/printer/TablePrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="30">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/player/PlayerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+    <entry file="file://$PROJECT_DIR$/Estimates.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/table/Table.java">
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/NumberFormatException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-          <folding>
-            <element signature="e#94#95#0" expanded="true" />
-            <element signature="e#144#145#0" expanded="true" />
-            <element signature="e#401#402#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/annotation/Native.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="40" column="52" lean-forward="true" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/checker/WinnerCheckerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/coordinates/CoordinatesTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+        <state relative-caret-position="105">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/output/message/MessagePrinter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+        <state relative-caret-position="300">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rows/DiagonalRowProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rows/HorizontalRowProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="2800" column="17" lean-forward="true" selection-start-line="2800" selection-start-column="17" selection-end-line="2800" selection-end-column="17" />
+          <folding>
+            <element signature="e#38369#38370#0" expanded="true" />
+            <element signature="e#38423#38424#0" expanded="true" />
+            <element signature="e#47538#47539#0" expanded="true" />
+            <element signature="e#47602#47603#0" expanded="true" />
+            <element signature="e#55800#55801#0" expanded="true" />
+            <element signature="e#55844#55845#0" expanded="true" />
+            <element signature="e#82616#82617#0" expanded="true" />
+            <element signature="e#82667#82668#0" expanded="true" />
+            <element signature="e#111196#111197#0" expanded="true" />
+            <element signature="e#111251#111252#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rows/VerticalRowProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/input/InputReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/player/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/input/InputValidatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding>
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rows/RowProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/checker/WinnerChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/coordinates/Coordinates.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/TicTacToe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/player/PlayerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/input/InputValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/output/message/Messages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/player/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="29" />
           <folding>
             <element signature="e#99#100#0" expanded="true" />
             <element signature="e#121#122#0" expanded="true" />
@@ -850,51 +1161,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messages/MessagePrinter.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/table/TableTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+        <state relative-caret-position="503">
+          <caret line="48" column="48" lean-forward="true" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/table/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
           <folding>
-            <element signature="e#88#89#0" expanded="true" />
-            <element signature="e#118#119#0" expanded="true" />
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#231#232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/messages/Messages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-          <folding>
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#257#258#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/checker/WinnerCheckerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rules/TicTacToeRules.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/checker/WinnerChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#981#982#0" expanded="true" />
+            <element signature="e#1018#1019#0" expanded="true" />
+            <element signature="e#1429#1430#0" expanded="true" />
+            <element signature="e#1477#1478#0" expanded="true" />
+            <element signature="e#2059#2060#0" expanded="true" />
+            <element signature="e#2092#2093#0" expanded="true" />
           </folding>
         </state>
       </provider>

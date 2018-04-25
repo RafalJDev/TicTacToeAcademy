@@ -31,4 +31,26 @@ public class TableTest {
     int expectedSize = 3;
     assertEquals(gameTableSize, expectedSize);
   }
+  
+  @Test
+  public void createNewTable_try() {
+    
+    int standardSize = 3;
+    table = Table.createNewTable(standardSize);
+    
+  }
+  
+  @Test
+  public void createNewTable_shouldContainUnderscore_inTheMiddle() {
+    
+    int standardSize = 3;
+    table = Table.createNewTable(standardSize);
+    
+    char signInTheMiddleOfArray = table.getSign(1, 1);
+    
+    char shouldBeUnderScore = '_';
+    assertEquals(signInTheMiddleOfArray, shouldBeUnderScore);
+  }
+  
+  
 }

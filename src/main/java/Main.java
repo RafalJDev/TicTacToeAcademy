@@ -8,7 +8,6 @@ public class Main {
 //    ticTacToe.letsPlay();
   
     Table table = Table.createNewTable(3);
-    table.getHorizontalSurroundings(1);
     
     }
 }
