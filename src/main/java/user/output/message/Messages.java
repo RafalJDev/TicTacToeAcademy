@@ -1,4 +1,4 @@
-package output.message;
+package user.output.message;
 
 public enum Messages {
   
@@ -7,7 +7,8 @@ public enum Messages {
   PLEASE_GIVE_COORDINATES("Please give me coordinates to put your sign on table: "),
   X_COORDINATE("X position: "),
   Y_COORDINATE("Y position: "),
-  FAREWALL("BYE, till the next time !");
+  PLEASE_ENTER_AGAIN("Please enter number again : "),
+  FAREWELL("BYE, till the next time !");
   
   private String message;
   

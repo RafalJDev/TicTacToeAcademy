@@ -9,6 +9,8 @@ public final class Table {
   //TODO to other class/enum or passed as parameter
   final int howMuchSignsToWin = 3;
   
+  final char signToFillTableWith = '_';
+  
   private Table(int tableSize) {
     gameTable = new char[tableSize][tableSize];
   
@@ -16,15 +18,15 @@ public final class Table {
   }
   
   public void fillTableWithUnderScores() {
-    char underscore = '_';
+  
     for (int x = 0; x < gameTable.length; x++) {
       for (int y = 0; y < gameTable.length; y++) {
-        gameTable[x][y] = underscore;
+        gameTable[x][y] = signToFillTableWith;
       }
     }
   }
   
-  public static Table createNewTable(int tableSize) {
+  public static Table of(int tableSize) {
   
     if (tableSize < 3) {
       throw new IllegalArgumentException("Table can't be: " + tableSize);
@@ -35,6 +37,11 @@ public final class Table {
   public void ticTacMove(Coordinates coordinates, char currentPlayerSign) {
     int xPosition = coordinates.getXPosition();
     int yPosition = coordinates.getYPosition();
+  
+    char signAtCoordinate = gameTable[xPosition][yPosition];
+    if (signAtCoordinate != signToFillTableWith) {
+    
+    }
     
     gameTable[xPosition][yPosition] = currentPlayerSign;
   }

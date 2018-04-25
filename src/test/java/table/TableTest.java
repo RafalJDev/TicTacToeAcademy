@@ -17,14 +17,14 @@ public class TableTest {
   public void createNewTable_withIllegalArgument_thenException() {
   
     int toSmallTableSize = 2;
-    table = Table.createNewTable(toSmallTableSize);
+    table = Table.of(toSmallTableSize);
   }
   
   @Test
   public void createNewTable_correctSize() {
   
     int standardSize = 3;
-    table = Table.createNewTable(standardSize);
+    table = Table.of(standardSize);
   
     int gameTableSize = table.getGameTableSize();
   
@@ -36,7 +36,7 @@ public class TableTest {
   public void createNewTable_try() {
     
     int standardSize = 3;
-    table = Table.createNewTable(standardSize);
+    table = Table.of(standardSize);
     
   }
   
@@ -44,7 +44,7 @@ public class TableTest {
   public void createNewTable_shouldContainUnderscore_inTheMiddle() {
     
     int standardSize = 3;
-    table = Table.createNewTable(standardSize);
+    table = Table.of(standardSize);
     
     char signInTheMiddleOfArray = table.getSign(1, 1);
     

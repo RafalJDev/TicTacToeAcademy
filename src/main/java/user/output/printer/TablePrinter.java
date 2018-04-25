@@ -1,4 +1,6 @@
-package output.printer;
+package user.output.printer;
 
 public class TablePrinter {
+
+
 }

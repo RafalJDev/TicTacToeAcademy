@@ -17,4 +17,7 @@ public enum Player {
   
   public abstract Player getOppositePlayer();
   
+  public char toChar() {
+    return name().charAt(0);
+  }
 }
