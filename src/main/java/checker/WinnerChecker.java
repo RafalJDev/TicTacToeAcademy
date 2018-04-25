@@ -1,5 +1,6 @@
 package checker;
 
+import coordinates.Coordinates;
 import player.Player;
 import table.Table;
 
@@ -9,16 +10,16 @@ public class WinnerChecker {
   
   private Table table;
   
-  public void checkIfPlayerWinned(Player player, Table table) {
+  public void checkIfPlayerWinned(Player player, Table table, Coordinates coordinates) {
     currentPlayer = player;
     this.table = table;
   }
   
-  public boolean isWinnerOnVertical() {
-  
-    boolean t;
-    boolean t2;
-    boolean t3;
+  public boolean isWinnerOnVertical(Coordinates coordinates) {
+    
+    int xPosition = coordinates.getXPosition();
+    int yPosition = coordinates.getYPosition();
+//    table[xPosition];
     return false;
   }
 }

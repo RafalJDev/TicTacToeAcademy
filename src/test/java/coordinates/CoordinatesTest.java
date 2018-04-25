@@ -17,20 +17,20 @@ public class CoordinatesTest {
   public void createCoordinates_passNegativeXIndex_thenException() {
   
     int negativeCoordinate_X = -1;
-    coordinates = Coordinates.createCoordinates(negativeCoordinate_X, 0);
+    coordinates = Coordinates.of(negativeCoordinate_X, 0);
   }
   
   @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Passed Y position has a negative value")
   public void createCoordinates_passNegativeYIndex_thenException() {
     
     int negativeCoordinate_Y = -1;
-    coordinates = Coordinates.createCoordinates(0, negativeCoordinate_Y);
+    coordinates = Coordinates.of(0, negativeCoordinate_Y);
   }
   
   @Test
   public void createCoordinates_positivePosition_thenCorrect() {
   
-    coordinates = Coordinates.createCoordinates(3, 3);
+    coordinates = Coordinates.of(3, 3);
   
     int actualXPosition = coordinates.getXPosition();
     int actualYPosition = coordinates.getYPosition();

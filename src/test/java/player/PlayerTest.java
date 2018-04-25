@@ -23,9 +23,9 @@ public class PlayerTest {
     System.out.println(name);
     Assert.assertEquals(name, "X");
   }
-  
-  @Test
-  public void method() {
-  
-  }
 }
+//O|O|O|0
+//-------
+//O|O|O
+//-----
+//O|O|O

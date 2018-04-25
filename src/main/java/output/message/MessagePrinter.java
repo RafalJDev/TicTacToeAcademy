@@ -1,4 +1,4 @@
-package messages;
+package output.message;
 
 import player.Player;
 
@@ -16,8 +16,17 @@ public class MessagePrinter {
     System.out.println(message + " " + additionalMessage);
   }
   
-  public static void printWhoIsNextPlayer(String whoIsnextPlayer) {
+  public static void printWhoIsNextPlayer(Player whoIsnextPlayer) {
     System.out.println(Messages.NEXT_PLAYER_IS + " " + whoIsnextPlayer);
+  }
+  
+  public static void askForCoordinatesOnX() {
+    System.out.println(Messages.PLEASE_GIVE_COORDINATES);
+    System.out.println(Messages.X_COORDINATE);
+  }
+  
+  public static void askForCoordinatesOnY() {
+    System.out.println(Messages.Y_COORDINATE);
   }
   
 }

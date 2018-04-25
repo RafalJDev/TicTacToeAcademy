@@ -1,5 +1,6 @@
 package checker;
 
+import coordinates.Coordinates;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -17,8 +18,9 @@ public class WinnerCheckerTest {
   public void isWinnerOnVertical() {
   
     winnerChecker = new WinnerChecker();
-    
-    boolean andTheWinnerIs = winnerChecker.isWinnerOnVertical();
+  
+    Coordinates coordinates = Coordinates.of(2, 2);
+    boolean andTheWinnerIs = winnerChecker.isWinnerOnVertical(coordinates);
     
     boolean expectedToWin = false;
     assertEquals(andTheWinnerIs, expectedToWin);

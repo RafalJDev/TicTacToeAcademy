@@ -10,7 +10,7 @@ public class Coordinates {
     y = yPosition;
   }
   
-  public static Coordinates createCoordinates(int xPosition, int yPosition) throws IllegalArgumentException{
+  public static Coordinates of(int xPosition, int yPosition) throws IllegalArgumentException {
     if (xPosition < 0 ) {
       throw new IllegalArgumentException("Passed X position has a negative value");
     } else if (yPosition < 0) {
