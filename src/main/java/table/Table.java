@@ -9,11 +9,12 @@ public final class Table {
   //TODO to other class/enum or passed as parameter
   final int howMuchSignsToWin = 3;
   
-  final char signToFillTableWith = '_';
+  char signToFillTableWith;
   
-  private Table(int tableSize) {
+  private Table(int tableSize, char signToFillTableWith) {
     gameTable = new char[tableSize][tableSize];
-  
+    
+    this.signToFillTableWith = signToFillTableWith;
     fillTableWithUnderScores();
   }
   
@@ -26,12 +27,12 @@ public final class Table {
     }
   }
   
-  public static Table of(int tableSize) {
-  
+  public static Table of(int tableSize, char signToFillTableWith) {
+    
     if (tableSize < 3) {
       throw new IllegalArgumentException("Table can't be: " + tableSize);
     }
-    return new Table(tableSize);
+    return new Table(tableSize, signToFillTableWith);
   }
   
   public void ticTacMove(Coordinates coordinates, char currentPlayerSign) {
@@ -72,14 +73,14 @@ public final class Table {
     return getVerticalRow(xPosition);
   }
   
-  public char getSign(int xPosition, int yPosition) {
+  public char getSignAt(int xPosition, int yPosition) {
     return gameTable[xPosition][yPosition];
   }
   
-  public char getSign(Coordinates coordinates) {
+  public char getSignAt(Coordinates coordinates) {
     int xPosition = coordinates.getXPosition();
     int yPosition = coordinates.getYPosition();
-    return gameTable[xPosition][yPosition];
+    return getSignAt(xPosition, yPosition);
   }
   
   public int getGameTableSize() {

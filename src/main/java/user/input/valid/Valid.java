@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 
 public abstract class Valid {
   
-  String userInput;
+  protected String userInput;
   Consumer<Object> message = MessagePrinter::printMessage;
   
   public Valid(String userInput) {

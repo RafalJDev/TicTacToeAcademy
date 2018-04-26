@@ -3,7 +3,6 @@ package user.input;
 import user.input.valid.Valid;
 import user.input.valid.ValidNumber;
 
-import java.util.Scanner;
 import java.util.function.Supplier;
 
 public class InputReader {

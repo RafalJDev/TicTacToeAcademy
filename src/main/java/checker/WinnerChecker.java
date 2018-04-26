@@ -19,7 +19,6 @@ public class WinnerChecker {
     
     int xPosition = coordinates.getXPosition();
     int yPosition = coordinates.getYPosition();
-//    table[xPosition];
     return false;
   }
 }

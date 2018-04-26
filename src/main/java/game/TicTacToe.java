@@ -1,30 +1,30 @@
 package game;
 
 import coordinates.Coordinates;
+import player.Player;
+import table.Table;
 import user.input.InputReader;
 import user.output.message.MessagePrinter;
 import user.output.message.Messages;
-import player.Player;
-import table.Table;
 
 import java.util.Scanner;
 import java.util.function.Supplier;
 
-public class TicTacToe {
+public final class TicTacToe {
   
-  Player nextPlayer = Player.X;
-  final Scanner scanner = new Scanner(System.in);
-  final Supplier<String> supplier = () -> scanner.nextLine();
+  private Player nextPlayer = Player.X;
+  private final Scanner scanner = new Scanner(System.in);
+  private final Supplier<String> supplier = scanner::nextLine;
   
   public void letsPlay() {
     
     MessagePrinter.printMessage(Messages.WELCOME);
-    int tableSizeFromUser = readLineToInt();
+    final int tableSizeFromUser = readLineToInt();
   
     boolean andTheWinnerIs = false;
   
     MessagePrinter.printMessage("How big table you wish to play on ?");
-    Table table = Table.of(tableSizeFromUser);
+    Table table = Table.of(tableSizeFromUser, ' ');
   
     while (!andTheWinnerIs) {
       
