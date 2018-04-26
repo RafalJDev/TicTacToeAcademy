@@ -8,10 +8,6 @@ import static org.testng.Assert.*;
 
 public class PlayerTest {
   
-  @BeforeMethod
-  public void setUp() {
-  }
-  
   @Test
   public void getOppositePlayer_createOPlayerInvokeMethod_expectXPlayer() {
     Player playerO = Player.O;

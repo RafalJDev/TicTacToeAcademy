@@ -10,10 +10,6 @@ public class WinnerCheckerTest {
   
   WinnerChecker winnerChecker;
   
-  @BeforeMethod
-  public void setUp() {
-  }
-  
   @Test
   public void isWinnerOnVertical() {
   

@@ -12,9 +12,10 @@ public class TablePrinterTest {
   @Test
   public void printTable_typicalSituation_tableSizeNotChanged_alsoTesterCanSeeIfMethodIsProperlyPrintingTable() {
     int tableSize = 3;
-    Table table = Table.of(tableSize, ' ');
-    
+    char signToFillTableWith = ' ';
+    Table table = Table.of(tableSize, signToFillTableWith);
     Consumer<StringBuilder> stringConsumer = System.out::println;
+  
     TablePrinter.printTable(table, stringConsumer);
     
     int actualGameTableSize = table.getGameTableSize();

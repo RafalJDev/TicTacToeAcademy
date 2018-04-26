@@ -1,6 +1,8 @@
 package table;
 
+import coordinates.Coordinates;
 import org.testng.annotations.Test;
+import player.Player;
 
 import static org.testng.Assert.assertEquals;
 
@@ -47,5 +49,21 @@ public class TableTest {
     assertEquals(signInTheMiddleOfArray, signToFillTableWith);
   }
   
+  @Test
+  public void ticTacMove_typicalSituation_firstMove_expectXAtPosition() {
+    
+    int standardSize = 3;
+    table = Table.of(standardSize, signToFillTableWith);
+    
+    final Coordinates coordinates = Coordinates.of(1, 1);
+    Player x = Player.X;
+    final char xChar = x.toChar();
+    
+    table.ticTacMove(coordinates, xChar);
+    
+    char signAt = table.getSignAt(coordinates);
+    
+    assertEquals(signAt, xChar);
+  }
   
 }

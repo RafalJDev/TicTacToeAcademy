@@ -13,8 +13,8 @@ public final class Table {
   
   private Table(int tableSize, char signToFillTableWith) {
     gameTable = new char[tableSize][tableSize];
-    
     this.signToFillTableWith = signToFillTableWith;
+  
     fillTableWithUnderScores();
   }
   
@@ -36,6 +36,7 @@ public final class Table {
   }
   
   public void ticTacMove(Coordinates coordinates, char currentPlayerSign) {
+  
     int xPosition = coordinates.getXPosition();
     int yPosition = coordinates.getYPosition();
   
@@ -59,7 +60,6 @@ public final class Table {
   
   public String getHorizontalRow(Coordinates coordinates) {
     int yPosition = coordinates.getYPosition();
-    
     return getHorizontalRow(yPosition);
   }
   
