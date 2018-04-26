@@ -9,10 +9,6 @@ public class CoordinatesTest {
   
   Coordinates coordinates;
   
-  @BeforeMethod
-  public void setUp() {
-  }
-  
   @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Passed X position has a negative value")
   public void createCoordinates_passNegativeXIndex_thenException() {
   

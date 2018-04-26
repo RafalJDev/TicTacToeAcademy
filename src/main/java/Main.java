@@ -1,14 +1,11 @@
-import table.Table;
+import game.TicTacToe;
 
 public class Main {
   
   public static void main(String[] args) {
-
-//    TicTacToe ticTacToe = new TicTacToe();
-//    ticTacToe.letsPlay();
   
-    Table table = Table.createNewTable(3);
-    table.getHorizontalSurroundings(1);
-    
-    }
+    TicTacToe ticTacToe = new TicTacToe();
+    ticTacToe.letsPlay();
+  
+  }
 }
