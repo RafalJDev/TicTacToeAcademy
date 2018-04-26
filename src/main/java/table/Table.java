@@ -63,14 +63,14 @@ public final class Table {
     return getHorizontalRow(yPosition);
   }
   
-  public char[] getVerticalRow(int xPosition) {
-    return gameTable[xPosition];
+  public String getVerticalColumn(int xPosition) {
+    return String.valueOf(gameTable[xPosition]);
   }
   
-  public char[] getVerticalRow(Coordinates coordinates) {
+  public String getVerticalColumn(Coordinates coordinates) {
     int xPosition = coordinates.getXPosition();
     int yPosition = coordinates.getYPosition();
-    return getVerticalRow(xPosition);
+    return getVerticalColumn(xPosition);
   }
   
   public char getSignAt(int xPosition, int yPosition) {

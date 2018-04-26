@@ -17,6 +17,7 @@ public final class TicTacToe {
   private Player nextPlayer = Player.X;
   private final Scanner scanner = new Scanner(System.in);
   private final Supplier<String> supplier = scanner::nextLine;
+  //TODO Consumer<StringBuilder> is not the best idea
   private final Consumer<StringBuilder> printer = System.out::println;
   
   public void letsPlay() {
