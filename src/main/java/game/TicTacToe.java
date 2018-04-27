@@ -1,7 +1,7 @@
 package game;
 
-import coordinates.Coordinates;
 import player.Player;
+import service.MoveService;
 import table.Table;
 import user.input.InputReader;
 import user.output.message.MessagePrinter;
@@ -31,18 +31,9 @@ public final class TicTacToe {
     Table table = Table.of(tableSizeFromUser, ' ');
   
     while (!andTheWinnerIs) {
-      
-      MessagePrinter.printWhoIsNextPlayer(nextPlayer);
-      MessagePrinter.askForCoordinatesOnX();
-      int xPosition = readLineToInt();
-      
-      MessagePrinter.askForCoordinatesOnY();
-      int yPosition = readLineToInt();
     
-      Coordinates coordinates = Coordinates.of(xPosition, yPosition);
-    
-      table.ticTacMove(coordinates, nextPlayer.toChar());
-  
+      MoveService.makeMove(table, nextPlayer, supplier);
+      
       TablePrinter.printTable(table, printer);
       
       nextPlayer = nextPlayer.getOppositePlayer();
@@ -52,7 +43,8 @@ public final class TicTacToe {
   }
   
   public int readLineToInt() {
-    return InputReader.readLine(supplier);
+    String s = InputReader.readLine(supplier);
+    return Integer.parseInt(s);
   }
   
 }

@@ -1,23 +1,22 @@
 package user.input;
 
-import user.input.valid.NotValidNegativeNumber;
-import user.input.valid.NotValidWord;
-import user.input.valid.Valid;
-import user.input.valid.ValidNumber;
+import user.input.valid.strategy.*;
 
 public class InputValidator {
   
-  public static Valid checkInput(String userInput) {
+  public static ValidStrategy checkInput(String userInput) {
     
-    Valid validState = null;
+    ValidStrategy validStrategyState = null;
     if (userInput.matches("\\d+")) {
-      validState = new ValidNumber(userInput);
+      validStrategyState = new ValidStrategyNumber(userInput);
+    } else if (userInput.isEmpty()) {
+      validStrategyState = new ValidStrategyEmpty(userInput); // todo test
     } else if (userInput.startsWith("-")) {
-      validState = new NotValidNegativeNumber(userInput);
+      validStrategyState = new ValidStrategyNegativeNumber(userInput);
     } else {
-      validState = new NotValidWord(userInput);
+      validStrategyState = new ValidStrategyWord(userInput);
     }
-    return validState;
+    return validStrategyState;
   }
   
 }

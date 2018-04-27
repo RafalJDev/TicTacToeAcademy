@@ -11,7 +11,7 @@ public class Coordinates {
   }
   
   public static Coordinates of(int xPosition, int yPosition) throws IllegalArgumentException {
-    if (xPosition < 0 ) {
+    if (xPosition < 0) {
       throw new IllegalArgumentException("Passed X position has a negative value");
     } else if (yPosition < 0) {
       throw new IllegalArgumentException("Passed Y position has a negative value");

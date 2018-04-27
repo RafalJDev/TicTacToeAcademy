@@ -58,6 +58,7 @@ public class TableTest {
     
     char signAt = table.getSignAt(coordinates);
   
+    playerChar = 'X';
     assertEquals(signAt, playerChar);
   }
   
@@ -112,9 +113,8 @@ public class TableTest {
     
     coordinates = Coordinates.of(xPosition, yPosition);
     Player player = Player.X;
-    playerChar = player.toChar();
-    
-    table.ticTacMove(coordinates, playerChar);
+  
+    table.ticTacMove(coordinates, player);
   }
   
   private void prepareTypicalTableAndMakeMove() {

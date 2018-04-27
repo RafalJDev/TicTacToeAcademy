@@ -1,27 +1,27 @@
 package user.input;
 
-import user.input.valid.Valid;
-import user.input.valid.ValidNumber;
+import user.input.valid.strategy.ValidStrategy;
+import user.input.valid.strategy.ValidStrategyNumber;
 
 import java.util.function.Supplier;
 
 public class InputReader {
   
-  public static int readLine(Supplier<String> supplier) {
+  public static String readLine(Supplier<String> supplier) {
     
     String nextLine;
-    Valid validState = null;
+    ValidStrategy validStrategyState = null;
     do {
       nextLine = supplier.get();
-      validState = InputValidator.checkInput(nextLine);
-      
-    } while (isNotValid(validState));
+      validStrategyState = InputValidator.checkInput(nextLine);
+  
+    } while (isNotValid(validStrategyState));
     
-    return Integer.parseInt(nextLine);
+    return nextLine;
   }
   
-  public static boolean isNotValid(Valid validState) {
-    return validState.getClass() != ValidNumber.class;
+  public static boolean isNotValid(ValidStrategy validStrategyState) {
+    return validStrategyState.getClass() != ValidStrategyNumber.class;
   }
   
 }
