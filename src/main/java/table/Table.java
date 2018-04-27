@@ -1,6 +1,7 @@
 package table;
 
 import coordinates.Coordinates;
+import player.Player;
 
 public final class Table {
   
@@ -35,16 +36,12 @@ public final class Table {
     return new Table(tableSize, signToFillTableWith);
   }
   
-  public void ticTacMove(Coordinates coordinates, char currentPlayerSign) {
-  
+  public void ticTacMove(Coordinates coordinates, Player currentPlayer) {
+    
     int xPosition = coordinates.getXPosition();
     int yPosition = coordinates.getYPosition();
-  
-    char signAtCoordinate = gameTable[xPosition][yPosition];
-    if (signAtCoordinate != signToFillTableWith) {
     
-    }
-    
+    char currentPlayerSign = currentPlayer.toChar();
     gameTable[xPosition][yPosition] = currentPlayerSign;
   }
   
@@ -63,14 +60,14 @@ public final class Table {
     return getHorizontalRow(yPosition);
   }
   
-  public char[] getVerticalRow(int xPosition) {
-    return gameTable[xPosition];
+  public String getVerticalColumn(int xPosition) {
+    return String.valueOf(gameTable[xPosition]);
   }
   
-  public char[] getVerticalRow(Coordinates coordinates) {
+  public String getVerticalColumn(Coordinates coordinates) {
     int xPosition = coordinates.getXPosition();
     int yPosition = coordinates.getYPosition();
-    return getVerticalRow(xPosition);
+    return getVerticalColumn(xPosition);
   }
   
   public char getSignAt(int xPosition, int yPosition) {
@@ -85,5 +82,9 @@ public final class Table {
   
   public int getGameTableSize() {
     return gameTable.length;
+  }
+  
+  public char getSignToFillTableWith() {
+    return signToFillTableWith;
   }
 }

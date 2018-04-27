@@ -1,10 +1,8 @@
-package user.input.valid;
+package user.input.valid.strategy;
 
-import user.output.message.MessagePrinter;
-
-public class NotValidNegativeNumber extends Valid {
+public class ValidStrategyNegativeNumber extends ValidStrategy {
   
-  public NotValidNegativeNumber(String userInput) {
+  public ValidStrategyNegativeNumber(String userInput) {
     super(userInput);
   }
   

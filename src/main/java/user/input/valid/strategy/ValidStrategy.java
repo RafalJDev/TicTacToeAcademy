@@ -1,15 +1,15 @@
-package user.input.valid;
+package user.input.valid.strategy;
 
 import user.output.message.MessagePrinter;
 
 import java.util.function.Consumer;
 
-public abstract class Valid {
+public abstract class ValidStrategy {
   
   protected String userInput;
   Consumer<Object> message = MessagePrinter::printMessage;
   
-  public Valid(String userInput) {
+  public ValidStrategy(String userInput) {
     this.userInput = userInput;
   }
   

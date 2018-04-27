@@ -1,11 +1,10 @@
-package user.input.valid;
+package user.input.valid.strategy;
 
-import user.output.message.MessagePrinter;
 import user.output.message.Messages;
 
-public class NotValidWord extends Valid {
+public class ValidStrategyWord extends ValidStrategy {
   
-  public NotValidWord(String userInput) {
+  public ValidStrategyWord(String userInput) {
     super(userInput);
   }
   
