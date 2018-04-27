@@ -8,7 +8,7 @@ public enum Player {
       return O;
     }
   },
-  O{
+  O {
     @Override
     public Player getOppositePlayer() {
       return X;

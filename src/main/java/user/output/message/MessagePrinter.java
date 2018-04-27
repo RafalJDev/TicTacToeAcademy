@@ -2,10 +2,16 @@ package user.output.message;
 
 import player.Player;
 
+import java.util.function.Consumer;
+
 public class MessagePrinter {
   
   public static void printMessage(Object message) {
     System.out.println(message.toString());
+  }
+  
+  public static void printMessage(String sdfweg, String aefwfe, Consumer<String> consumer) {
+    consumer.accept(sdfweg);
   }
   
   public static void printMessage(String message) {

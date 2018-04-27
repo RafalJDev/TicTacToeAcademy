@@ -1,8 +1,8 @@
 package user.input;
 
 import org.testng.annotations.Test;
-import user.input.valid.NotValidWord;
-import user.input.valid.ValidNumber;
+import user.input.valid.strategy.ValidStrategyWord;
+import user.input.valid.strategy.ValidStrategyNumber;
 
 import java.util.Random;
 import java.util.function.Supplier;
@@ -17,20 +17,20 @@ public class InputReaderTest {
   public void readLine_supplierAsRandomGenerator_positiveInput_thenReturnedLineGreaterThanZero() {
     
     Supplier<String> supplier = () -> String.valueOf(random.nextInt(100));
-    
-    int returnedLine = InputReader.readLine(supplier);
-    
-    assertTrue(returnedLine >= 0);
+  
+    String returnedLine = InputReader.readLine(supplier);
+  
+    assertTrue(Integer.parseInt(returnedLine) >= 0);
   }
   
   //TODO TestNG timeout doesn't work, so I made some magic
-  volatile int returnedLine;
+  volatile String returnedLine;
   
   @Test()
   public void readLine_supplierAsRandomGenerator_negativeInput_thenReturnedBigNegative() throws InterruptedException {
     
     int bigNegativeValueThatWontBeGeneratedByGenerator = -2000;
-    returnedLine = bigNegativeValueThatWontBeGeneratedByGenerator;
+    returnedLine = String.valueOf(bigNegativeValueThatWontBeGeneratedByGenerator);
     
     Thread input = new Thread(() -> {
       Supplier<String> supplier = () -> String.valueOf(random.nextInt(100) - 101);
@@ -44,19 +44,20 @@ public class InputReaderTest {
     input.join(300);
     
     int expected = bigNegativeValueThatWontBeGeneratedByGenerator;
-    assertEquals(returnedLine, expected);
+    String expectedString = String.valueOf(expected);
+    assertEquals(returnedLine, expectedString);
   }
   
   @Test
   public void isNotValid_passedValidClass_thenFalse() {
-    boolean isNotValid = InputReader.isNotValid(new ValidNumber("1"));
+    boolean isNotValid = InputReader.isNotValid(new ValidStrategyNumber("1"));
     
     assertFalse(isNotValid);
   }
   
   @Test
   public void isNotValid_passedNotValidClass_thenTrue() {
-    boolean isNotValid = InputReader.isNotValid(new NotValidWord("1"));
+    boolean isNotValid = InputReader.isNotValid(new ValidStrategyWord("1"));
     
     assertTrue(isNotValid);
   }
