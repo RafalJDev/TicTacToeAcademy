@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 
 public class MoveService {
   
-  public static boolean makeMove(Table table, Player nextPlayer, Supplier<String> supplier) {
+  public static boolean makeMove(Table table, Player currentPlayer, Supplier<String> supplier) {
     if (supplier == null) {
       supplier = new Scanner(System.in)::nextLine;
     }
@@ -23,11 +23,11 @@ public class MoveService {
     MoveStrategy moveStrategy;
     
     do {
-      Coordinates coordinates = moveAsker.askForCoordinates(nextPlayer);
+      Coordinates coordinates = moveAsker.askForCoordinates(currentPlayer);
       
       moveStrategy = MoveValidator.checkMoveAction(table, coordinates);
-      
-      moveStrategy.action(nextPlayer);
+  
+      moveStrategy.action(currentPlayer);
       
     } while (isMoveHappened(moveStrategy));
     return true;

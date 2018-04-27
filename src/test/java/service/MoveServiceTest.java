@@ -28,11 +28,11 @@ public class MoveServiceTest {
     assertTrue(isMoveHappend);
   }
   
-  //TODO TestNG timeout doesn't work, so I made some magic
+  //TODO TestNG timeout doesn't work, so I do some magic
   volatile boolean isMoveHappened = false;
   
   @Test
-  public void makeMove_typicalSituation_twoMoves_thenTimeOut() throws InterruptedException {
+  public void makeMove_typicalSituation_twoMoves_thenMoveDidntHappened() throws InterruptedException {
     
     table = Table.of(6, ' ');
     player = Player.X;

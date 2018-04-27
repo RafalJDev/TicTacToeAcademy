@@ -23,7 +23,7 @@ public class InputReaderTest {
     assertTrue(Integer.parseInt(returnedLine) >= 0);
   }
   
-  //TODO TestNG timeout doesn't work, so I made some magic
+  //TODO TestNG timeout doesn't work, so I do some magic
   volatile String returnedLine;
   
   @Test()
