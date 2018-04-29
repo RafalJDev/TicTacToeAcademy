@@ -28,7 +28,7 @@ public final class TicTacToe {
   
     MessagePrinter.printMessage("How big table you wish to play on ?");
     final int tableSizeFromUser = readLineToInt();
-    Table table = Table.of(tableSizeFromUser, ' ');
+    Table table = Table.of(tableSizeFromUser, " ");
   
     while (!andTheWinnerIs) {
     

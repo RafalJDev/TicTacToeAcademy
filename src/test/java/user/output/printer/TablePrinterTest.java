@@ -12,7 +12,7 @@ public class TablePrinterTest {
   @Test
   public void printTable_typicalSituation_tableSizeNotChanged_alsoTesterCanSeeIfMethodIsProperlyPrintingTable() {
     int tableSize = 3;
-    char signToFillTableWith = ' ';
+    String signToFillTableWith = " ";
     Table table = Table.of(tableSize, signToFillTableWith);
     Consumer<StringBuilder> stringConsumer = System.out::println;
   

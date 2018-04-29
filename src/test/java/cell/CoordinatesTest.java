@@ -1,6 +1,5 @@
-package coordinates;
+package cell;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
@@ -9,18 +8,22 @@ public class CoordinatesTest {
   
   Coordinates coordinates;
   
-  @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Passed X position has a negative value")
+  @Test()
   public void createCoordinates_passNegativeXIndex_thenException() {
   
     int negativeCoordinate_X = -1;
     coordinates = Coordinates.of(negativeCoordinate_X, 0);
+
+    assertNull(coordinates);
   }
   
-  @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Passed Y position has a negative value")
+  @Test()
   public void createCoordinates_passNegativeYIndex_thenException() {
     
     int negativeCoordinate_Y = -1;
     coordinates = Coordinates.of(0, negativeCoordinate_Y);
+
+    assertNull(coordinates);
   }
   
   @Test

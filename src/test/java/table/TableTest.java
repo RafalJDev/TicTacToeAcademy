@@ -1,6 +1,5 @@
 package table;
 
-import coordinates.Coordinates;
 import org.testng.annotations.Test;
 import player.Player;
 
@@ -12,7 +11,7 @@ public class TableTest {
   Coordinates coordinates;
   char playerChar;
   
-  final char signToFillTableWith = ' ';
+  final String signToFillTableWith = " ";
   
   @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Table can't be: " + 2)
   public void createNewTable_withIllegalArgument_thenException() {
@@ -46,7 +45,7 @@ public class TableTest {
     int standardSize = 3;
     table = Table.of(standardSize, signToFillTableWith);
   
-    char signInTheMiddleOfArray = table.getSignAt(1, 1);
+    String signInTheMiddleOfArray = table.getSignAt(1, 1);
   
     assertEquals(signInTheMiddleOfArray, signToFillTableWith);
   }
@@ -56,7 +55,7 @@ public class TableTest {
   
     prepareTypicalTableAndMakeMove();
     
-    char signAt = table.getSignAt(coordinates);
+    String signAt = table.getSignAt(coordinates);
   
     playerChar = 'X';
     assertEquals(signAt, playerChar);

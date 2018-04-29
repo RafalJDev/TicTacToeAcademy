@@ -15,7 +15,7 @@ public class TablePrinter {
     for (int x = 0; x < gameTableSize; x++) {
       StringBuilder rowToPrint = new StringBuilder(realCountOfSigns);
       for (int y = 0; y < gameTableSize; y++) {
-        char signAt = table.getSignAt(x, y);
+        String signAt = table.getSignAt(x, y);
         rowToPrint.append(signAt + "|");
       }
       rowToPrint.deleteCharAt(realCountOfSigns);

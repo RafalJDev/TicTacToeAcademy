@@ -1,6 +1,5 @@
 package service;
 
-import coordinates.Coordinates;
 import player.Player;
 import table.Table;
 import table.move.MoveValidator;

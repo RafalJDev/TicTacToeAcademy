@@ -1,6 +1,5 @@
 package judge.strategy;
 
-import coordinates.Coordinates;
 import player.Player;
 import table.Table;
 

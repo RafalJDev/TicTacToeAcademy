@@ -1,6 +1,5 @@
 package table.move.strategy;
 
-import coordinates.Coordinates;
 import player.Player;
 import table.Table;
 import user.output.message.MessagePrinter;

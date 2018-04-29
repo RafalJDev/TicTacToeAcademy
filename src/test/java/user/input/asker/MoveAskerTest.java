@@ -1,6 +1,5 @@
 package user.input.asker;
 
-import coordinates.Coordinates;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import player.Player;

@@ -1,6 +1,5 @@
 package table.move;
 
-import coordinates.Coordinates;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import player.Player;
@@ -19,7 +18,7 @@ public class MoveValidatorTest {
   
   @BeforeMethod
   public void setUp() {
-    table = Table.of(3, ' ');
+    table = Table.of(3, " ");
   }
   
   @Test

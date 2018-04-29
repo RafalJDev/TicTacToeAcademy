@@ -19,7 +19,7 @@ public class MoveServiceTest {
   @Test
   public void makeMove_typicalSituation_firstMove_thenTrue() {
     
-    table = Table.of(6, ' ');
+    table = Table.of(6, " ");
     player = Player.X;
     supplier = () -> "1";
     
@@ -34,7 +34,7 @@ public class MoveServiceTest {
   @Test
   public void makeMove_typicalSituation_twoMoves_thenMoveDidntHappened() throws InterruptedException {
     
-    table = Table.of(6, ' ');
+    table = Table.of(6, " ");
     player = Player.X;
     supplier = () -> "1";
     

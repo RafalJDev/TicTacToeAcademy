@@ -1,6 +1,5 @@
 package table.move;
 
-import coordinates.Coordinates;
 import table.Table;
 import table.move.strategy.MoveStrategy;
 import table.move.strategy.MoveStrategyOccupied;
@@ -17,7 +16,7 @@ public class MoveValidator {
     int gameTableSize = table.getGameTableSize();
     if (xPosition >= gameTableSize || yPosition >= gameTableSize) {
       return new MoveStrategyOutOfArray(table, coordinates);
-    } else if (table.getSignAt(coordinates) != table.getSignToFillTableWith()) {
+    } else if (!(table.getSignAt(coordinates).matches("\\d+"))) {
       return new MoveStrategyOccupied(table, coordinates);
     }
     return new MoveStrategyPossible(table, coordinates);

@@ -1,6 +1,5 @@
 package user.input.asker;
 
-import coordinates.Coordinates;
 import player.Player;
 import user.input.InputReader;
 import user.output.message.MessagePrinter;

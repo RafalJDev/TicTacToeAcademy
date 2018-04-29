@@ -1,6 +1,5 @@
 package judge;
 
-import coordinates.Coordinates;
 import org.testng.annotations.Test;
 import player.Player;
 import table.Table;
@@ -16,7 +15,9 @@ public class ScoreCheckerTest {
   @Test
   public void isThisEndOfTheGame_firstMove_thenFalse() {
     
-    table = Table.of(3, ' ');
+    table = Table.of(3, " ");
+    coordinates = Coordinates.of(1,1);
+    currentPlayer = Player.X;
     
     boolean thisEndOfTheGame = ScoreChecker.isThisEndOfTheGame(table, coordinates, currentPlayer);
     

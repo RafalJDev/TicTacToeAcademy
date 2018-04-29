@@ -1,48 +1,52 @@
 package table;
 
-import coordinates.Coordinates;
+import cell.Cell;
 import player.Player;
 
 public final class Table {
   
-  char[][] gameTable;
+  String[][] gameTable;
   
   //TODO to other class/enum or passed as parameter
   final int howMuchSignsToWin = 3;
   
-  char signToFillTableWith;
-  
-  private Table(int tableSize, char signToFillTableWith) {
-    gameTable = new char[tableSize][tableSize];
+  String signToFillTableWith;
+  private int filledCells=0;
+
+  private Table(int tableSize, String signToFillTableWith) {
+    gameTable = new String[tableSize][tableSize];
     this.signToFillTableWith = signToFillTableWith;
   
     fillTableWithUnderScores();
   }
   
   public void fillTableWithUnderScores() {
-  
+
+    int numberToFillCellWith = 1;
     for (int x = 0; x < gameTable.length; x++) {
       for (int y = 0; y < gameTable.length; y++) {
-        gameTable[x][y] = signToFillTableWith;
+        gameTable[x][y] = String.valueOf(numberToFillCellWith++);
       }
     }
   }
   
-  public static Table of(int tableSize, char signToFillTableWith) {
-    
+  public static Table of(int tableSize, String signToFillTableWith) {
+
+    //TODO put checker somewhere else
     if (tableSize < 3) {
       throw new IllegalArgumentException("Table can't be: " + tableSize);
     }
     return new Table(tableSize, signToFillTableWith);
   }
   
-  public void ticTacMove(Coordinates coordinates, Player currentPlayer) {
+  public void ticTacMove(Cell cell, Player currentPlayer) {
     
     int xPosition = coordinates.getXPosition();
     int yPosition = coordinates.getYPosition();
     
-    char currentPlayerSign = currentPlayer.toChar();
+    String currentPlayerSign = currentPlayer.toString();
     gameTable[xPosition][yPosition] = currentPlayerSign;
+    filledCells++;
   }
   
   public String getHorizontalRow(int yPosition) {
@@ -70,11 +74,11 @@ public final class Table {
     return getVerticalColumn(xPosition);
   }
   
-  public char getSignAt(int xPosition, int yPosition) {
+  public String getSignAt(int xPosition, int yPosition) {
     return gameTable[xPosition][yPosition];
   }
   
-  public char getSignAt(Coordinates coordinates) {
+  public String getSignAt(Coordinates coordinates) {
     int xPosition = coordinates.getXPosition();
     int yPosition = coordinates.getYPosition();
     return getSignAt(xPosition, yPosition);
@@ -84,7 +88,11 @@ public final class Table {
     return gameTable.length;
   }
   
-  public char getSignToFillTableWith() {
+  public String getSignToFillTableWith() {
     return signToFillTableWith;
+  }
+
+  public int getFilledCells() {
+    return filledCells;
   }
 }
