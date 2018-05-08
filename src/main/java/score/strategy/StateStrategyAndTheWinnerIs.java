@@ -13,7 +13,7 @@ public class StateStrategyAndTheWinnerIs extends StateStrategy {
   }
   
   @Override
-  public boolean action(IOEntity ioEntity) {
+  public boolean isThisEndOfTheGame(IOEntity ioEntity) {
     
     Consumer consumer = ioEntity.getConsumer();
     consumer.accept("Congratulations: " +

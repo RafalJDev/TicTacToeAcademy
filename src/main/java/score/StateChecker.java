@@ -9,7 +9,7 @@ import table.Table;
 
 public class StateChecker {
   
-  public static StateStrategy isThisEndOfTheGame(Table table, Cell cell) {
+  public static StateStrategy moveResult(Table table, Cell cell) {
     
     StateStrategy stateStrategy = null;
     

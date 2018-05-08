@@ -23,7 +23,7 @@ public class StateCheckerTest {
     currentCell = Cell.of(5, currentPlayer.toString());
     
     
-    StateStrategy stateStrategy = StateChecker.isThisEndOfTheGame(table, currentCell);
+    StateStrategy stateStrategy = StateChecker.moveResult(table, currentCell);
     
     assertTrue(stateStrategy instanceof StateStrategyNoWinner);
   }

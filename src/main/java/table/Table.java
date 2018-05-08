@@ -7,11 +7,13 @@ public final class Table {
   
   //TODO to other class/enum or passed as parameter
   public final int howMuchSignsToWin = 3;
+  private final int tableSize;
   private Cell[][] gameTable;
-  
   private int filledCells = 0;
   
   private Table(int tableSize) {
+    
+    this.tableSize = tableSize;
     gameTable = new Cell[tableSize][tableSize];
     
     fillTableWithNumbers();
@@ -38,15 +40,15 @@ public final class Table {
   
   public void ticTacMove(Cell cell, Player currentPlayer) {
     
-    int xPosition = cell.getXPosition(getGameTableSize());
-    int yPosition = cell.getYPosition(getGameTableSize());
+    int xPosition = cell.getXPosition(tableSize);
+    int yPosition = cell.getYPosition(tableSize);
     
     String currentPlayerSign = currentPlayer.toString();
     gameTable[xPosition][yPosition].sign = currentPlayerSign;
     filledCells++;
   }
   
-  public String getVerticalColumn(int yPosition) {
+  public String getVerticalColumn(final int yPosition) {
     
     String horizontalSurroundings = "";
     for (int i = 0; i < gameTable.length; i++) {
@@ -57,11 +59,11 @@ public final class Table {
   }
   
   public String getVerticalColumn(Cell coordinates) {
-    int yPosition = coordinates.getYPosition(getGameTableSize());
+    int yPosition = coordinates.getYPosition(tableSize);
     return getVerticalColumn(yPosition);
   }
   
-  public String getHorizontalRow(int xPosition) {
+  public String getHorizontalRow(final int xPosition) {
     String line = "";
     for (Cell cell : gameTable[xPosition]) {
       line += cell.sign;
@@ -70,9 +72,53 @@ public final class Table {
   }
   
   public String getHorizontalRow(Cell coordinates) {
-    int xPosition = coordinates.getXPosition(getGameTableSize());
-    int yPosition = coordinates.getYPosition(getGameTableSize());
+    int xPosition = coordinates.getXPosition(tableSize);
+    int yPosition = coordinates.getYPosition(tableSize);
     return getHorizontalRow(xPosition);
+  }
+  
+  public String getLeftDiagonalLine(final Cell cell) {
+    final int yPosition = cell.getYPosition(tableSize);
+    final int xPosition = cell.getXPosition(tableSize);
+    
+    final int leftBoundaryOfSignsTobin = -howMuchSignsToWin + 1;
+    
+    String diagonalLine = "";
+    for (int position = leftBoundaryOfSignsTobin; position < howMuchSignsToWin; position++) {
+      int currentXPosition = xPosition + position;
+      int currentYPosition = yPosition + position;
+      System.out.println(currentXPosition + "i" + currentYPosition);
+      
+      if (checkIfPositionIsCorrect(currentXPosition) && checkIfPositionIsCorrect(currentYPosition)) {
+        diagonalLine += getSignAt(currentXPosition, currentYPosition);
+        System.out.println("i" + getSignAt(currentXPosition, currentYPosition));
+      }
+    }
+    return diagonalLine;
+  }
+  
+  public String getRightDiagonalLine(final Cell cell) {
+    final int yPosition = cell.getYPosition(tableSize);
+    final int xPosition = cell.getXPosition(tableSize);
+    
+    final int leftBoundaryOfSignsToWin = -howMuchSignsToWin + 1;
+    
+    StringBuilder diagonalLine = new StringBuilder(howMuchSignsToWin * 2 - 1);
+    for (int position = leftBoundaryOfSignsToWin; position < howMuchSignsToWin; position++) {
+      int currentXPosition = xPosition + position;
+      int currentYPosition = yPosition - position;
+      System.out.println(currentXPosition + "i" + currentYPosition);
+      
+      if (checkIfPositionIsCorrect(currentXPosition) && checkIfPositionIsCorrect(currentYPosition)) {
+        diagonalLine.append(getSignAt(currentXPosition, currentYPosition));
+        System.out.println("i" + getSignAt(currentXPosition, currentYPosition));
+      }
+    }
+    return diagonalLine.toString();
+  }
+  
+  private boolean checkIfPositionIsCorrect(int position) {
+    return position >= 0 && position < tableSize;
   }
   
   public String getSignAt(int xPosition, int yPosition) {
@@ -80,13 +126,13 @@ public final class Table {
   }
   
   public String getSignAt(Cell coordinates) {
-    int xPosition = coordinates.getXPosition(getGameTableSize());
-    int yPosition = coordinates.getYPosition(getGameTableSize());
+    int xPosition = coordinates.getXPosition(tableSize);
+    int yPosition = coordinates.getYPosition(tableSize);
     return getSignAt(xPosition, yPosition);
   }
   
   public int getGameTableSize() {
-    return gameTable.length;
+    return tableSize;
   }
   
   public int getFilledCells() {
@@ -96,4 +142,5 @@ public final class Table {
   public int getHowMuchSignsToWin() {
     return howMuchSignsToWin;
   }
+  
 }

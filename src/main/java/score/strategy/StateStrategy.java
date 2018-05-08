@@ -14,5 +14,5 @@ public abstract class StateStrategy {
     this.currentCell = currentCell;
   }
   
-  public abstract boolean action(IOEntity ioEntity);
+  public abstract boolean isThisEndOfTheGame(IOEntity ioEntity);
 }

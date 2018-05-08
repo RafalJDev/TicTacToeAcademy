@@ -40,7 +40,6 @@ public final class TicTacToe {
       dearUserOfThisVeryComplicatedGameDoYouWannaPlayThisGame =
           JudgeService.checkGameState(table, cell, ioEntity);
       
-      /*nextPlayer = */
       nextPlayer.getOppositePlayer();
     }
     

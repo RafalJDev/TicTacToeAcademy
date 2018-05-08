@@ -10,9 +10,9 @@ public class JudgeService {
   
   public static boolean checkGameState(Table table, Cell cell, IOEntity ioEntity) {
     
-    StateStrategy stateStrategy = StateChecker.isThisEndOfTheGame(table, cell);
+    StateStrategy stateStrategy = StateChecker.moveResult(table, cell);
     
-    stateStrategy.action(ioEntity);
+    stateStrategy.isThisEndOfTheGame(ioEntity);
     
     return false;
   }

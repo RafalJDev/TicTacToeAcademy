@@ -35,7 +35,7 @@ public class LineChecker {
   }
   
   public static boolean isThereWinnerOnDiagonal(Table table, Cell cell) {
-    String diagonalRow = ""; //TODO
+    String diagonalRow = table.getLeftDiagonalLine(cell);
     return isWinnerOnThisLine(diagonalRow);
   }
   
