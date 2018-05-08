@@ -1,5 +1,6 @@
 package table.move;
 
+import cell.Cell;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import player.Player;
@@ -9,48 +10,49 @@ import table.move.strategy.MoveStrategyOccupied;
 import table.move.strategy.MoveStrategyOutOfArray;
 import table.move.strategy.MoveStrategyPossible;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class MoveValidatorTest {
   
   Table table;
-  Coordinates coordinates;
+  Cell cell;
   
   @BeforeMethod
   public void setUp() {
-    table = Table.of(3, " ");
+    table = Table.of(3);
   }
   
   @Test
   public void checkMoveAction_typicalSituation_instanceOfMoveStrategyPossible() {
-    coordinates = Coordinates.of(1, 1);
-    MoveStrategy moveStrategy = MoveValidator.checkMoveAction(table, coordinates);
+    cell = Cell.of(5, "X");
+    MoveStrategy moveStrategy = MoveValidator.checkMoveAction(table, cell);
     
     assertEquals(moveStrategy.getClass(), MoveStrategyPossible.class);
   }
   
   @Test
   public void checkMoveAction_moveXIndexOutOfTable_instanceOfMoveStrategyPossible() {
-    coordinates = Coordinates.of(3, 2);
-    MoveStrategy moveStrategy = MoveValidator.checkMoveAction(table, coordinates);
+    cell = Cell.of(10, "X");
+    MoveStrategy moveStrategy = MoveValidator.checkMoveAction(table, cell);
     
     assertEquals(moveStrategy.getClass(), MoveStrategyOutOfArray.class);
   }
   
-  @Test
+  //TODO THERE IS NO Y ANYMORE SO DELETE THIS ?
+  @Test(enabled = false)
   public void checkMoveAction_moveYIndexOutOfTable_instanceOfMoveStrategyPossible() {
-    coordinates = Coordinates.of(2, 3);
-    MoveStrategy moveStrategy = MoveValidator.checkMoveAction(table, coordinates);
+    cell = Cell.of(-1, "X");
+    MoveStrategy moveStrategy = MoveValidator.checkMoveAction(table, cell);
     
     assertEquals(moveStrategy.getClass(), MoveStrategyOutOfArray.class);
   }
   
   @Test
   public void checkMoveAction_moveTwoTimesToSamePosition_instanceOfMoveStrategyOccupied() {
-    coordinates = Coordinates.of(2, 2);
-    table.ticTacMove(coordinates, Player.X);
+    cell = Cell.of(9, "X");
+    table.ticTacMove(cell, Player.X);
     
-    MoveStrategy moveStrategy = MoveValidator.checkMoveAction(table, coordinates);
+    MoveStrategy moveStrategy = MoveValidator.checkMoveAction(table, cell);
     
     assertEquals(moveStrategy.getClass(), MoveStrategyOccupied.class);
   }

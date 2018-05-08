@@ -1,8 +1,8 @@
 package user.input;
 
 import org.testng.annotations.Test;
-import user.input.valid.strategy.ValidStrategyWord;
 import user.input.valid.strategy.ValidStrategyNumber;
+import user.input.valid.strategy.ValidStrategyWord;
 
 import java.util.Random;
 import java.util.function.Supplier;
@@ -17,9 +17,9 @@ public class InputReaderTest {
   public void readLine_supplierAsRandomGenerator_positiveInput_thenReturnedLineGreaterThanZero() {
     
     Supplier<String> supplier = () -> String.valueOf(random.nextInt(100));
-  
+    
     String returnedLine = InputReader.readLine(supplier);
-  
+    
     assertTrue(Integer.parseInt(returnedLine) >= 0);
   }
   

@@ -1,14 +1,13 @@
 package service;
 
+import cell.Cell;
 import org.testng.annotations.Test;
 import player.Player;
 import table.Table;
 
 import java.util.function.Supplier;
 
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.fail;
+import static org.testng.Assert.*;
 
 public class MoveServiceTest {
   
@@ -19,28 +18,27 @@ public class MoveServiceTest {
   @Test
   public void makeMove_typicalSituation_firstMove_thenTrue() {
     
-    table = Table.of(6, " ");
+    table = Table.of(6);
     player = Player.X;
     supplier = () -> "1";
     
-    boolean isMoveHappend = MoveService.makeMove(table, player, supplier);
+    Cell cell = MoveService.makeMove(table, player, supplier);
     
-    assertTrue(isMoveHappend);
+    assertNotNull(cell);
   }
   
   //TODO TestNG timeout doesn't work, so I do some magic
-  volatile boolean isMoveHappened = false;
+  volatile Cell returnedCell = null;
   
-  @Test
+  @Test()
   public void makeMove_typicalSituation_twoMoves_thenMoveDidntHappened() throws InterruptedException {
-    
-    table = Table.of(6, " ");
+    table = Table.of(6);
     player = Player.X;
     supplier = () -> "1";
     
     Thread input = new Thread(() -> {
       MoveService.makeMove(table, player, supplier);
-      isMoveHappened = MoveService.makeMove(table, player, supplier);
+      returnedCell = MoveService.makeMove(table, player, supplier);
       
       fail("STUPID! You can't return any value! STUPID!");
     });
@@ -48,6 +46,6 @@ public class MoveServiceTest {
     
     input.join(300);
     
-    assertFalse(isMoveHappened);
+    assertNull(returnedCell);
   }
 }

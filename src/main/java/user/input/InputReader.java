@@ -14,7 +14,7 @@ public class InputReader {
     do {
       nextLine = supplier.get();
       validStrategyState = InputValidator.checkInput(nextLine);
-  
+      
     } while (isNotValid(validStrategyState));
     
     return nextLine;

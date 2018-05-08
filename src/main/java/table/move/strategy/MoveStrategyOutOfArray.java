@@ -1,12 +1,13 @@
 package table.move.strategy;
 
+import cell.Cell;
 import player.Player;
 import table.Table;
 
 public class MoveStrategyOutOfArray extends MoveStrategy {
   
-  public MoveStrategyOutOfArray(Table table, Coordinates coordinates) {
-    super(table, coordinates);
+  public MoveStrategyOutOfArray(Table table, Cell cell) {
+    super(table, cell);
   }
   
   @Override

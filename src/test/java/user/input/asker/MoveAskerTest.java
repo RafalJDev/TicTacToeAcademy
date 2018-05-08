@@ -1,5 +1,6 @@
 package user.input.asker;
 
+import cell.Cell;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import player.Player;
@@ -24,9 +25,9 @@ public class MoveAskerTest {
   public void askForCoordinates_emulateRandomPositiveInput_() {
     
     moveAsker = new MoveAsker(emulateRandomUserInput(100));
-    Coordinates coordinates = moveAsker.askForCoordinates(Player.X);
+    Cell cell = moveAsker.askForCoordinates(Player.X);
     
-    assertNotNull(coordinates);
+    assertNotNull(cell);
   }
   
   @Test
@@ -35,13 +36,11 @@ public class MoveAskerTest {
     int userInput = 1;
     
     moveAsker = new MoveAsker(emulateSingleUserInput(userInput));
-    Coordinates coordinates = moveAsker.askForCoordinates(Player.X);
+    Cell cell = moveAsker.askForCoordinates(Player.X);
     
-    int xPosition = coordinates.getXPosition();
-    int yPosition = coordinates.getYPosition();
+    int position = cell.getCellNumber();
     
-    assertEquals(xPosition, userInput);
-    assertEquals(yPosition, userInput);
+    assertEquals(position, userInput);
   }
   
   private Supplier<String> emulateRandomUserInput(int bound) {

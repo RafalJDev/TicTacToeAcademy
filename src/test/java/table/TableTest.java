@@ -1,5 +1,6 @@
 package table;
 
+import cell.Cell;
 import org.testng.annotations.Test;
 import player.Player;
 
@@ -7,27 +8,26 @@ import static org.testng.Assert.assertEquals;
 
 public class TableTest {
   
-  Table table;
-  Coordinates coordinates;
-  char playerChar;
   
-  final String signToFillTableWith = " ";
+  Table table;
+  Cell cell;
+  String playerChar;
   
   @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Table can't be: " + 2)
   public void createNewTable_withIllegalArgument_thenException() {
     
     int toSmallTableSize = 2;
-    table = Table.of(toSmallTableSize, signToFillTableWith);
+    table = Table.of(toSmallTableSize);
   }
   
-  @Test
+  @Test()
   public void createNewTable_correctSize() {
-  
+    
     int standardSize = 3;
-    table = Table.of(standardSize, signToFillTableWith);
-  
+    table = Table.of(standardSize);
+    
     int gameTableSize = table.getGameTableSize();
-  
+    
     int expectedSize = 3;
     assertEquals(gameTableSize, expectedSize);
   }
@@ -36,28 +36,31 @@ public class TableTest {
   public void createNewTable_try() {
     
     int standardSize = 3;
-    table = Table.of(standardSize, signToFillTableWith);
+    table = Table.of(standardSize);
   }
   
   @Test
   public void createNewTable_shouldContainUnderscore_inTheMiddle() {
     
     int standardSize = 3;
-    table = Table.of(standardSize, signToFillTableWith);
-  
-    String signInTheMiddleOfArray = table.getSignAt(1, 1);
-  
-    assertEquals(signInTheMiddleOfArray, signToFillTableWith);
+    table = Table.of(standardSize);
+    
+    String numberInTheMiddleOfTable = table.getSignAt(1, 1);
+    
+    int countOfNumberInTable = standardSize * standardSize;
+    String expetedNumber = String.valueOf((countOfNumberInTable / 2) + 1);
+    
+    assertEquals(numberInTheMiddleOfTable, expetedNumber);
   }
   
   @Test
   public void ticTacMove_typicalSituation_firstMove_expectXAtPosition() {
-  
+    
     prepareTypicalTableAndMakeMove();
     
-    String signAt = table.getSignAt(coordinates);
-  
-    playerChar = 'X';
+    String signAt = table.getSignAt(cell);
+    
+    playerChar = "X";
     assertEquals(signAt, playerChar);
   }
   
@@ -68,55 +71,56 @@ public class TableTest {
     
     String horizontalRow = table.getHorizontalRow(1);
     
-    String expectedRow = " X ";
+    String expectedRow = "4X6";
     assertEquals(horizontalRow, expectedRow);
   }
   
   @Test
   public void getHorizontalRow_typicalSituation_provideCoordinate() {
     
-    prepareTypicalTableAndMakeMove(1, 0);
+    prepareTypicalTableAndMakeMove(3);
     
-    String horizontalRow = table.getHorizontalRow(coordinates);
+    String horizontalRow = table.getHorizontalRow(cell);
     
-    String expectedRow = " X ";
+    String expectedRow = "12X";
     assertEquals(horizontalRow, expectedRow);
   }
   
   @Test
   public void getVerticalColumn_typicalSituation_provideInt() {
     
-    prepareTypicalTableAndMakeMove(1, 0);
+    prepareTypicalTableAndMakeMove(3);
     
-    String horizontalRow = table.getVerticalColumn(1);
+    String verticalColumn = table.getVerticalColumn(1);
     
-    String expectedRow = "X  ";
-    assertEquals(horizontalRow, expectedRow);
+    String expectedRow = "258";
+    assertEquals(verticalColumn, expectedRow);
   }
   
   @Test
-  public void getVerticalColumn_typicalSituation_provideCoordinate() {
+  public void getHorizontalColumn_typicalSituation_provideCoordinate() {
     
-    prepareTypicalTableAndMakeMove(1, 0);
+    prepareTypicalTableAndMakeMove(3);
     
-    String horizontalRow = table.getVerticalColumn(coordinates);
+    String horizontalRow = table.getHorizontalRow(cell);
     
-    String expectedRow = "X  ";
+    String expectedRow = "12X";
+    
     assertEquals(horizontalRow, expectedRow);
   }
   
-  void prepareTypicalTableAndMakeMove(int xPosition, int yPosition) {
+  void prepareTypicalTableAndMakeMove(int position) {
     
     int standardSize = 3;
-    table = Table.of(standardSize, signToFillTableWith);
+    table = Table.of(standardSize);
     
-    coordinates = Coordinates.of(xPosition, yPosition);
+    cell = Cell.of(position, "X");
     Player player = Player.X;
-  
-    table.ticTacMove(coordinates, player);
+    
+    table.ticTacMove(cell, player);
   }
   
   private void prepareTypicalTableAndMakeMove() {
-    prepareTypicalTableAndMakeMove(1, 1);
+    prepareTypicalTableAndMakeMove(5);
   }
 }

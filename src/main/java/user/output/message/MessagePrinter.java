@@ -31,13 +31,9 @@ public class MessagePrinter {
     System.out.println(Messages.NEXT_PLAYER_IS + " " + whoIsnextPlayer);
   }
   
-  public static void askForCoordinatesOnX() {
+  public static void askForPosition() {
     System.out.println(Messages.PLEASE_GIVE_COORDINATES);
-    System.out.println(Messages.X_COORDINATE);
-  }
-  
-  public static void askForCoordinatesOnY() {
-    System.out.println(Messages.Y_COORDINATE);
+    System.out.println(Messages.ASK_FOR_POSITION);
   }
   
 }

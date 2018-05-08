@@ -1,5 +1,6 @@
 package service;
 
+import cell.Cell;
 import player.Player;
 import table.Table;
 import table.move.MoveValidator;
@@ -12,7 +13,8 @@ import java.util.function.Supplier;
 
 public class MoveService {
   
-  public static boolean makeMove(Table table, Player currentPlayer, Supplier<String> supplier) {
+  public static Cell makeMove(Table table, Player currentPlayer, Supplier<String> supplier) {
+    //TODO DELETE
     if (supplier == null) {
       supplier = new Scanner(System.in)::nextLine;
     }
@@ -20,16 +22,16 @@ public class MoveService {
     MoveAsker moveAsker = new MoveAsker(supplier);
     
     MoveStrategy moveStrategy;
-    
+    Cell cell;
     do {
-      Coordinates coordinates = moveAsker.askForCoordinates(currentPlayer);
+      cell = moveAsker.askForCoordinates(currentPlayer);
       
-      moveStrategy = MoveValidator.checkMoveAction(table, coordinates);
-  
+      moveStrategy = MoveValidator.checkMoveAction(table, cell);
+      
       moveStrategy.action(currentPlayer);
       
     } while (isMoveHappened(moveStrategy));
-    return true;
+    return cell;
   }
   
   private static boolean isMoveHappened(MoveStrategy moveStrategy) {

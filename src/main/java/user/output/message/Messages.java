@@ -2,11 +2,10 @@ package user.output.message;
 
 public enum Messages {
   
-  WELCOME("HEY ! This is tic tac toe game"),
+  WELCOME("HEY ! This is tic tac toe service.game"),
   NEXT_PLAYER_IS("The next player is: "),
   PLEASE_GIVE_COORDINATES("Please give me cell to put your sign on table: "),
-  X_COORDINATE("X position: "),
-  Y_COORDINATE("Y position: "),
+  ASK_FOR_POSITION("Position number (positive number): "),
   PLEASE_ENTER_AGAIN("Please enter number again : "),
   FAREWELL("BYE, till the next time !");
   

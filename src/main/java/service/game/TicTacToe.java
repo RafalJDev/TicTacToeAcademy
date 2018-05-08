@@ -1,49 +1,54 @@
-package game;
+package service.game;
 
+import cell.Cell;
 import player.Player;
+import service.JudgeService;
 import service.MoveService;
 import table.Table;
 import user.input.InputReader;
+import user.io.entity.IOEntity;
 import user.output.message.MessagePrinter;
 import user.output.message.Messages;
 import user.output.printer.TablePrinter;
 
 import java.util.Scanner;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public final class TicTacToe {
   
-  private Player nextPlayer = Player.X;
-  private final Scanner scanner = new Scanner(System.in);
-  private final Supplier<String> supplier = scanner::nextLine;
-  //TODO Consumer<StringBuilder> is not the best idea
   private final Consumer<StringBuilder> printer = System.out::println;
+  private Player nextPlayer = Player.X;
+  
+  private final IOEntity ioEntity = IOEntity.of(new Scanner(System.in)::nextLine, System.out::println);
   
   public void letsPlay() {
     
     MessagePrinter.printMessage(Messages.WELCOME);
-  
-    boolean andTheWinnerIs = false;
-  
+    
+    boolean dearUserOfThisVeryComplicatedGameDoYouWannaPlayThisGame = false;
+    
     MessagePrinter.printMessage("How big table you wish to play on ?");
     final int tableSizeFromUser = readLineToInt();
-    Table table = Table.of(tableSizeFromUser, " ");
-  
-    while (!andTheWinnerIs) {
+    Table table = Table.of(tableSizeFromUser);
     
-      MoveService.makeMove(table, nextPlayer, supplier);
+    while (dearUserOfThisVeryComplicatedGameDoYouWannaPlayThisGame) {
+      
+      Cell cell = MoveService.makeMove(table, nextPlayer, ioEntity.getSupplier());
       
       TablePrinter.printTable(table, printer);
       
-      nextPlayer = nextPlayer.getOppositePlayer();
+      dearUserOfThisVeryComplicatedGameDoYouWannaPlayThisGame =
+          JudgeService.checkGameState(table, cell, ioEntity);
+      
+      /*nextPlayer = */
+      nextPlayer.getOppositePlayer();
     }
-  
+    
     MessagePrinter.printMessage(Messages.FAREWELL);
   }
   
   public int readLineToInt() {
-    String s = InputReader.readLine(supplier);
+    String s = InputReader.readLine(ioEntity.getSupplier());
     return Integer.parseInt(s);
   }
   

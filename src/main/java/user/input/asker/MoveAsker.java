@@ -1,5 +1,6 @@
 package user.input.asker;
 
+import cell.Cell;
 import player.Player;
 import user.input.InputReader;
 import user.output.message.MessagePrinter;
@@ -14,15 +15,12 @@ public class MoveAsker {
     this.supplier = supplier;
   }
   
-  public Coordinates askForCoordinates(Player nextPlayer) {
+  public Cell askForCoordinates(Player nextPlayer) {
     MessagePrinter.printWhoIsNextPlayer(nextPlayer);
-    MessagePrinter.askForCoordinatesOnX();
-    int xPosition = readLineToInt();
+    MessagePrinter.askForPosition();
+    int position = readLineToInt();
     
-    MessagePrinter.askForCoordinatesOnY();
-    int yPosition = readLineToInt();
-    
-    return Coordinates.of(xPosition, yPosition);
+    return Cell.of(position, "X");
   }
   
   private int readLineToInt() {

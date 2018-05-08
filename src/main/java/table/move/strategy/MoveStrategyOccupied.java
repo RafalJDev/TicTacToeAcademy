@@ -1,12 +1,13 @@
 package table.move.strategy;
 
+import cell.Cell;
 import player.Player;
 import table.Table;
 
 public class MoveStrategyOccupied extends MoveStrategy {
   
-  public MoveStrategyOccupied(Table table, Coordinates coordinates) {
-    super(table, coordinates);
+  public MoveStrategyOccupied(Table table, Cell cell) {
+    super(table, cell);
   }
   
   @Override
