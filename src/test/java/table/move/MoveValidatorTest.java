@@ -56,4 +56,6 @@ public class MoveValidatorTest {
     
     assertEquals(moveStrategy.getClass(), MoveStrategyOccupied.class);
   }
+  
+  
 }

@@ -9,7 +9,7 @@
     </properties>
 
     <groupId>raf.proj.tic.tac.toe</groupId>
-    <artifactId>proj</artifactId>
+    <artifactId>TicTacToeAcadamy</artifactId>
     <version>0.2</version>
 
     <build>
@@ -47,6 +47,12 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.5</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

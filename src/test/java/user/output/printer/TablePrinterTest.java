@@ -13,14 +13,26 @@ public class TablePrinterTest {
   public void printTable_typicalSituation_tableSizeNotChanged_alsoTesterCanSeeIfMethodIsProperlyPrintingTable() {
     int tableSize = 3;
     Table table = Table.of(tableSize);
-    Consumer<StringBuilder> stringConsumer = System.out::println;
+    Consumer<String> stringConsumer = System.out::println;
+  
+    TablePrinter.printTable(table, stringConsumer);
+  
+    int actualGameTableSize = table.getGameTableSize();
+  
+    assertEquals(actualGameTableSize, tableSize);
+  }
+  
+  @Test
+  public void printTable_tableSize_5_tableSizeNotChanged_alsoTesterCanSeeIfMethodIsProperlyPrintingTable() {
+    int tableSize = 5;
+    Table table = Table.of(tableSize);
+    Consumer<String> stringConsumer = System.out::println;
     
     TablePrinter.printTable(table, stringConsumer);
     
     int actualGameTableSize = table.getGameTableSize();
-    int tableSizeNotChanged = 3;
     
-    assertEquals(actualGameTableSize, tableSizeNotChanged);
+    assertEquals(actualGameTableSize, tableSize);
   }
   
   @Test(expectedExceptions = NegativeArraySizeException.class)

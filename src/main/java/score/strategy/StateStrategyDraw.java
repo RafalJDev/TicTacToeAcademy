@@ -10,7 +10,11 @@ public class StateStrategyDraw extends StateStrategy {
   }
   
   @Override
-  public boolean isThisEndOfTheGame(IOEntity ioEntity) {
-    return false;
+  public boolean stillPlaying(IOEntity ioEntity) {
+  
+    ioEntity.acceptOutput("Draw! Nobody wins." +
+                              "Would you like to play again [Y/N] ?");
+  
+    return yesOrNo(ioEntity);
   }
 }

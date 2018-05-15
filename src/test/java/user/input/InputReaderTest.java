@@ -3,6 +3,7 @@ package user.input;
 import org.testng.annotations.Test;
 import user.input.valid.strategy.ValidStrategyNumber;
 import user.input.valid.strategy.ValidStrategyWord;
+import user.io.entity.IOEntity;
 
 import java.util.Random;
 import java.util.function.Supplier;
@@ -17,8 +18,8 @@ public class InputReaderTest {
   public void readLine_supplierAsRandomGenerator_positiveInput_thenReturnedLineGreaterThanZero() {
     
     Supplier<String> supplier = () -> String.valueOf(random.nextInt(100));
-    
-    String returnedLine = InputReader.readLine(supplier);
+  
+    String returnedLine = InputReader.readLine(IOEntity.of(supplier, null));
     
     assertTrue(Integer.parseInt(returnedLine) >= 0);
   }
@@ -34,8 +35,8 @@ public class InputReaderTest {
     
     Thread input = new Thread(() -> {
       Supplier<String> supplier = () -> String.valueOf(random.nextInt(100) - 101);
-      
-      returnedLine = InputReader.readLine(supplier);
+  
+      returnedLine = InputReader.readLine(IOEntity.of(supplier, null));
       
       fail("STUPID! You can't return any value! STUPID!");
     });

@@ -2,17 +2,18 @@ package user.input;
 
 import user.input.valid.strategy.ValidStrategy;
 import user.input.valid.strategy.ValidStrategyNumber;
+import user.io.entity.IOEntity;
 
 import java.util.function.Supplier;
 
 public class InputReader {
   
-  public static String readLine(Supplier<String> supplier) {
+  public static String readLine(IOEntity ioEntity) {
     
     String nextLine;
     ValidStrategy validStrategyState = null;
     do {
-      nextLine = supplier.get();
+      nextLine = ioEntity.getInput();
       validStrategyState = InputValidator.checkInput(nextLine);
       
     } while (isNotValid(validStrategyState));

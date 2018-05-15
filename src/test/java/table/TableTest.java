@@ -3,7 +3,6 @@ package table;
 import cell.Cell;
 import org.testng.annotations.Test;
 import player.Player;
-import user.output.printer.TablePrinter;
 
 import static org.testng.Assert.assertEquals;
 
@@ -113,7 +112,7 @@ public class TableTest {
   public void getLeftDiagonalLine_threeMoves_123() {
     prepareTableAndMakeMovesAsX(3, 1, 2, 3);
   
-    
+  
     String leftDiagonalLine = table.getLeftDiagonalLine(cell);
     
     assertEquals(leftDiagonalLine, "X");
@@ -130,7 +129,7 @@ public class TableTest {
   
   @Test
   public void getLeftDiagonalLine_threeMoves_789() {
-    prepareTableAndMakeMovesAsX(3, 7,8,9);
+    prepareTableAndMakeMovesAsX(3, 7, 8, 9);
     
     String rightDiagonalLine = table.getLeftDiagonalLine(cell);
     
@@ -148,7 +147,7 @@ public class TableTest {
   
   @Test
   public void getRightDiagonalLine_threeMoves_456() {
-    prepareTableAndMakeMovesAsX(3, 4,5,6);
+    prepareTableAndMakeMovesAsX(3, 4, 5, 6);
     
     String rightDiagonalLine = table.getRightDiagonalLine(cell);
     
@@ -157,12 +156,12 @@ public class TableTest {
   
   @Test
   public void getRightDiagonalLine_threeMoves_789() {
-    prepareTableAndMakeMovesAsX(3, 7,8,9);
+    prepareTableAndMakeMovesAsX(3, 7, 8, 9);
     
     String rightDiagonalLine = table.getRightDiagonalLine(cell);
     
     assertEquals(rightDiagonalLine, "X");
-    }
+  }
   
   void prepareTableAndMakeMovesAsPlayer(Player currentPlayer, int tableSize, int... positions) {
     table = Table.of(tableSize);

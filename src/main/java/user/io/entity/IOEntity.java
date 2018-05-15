@@ -5,31 +5,23 @@ import java.util.function.Supplier;
 
 public class IOEntity {
   
-  private Supplier supplier;
-  private Consumer consumer;
+  private Supplier<String> supplier;
+  private Consumer<String> consumer;
   
-  private IOEntity(Supplier supplier, Consumer consumer) {
+  private IOEntity(Supplier<String> supplier, Consumer<String> consumer) {
     this.supplier = supplier;
     this.consumer = consumer;
   }
   
-  public static IOEntity of(Supplier supplier, Consumer consumer) {
+  public static IOEntity of(Supplier<String> supplier, Consumer<String> consumer) {
     return new IOEntity(supplier, consumer);
   }
   
-  public Supplier getSupplier() {
-    return supplier;
-  }
-  
-  public Object getInput() {
+  public String getInput() {
     return supplier.get();
   }
   
-  public Consumer getConsumer() {
-    return consumer;
-  }
-  
-  public void acceptOutput(Object toConsume) {
+  public void acceptOutput(String toConsume) {
     consumer.accept(toConsume);
   }
   

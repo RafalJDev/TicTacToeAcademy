@@ -6,24 +6,52 @@ import java.util.function.Consumer;
 
 public class TablePrinter {
   
-  public static void printTable(final Table table, final Consumer<StringBuilder> printer) {
+  public static void printTable(final Table table, final Consumer<String> printer) {
     
     final int gameTableSize = table.getGameTableSize();
-    final int realCountOfSigns = (gameTableSize * 2) - 1;
+    
+    int maxCountOfNumbers = getMaxCountOfNumbers(gameTableSize);
+    
+    final int realCountOfSigns = getRealCountOfSigns(gameTableSize, maxCountOfNumbers);
     final StringBuilder emptyLine = createLineWithHorizontalBars(realCountOfSigns);
     
     for (int x = 0; x < gameTableSize; x++) {
       StringBuilder rowToPrint = new StringBuilder(realCountOfSigns);
       for (int y = 0; y < gameTableSize; y++) {
-        String signAt = table.getSignAt(x, y);
-        rowToPrint.append(signAt + "|");
+        String cellToPrint = prepareCellToPrint(table, maxCountOfNumbers, x, y);
+        rowToPrint.append(cellToPrint);
       }
-      rowToPrint.deleteCharAt(realCountOfSigns);
-      printer.accept(rowToPrint);
+      rowToPrint.deleteCharAt(rowToPrint.length() - 1);
+      printer.accept(rowToPrint.toString());
       if (x != (gameTableSize - 1)) {
-        printer.accept(emptyLine);
+        printer.accept(emptyLine.toString());
       }
     }
+  }
+  
+  private static int getRealCountOfSigns(int gameTableSize, int maxCountOfNumbers) {
+    return maxCountOfNumbers * gameTableSize + gameTableSize - 1;
+  }
+  
+  private static int getMaxCountOfNumbers(int gameTableSize) {
+    int countOfSignsInTable = gameTableSize * gameTableSize;
+    String countToString = String.valueOf(countOfSignsInTable);
+    return countToString.length();
+  }
+  
+  public static String prepareCellToPrint(final Table table, final int maxCountOfNumbers, int x, int y) {
+    
+    String cellToPrint = "";
+    String signAt = table.getSignAt(x, y);
+    
+    int signAtLength = signAt.length();
+    for (int i = signAtLength; i < maxCountOfNumbers; i++) {
+      cellToPrint = " " + cellToPrint;
+    }
+    
+    String horizontalSeparator = "|";
+    cellToPrint += signAt + horizontalSeparator;
+    return cellToPrint;
   }
   
   public static StringBuilder createLineWithHorizontalBars(final int realCountOfSigns) {

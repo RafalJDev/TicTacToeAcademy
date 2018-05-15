@@ -14,5 +14,17 @@ public abstract class StateStrategy {
     this.currentCell = currentCell;
   }
   
-  public abstract boolean isThisEndOfTheGame(IOEntity ioEntity);
+  public abstract boolean stillPlaying(IOEntity ioEntity);
+  
+  protected boolean yesOrNo(IOEntity ioEntity) {
+    while (true) {
+      String input = ioEntity.getInput();
+      if (input.equals("Y")) {
+        return true;
+      } else if (input.equals("N")) {
+        return false;
+      }
+      ioEntity.acceptOutput("Please enter [Y]es or [N]o");
+    }
+  }
 }

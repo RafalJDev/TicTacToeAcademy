@@ -5,6 +5,7 @@ import table.Table;
 import user.io.entity.IOEntity;
 
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class StateStrategyAndTheWinnerIs extends StateStrategy {
   
@@ -13,14 +14,13 @@ public class StateStrategyAndTheWinnerIs extends StateStrategy {
   }
   
   @Override
-  public boolean isThisEndOfTheGame(IOEntity ioEntity) {
-    
-    Consumer consumer = ioEntity.getConsumer();
-    consumer.accept("Congratulations: " +
+  public boolean stillPlaying(IOEntity ioEntity) {
+  
+    ioEntity.acceptOutput("Congratulations: " +
                         currentCell.sign +
                         " You win the game !" +
-                        "Would you like to play again ?");
-    
-    return true;
+                              "Would you like to play again [Y/N] ?");
+  
+    return yesOrNo(ioEntity);
   }
 }

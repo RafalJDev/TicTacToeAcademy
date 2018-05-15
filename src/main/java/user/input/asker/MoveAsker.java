@@ -3,16 +3,17 @@ package user.input.asker;
 import cell.Cell;
 import player.Player;
 import user.input.InputReader;
+import user.io.entity.IOEntity;
 import user.output.message.MessagePrinter;
 
 import java.util.function.Supplier;
 
 public class MoveAsker {
   
-  private final Supplier<String> supplier;
+  private final IOEntity ioEntity;
   
-  public MoveAsker(Supplier<String> supplier) {
-    this.supplier = supplier;
+  public MoveAsker(IOEntity ioEntity) {
+    this.ioEntity = ioEntity;
   }
   
   public Cell askForCoordinates(Player nextPlayer) {
@@ -24,7 +25,7 @@ public class MoveAsker {
   }
   
   private int readLineToInt() {
-    String s = InputReader.readLine(supplier);
+    String s = InputReader.readLine(ioEntity);
     return Integer.parseInt(s);
   }
 }

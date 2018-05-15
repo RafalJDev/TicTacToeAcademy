@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 
 public final class TicTacToe {
   
-  private final Consumer<StringBuilder> printer = System.out::println;
+  private final Consumer<String> printer = System.out::println;
   private Player nextPlayer = Player.X;
   
   private final IOEntity ioEntity = IOEntity.of(new Scanner(System.in)::nextLine, System.out::println);
@@ -24,30 +24,30 @@ public final class TicTacToe {
   public void letsPlay() {
     
     MessagePrinter.printMessage(Messages.WELCOME);
-    
-    boolean dearUserOfThisVeryComplicatedGameDoYouWannaPlayThisGame = false;
+  
+    boolean stillPlaying = true;
     
     MessagePrinter.printMessage("How big table you wish to play on ?");
     final int tableSizeFromUser = readLineToInt();
     Table table = Table.of(tableSizeFromUser);
+  
+    while (stillPlaying) {
     
-    while (dearUserOfThisVeryComplicatedGameDoYouWannaPlayThisGame) {
-      
-      Cell cell = MoveService.makeMove(table, nextPlayer, ioEntity.getSupplier());
+      Cell cell = MoveService.makeMove(table, nextPlayer, ioEntity);
       
       TablePrinter.printTable(table, printer);
-      
-      dearUserOfThisVeryComplicatedGameDoYouWannaPlayThisGame =
+    
+      stillPlaying =
           JudgeService.checkGameState(table, cell, ioEntity);
-      
+    
+    
       nextPlayer.getOppositePlayer();
     }
-    
     MessagePrinter.printMessage(Messages.FAREWELL);
   }
   
   public int readLineToInt() {
-    String s = InputReader.readLine(ioEntity.getSupplier());
+    String s = InputReader.readLine(ioEntity);
     return Integer.parseInt(s);
   }
   

@@ -11,9 +11,9 @@ public class JudgeService {
   public static boolean checkGameState(Table table, Cell cell, IOEntity ioEntity) {
     
     StateStrategy stateStrategy = StateChecker.moveResult(table, cell);
-    
-    stateStrategy.isThisEndOfTheGame(ioEntity);
-    
-    return false;
+  
+    boolean stillPlaying = stateStrategy.stillPlaying(ioEntity);
+  
+    return stillPlaying;
   }
 }

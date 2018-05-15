@@ -3,6 +3,8 @@ package table;
 import cell.Cell;
 import player.Player;
 
+import java.util.function.ToIntBiFunction;
+
 public final class Table {
   
   //TODO to other class/enum or passed as parameter
@@ -73,48 +75,42 @@ public final class Table {
   
   public String getHorizontalRow(Cell coordinates) {
     int xPosition = coordinates.getXPosition(tableSize);
-    int yPosition = coordinates.getYPosition(tableSize);
     return getHorizontalRow(xPosition);
   }
   
   public String getLeftDiagonalLine(final Cell cell) {
-    final int yPosition = cell.getYPosition(tableSize);
-    final int xPosition = cell.getXPosition(tableSize);
-    
-    final int leftBoundaryOfSignsTobin = -howMuchSignsToWin + 1;
-    
-    String diagonalLine = "";
-    for (int position = leftBoundaryOfSignsTobin; position < howMuchSignsToWin; position++) {
-      int currentXPosition = xPosition + position;
-      int currentYPosition = yPosition + position;
-      System.out.println(currentXPosition + "i" + currentYPosition);
-      
-      if (checkIfPositionIsCorrect(currentXPosition) && checkIfPositionIsCorrect(currentYPosition)) {
-        diagonalLine += getSignAt(currentXPosition, currentYPosition);
-        System.out.println("i" + getSignAt(currentXPosition, currentYPosition));
-      }
-    }
-    return diagonalLine;
+    return getDiagonal(cell, kurwaDodatnia());
   }
   
   public String getRightDiagonalLine(final Cell cell) {
+    return getDiagonal(cell, kurwaUjemna());
+  }
+  
+  private String getDiagonal(final Cell cell, final ToIntBiFunction<Integer, Integer> currentYPositionFunction) {
     final int yPosition = cell.getYPosition(tableSize);
     final int xPosition = cell.getXPosition(tableSize);
     
     final int leftBoundaryOfSignsToWin = -howMuchSignsToWin + 1;
     
-    StringBuilder diagonalLine = new StringBuilder(howMuchSignsToWin * 2 - 1);
+    int signCountAroundProvidedCell = howMuchSignsToWin * 2 - 1;
+    StringBuilder diagonalLine = new StringBuilder(signCountAroundProvidedCell);
     for (int position = leftBoundaryOfSignsToWin; position < howMuchSignsToWin; position++) {
       int currentXPosition = xPosition + position;
-      int currentYPosition = yPosition - position;
-      System.out.println(currentXPosition + "i" + currentYPosition);
+      int currentYPosition = currentYPositionFunction.applyAsInt(yPosition, position);
       
       if (checkIfPositionIsCorrect(currentXPosition) && checkIfPositionIsCorrect(currentYPosition)) {
         diagonalLine.append(getSignAt(currentXPosition, currentYPosition));
-        System.out.println("i" + getSignAt(currentXPosition, currentYPosition));
       }
     }
     return diagonalLine.toString();
+  }
+  
+  private ToIntBiFunction<Integer, Integer> kurwaDodatnia() {
+    return (integer, integer2) -> integer + integer2;
+  }
+  
+  private ToIntBiFunction<Integer, Integer> kurwaUjemna() {
+    return (integer, integer2) -> integer - integer2;
   }
   
   private boolean checkIfPositionIsCorrect(int position) {

@@ -11,7 +11,7 @@ public class StateStrategyNoWinner extends StateStrategy {
   }
   
   @Override
-  public boolean isThisEndOfTheGame(IOEntity ioEntity) {
-    return false;
+  public boolean stillPlaying(IOEntity ioEntity) {
+    return true;
   }
 }

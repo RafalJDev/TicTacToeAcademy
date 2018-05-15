@@ -4,9 +4,9 @@ import cell.Cell;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import player.Player;
+import user.io.entity.IOEntity;
 
 import java.util.Random;
-import java.util.function.Supplier;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
@@ -43,17 +43,17 @@ public class MoveAskerTest {
     assertEquals(position, userInput);
   }
   
-  private Supplier<String> emulateRandomUserInput(int bound) {
+  private IOEntity emulateRandomUserInput(int bound) {
     passedUserInput = random.nextInt(bound);
-    return () -> toString(passedUserInput);
+    return IOEntity.of(() -> toString(passedUserInput), null);
   }
   
-  private Supplier<String> emulateSingleUserInput(int input) {
-    return () -> toString(input);
+  private IOEntity emulateSingleUserInput(int input) {
+    return IOEntity.of(() -> toString(input), null);
   }
   
-  private Supplier<String> emulateUserInput_1(int i) {
-    return () -> "1";
+  private IOEntity emulateUserInput_1(int i) {
+    return IOEntity.of(() -> "1", null);
   }
   
   private String toString(int i) {

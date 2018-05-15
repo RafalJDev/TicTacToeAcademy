@@ -12,16 +12,14 @@ public class StateChecker {
   public static StateStrategy moveResult(Table table, Cell cell) {
     
     StateStrategy stateStrategy = null;
-    
+  
+    stateStrategy = new StateStrategyNoWinner(table, cell);
     if (LineChecker.isThereWinningLine(table, cell)) {
       stateStrategy = new StateStrategyAndTheWinnerIs(table, cell);
     } else if ((table.getFilledCells() >= table.getGameTableSize())) {
       //TODO
       stateStrategy = new StateStrategyDraw(table, cell);
-    } else {
-      stateStrategy = new StateStrategyNoWinner(table, cell);
     }
-    
     return stateStrategy;
   }
 }

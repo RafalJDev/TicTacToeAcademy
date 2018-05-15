@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import player.Player;
 import service.MoveService;
 import table.Table;
+import user.io.entity.IOEntity;
 
 import static org.testng.Assert.*;
 
@@ -72,7 +73,7 @@ public class LineCheckerTest {
   public void isThereWinnerOnVertical_XXX_column_thenThereIsWinner() {
     
     makeMoves("X", 6, 9);
-    MoveService.makeMove(table, currentPlayer, () -> "3");
+    MoveService.makeMove(table, currentPlayer, IOEntity.of(() -> "3", null));
     
     boolean thereWinnerOnVertical = LineChecker.isThereWinnerOnVertical(table, lastCell);
     
@@ -83,7 +84,7 @@ public class LineCheckerTest {
   public void isThereWinnerOnVertical_XXO_column_thenNOWinner() {
     
     makeMoves("X", 1, 2);
-    MoveService.makeMove(table, currentPlayer.getOppositePlayer(), () -> "3");
+    MoveService.makeMove(table, currentPlayer.getOppositePlayer(), IOEntity.of(() -> "3", null));
     
     boolean thereWinnerOnVertical = LineChecker.isThereWinnerOnVertical(table, lastCell);
     
@@ -124,7 +125,7 @@ public class LineCheckerTest {
     LineChecker.prepareRegexForWinner(table, cell);
     
     for (int movesPosition : movesPositions) {
-      MoveService.makeMove(table, currentPlayer, () -> String.valueOf(movesPosition));
+      MoveService.makeMove(table, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), null));
       lastCell = Cell.of(movesPosition, "X");
     }
   }
