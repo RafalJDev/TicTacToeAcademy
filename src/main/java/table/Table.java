@@ -3,118 +3,64 @@ package table;
 import cell.Cell;
 import player.Player;
 
-import java.util.function.ToIntBiFunction;
-
 public final class Table {
   
   //TODO to other class/enum or passed as parameter
-  public final int howMuchSignsToWin = 3;
-  private final int tableSize;
+  private final int howMuchSignsToWin;
+  
+  private TableSize tableSize;
+  
   private Cell[][] gameTable;
   private int filledCells = 0;
   
-  private Table(int tableSize) {
-    
+  private Table(TableSize tableSize, int howMuchSignsToWin) {
     this.tableSize = tableSize;
-    gameTable = new Cell[tableSize][tableSize];
+    this.howMuchSignsToWin = howMuchSignsToWin;
+    
+    gameTable = Cell.ofArray(tableSize);
     
     fillTableWithNumbers();
   }
   
-  public static Table of(int tableSize) {
+  public static Table of(TableSize tableSize, int howMuchSignsToWin) {
+    return new Table(tableSize, howMuchSignsToWin);
+  }
+  
+  public static Table of(int tableSizeOnX, int tableSizeOnY) {
     
-    //TODO put checker somewhere else
+    //TODO probably to delete cause checking is somewhere else
+    if (tableSizeOnX < 3 || tableSizeOnY < 3) {
+      throw new IllegalArgumentException("Table Size cannot be less than 3");
+    }
+    return new Table(new TableSize(tableSizeOnX, tableSizeOnY), 3);
+  }
+  
+  public static Table ofSquareTable(int tableSize) {
+    
+    //TODO probably to delete cause checking is somewhere else
     if (tableSize < 3) {
       throw new IllegalArgumentException("Table can't be: " + tableSize);
     }
-    return new Table(tableSize);
+    return new Table(new TableSize(tableSize, tableSize), 3);
   }
   
   public void fillTableWithNumbers() {
     
     int numberToFillCellWith = 1;
-    for (int x = 0; x < gameTable.length; x++) {
-      for (int y = 0; y < gameTable.length; y++) {
+    for (int y = 0; y < getTableSizeOnX(); y++) {
+      for (int x = 0; x < getTableSizeOnY(); x++) {
         gameTable[x][y] = Cell.of(numberToFillCellWith, String.valueOf(numberToFillCellWith++));
       }
     }
   }
   
   public void ticTacMove(Cell cell, Player currentPlayer) {
-    
-    int xPosition = cell.getXPosition(tableSize);
-    int yPosition = cell.getYPosition(tableSize);
+    int xPosition = cell.getXPosition(getTableSizeOnX());
+    int yPosition = cell.getYPosition(getTableSizeOnY());
     
     String currentPlayerSign = currentPlayer.toString();
     gameTable[xPosition][yPosition].sign = currentPlayerSign;
     filledCells++;
-  }
-  
-  public String getVerticalColumn(final int yPosition) {
-    
-    String horizontalSurroundings = "";
-    for (int i = 0; i < gameTable.length; i++) {
-      horizontalSurroundings += gameTable[i][yPosition].sign;
-    }
-    
-    return horizontalSurroundings;
-  }
-  
-  public String getVerticalColumn(Cell coordinates) {
-    int yPosition = coordinates.getYPosition(tableSize);
-    return getVerticalColumn(yPosition);
-  }
-  
-  public String getHorizontalRow(final int xPosition) {
-    String line = "";
-    for (Cell cell : gameTable[xPosition]) {
-      line += cell.sign;
-    }
-    return line;
-  }
-  
-  public String getHorizontalRow(Cell coordinates) {
-    int xPosition = coordinates.getXPosition(tableSize);
-    return getHorizontalRow(xPosition);
-  }
-  
-  public String getLeftDiagonalLine(final Cell cell) {
-    return getDiagonal(cell, kurwaDodatnia());
-  }
-  
-  public String getRightDiagonalLine(final Cell cell) {
-    return getDiagonal(cell, kurwaUjemna());
-  }
-  
-  private String getDiagonal(final Cell cell, final ToIntBiFunction<Integer, Integer> currentYPositionFunction) {
-    final int yPosition = cell.getYPosition(tableSize);
-    final int xPosition = cell.getXPosition(tableSize);
-    
-    final int leftBoundaryOfSignsToWin = -howMuchSignsToWin + 1;
-    
-    int signCountAroundProvidedCell = howMuchSignsToWin * 2 - 1;
-    StringBuilder diagonalLine = new StringBuilder(signCountAroundProvidedCell);
-    for (int position = leftBoundaryOfSignsToWin; position < howMuchSignsToWin; position++) {
-      int currentXPosition = xPosition + position;
-      int currentYPosition = currentYPositionFunction.applyAsInt(yPosition, position);
-      
-      if (checkIfPositionIsCorrect(currentXPosition) && checkIfPositionIsCorrect(currentYPosition)) {
-        diagonalLine.append(getSignAt(currentXPosition, currentYPosition));
-      }
-    }
-    return diagonalLine.toString();
-  }
-  
-  private ToIntBiFunction<Integer, Integer> kurwaDodatnia() {
-    return (integer, integer2) -> integer + integer2;
-  }
-  
-  private ToIntBiFunction<Integer, Integer> kurwaUjemna() {
-    return (integer, integer2) -> integer - integer2;
-  }
-  
-  private boolean checkIfPositionIsCorrect(int position) {
-    return position >= 0 && position < tableSize;
   }
   
   public String getSignAt(int xPosition, int yPosition) {
@@ -122,13 +68,21 @@ public final class Table {
   }
   
   public String getSignAt(Cell coordinates) {
-    int xPosition = coordinates.getXPosition(tableSize);
-    int yPosition = coordinates.getYPosition(tableSize);
+    int xPosition = coordinates.getXPosition(getTableSizeOnX());
+    int yPosition = coordinates.getYPosition(getTableSizeOnY());
     return getSignAt(xPosition, yPosition);
   }
   
-  public int getGameTableSize() {
-    return tableSize;
+  public int getTableSizeOnX() {
+    return tableSize.getTableSizeOnX();
+  }
+  
+  public int getTableSizeOnY() {
+    return tableSize.getTableSizeOnY();
+  }
+  
+  public int getCountOfSigns() {
+    return getTableSizeOnX() * getTableSizeOnY();
   }
   
   public int getFilledCells() {

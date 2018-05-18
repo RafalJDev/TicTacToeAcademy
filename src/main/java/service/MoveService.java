@@ -9,8 +9,6 @@ import table.move.strategy.MoveStrategyPossible;
 import user.input.asker.MoveAsker;
 import user.io.entity.IOEntity;
 
-import java.util.function.Supplier;
-
 public class MoveService {
   
   public static Cell makeMove(Table table, Player currentPlayer, IOEntity ioEntity) {

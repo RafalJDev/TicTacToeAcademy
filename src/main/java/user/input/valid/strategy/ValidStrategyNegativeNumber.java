@@ -8,6 +8,6 @@ public class ValidStrategyNegativeNumber extends ValidStrategy {
   
   @Override
   public void action() {
-    message.accept("Number " + userInput + " must be greater than 0! Please enter position again: ");
+    message.accept("Number " + userInput + " must be greater than 0! Please enter number again: ");
   }
 }

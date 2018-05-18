@@ -9,16 +9,14 @@ import table.Table;
 
 public class StateChecker {
   
-  public static StateStrategy moveResult(Table table, Cell cell) {
+  public static StateStrategy moveResult(Table table, Cell lastCell) {
     
-    StateStrategy stateStrategy = null;
-  
-    stateStrategy = new StateStrategyNoWinner(table, cell);
-    if (LineChecker.isThereWinningLine(table, cell)) {
-      stateStrategy = new StateStrategyAndTheWinnerIs(table, cell);
-    } else if ((table.getFilledCells() >= table.getGameTableSize())) {
-      //TODO
-      stateStrategy = new StateStrategyDraw(table, cell);
+    StateStrategy stateStrategy = new StateStrategyNoWinner(table, lastCell);
+    
+    if (LineChecker.isThereWinningLine(table, lastCell)) {
+      stateStrategy = new StateStrategyAndTheWinnerIs(table, lastCell);
+    } else if ((table.getFilledCells() >= table.getCountOfSigns())) {
+      stateStrategy = new StateStrategyDraw(table, lastCell);
     }
     return stateStrategy;
   }

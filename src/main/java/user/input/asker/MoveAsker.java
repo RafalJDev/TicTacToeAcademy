@@ -6,8 +6,6 @@ import user.input.InputReader;
 import user.io.entity.IOEntity;
 import user.output.message.MessagePrinter;
 
-import java.util.function.Supplier;
-
 public class MoveAsker {
   
   private final IOEntity ioEntity;

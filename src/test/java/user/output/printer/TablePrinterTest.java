@@ -2,8 +2,7 @@ package user.output.printer;
 
 import org.testng.annotations.Test;
 import table.Table;
-
-import java.util.function.Consumer;
+import user.io.entity.IOEntity;
 
 import static org.testng.Assert.assertEquals;
 
@@ -12,25 +11,23 @@ public class TablePrinterTest {
   @Test
   public void printTable_typicalSituation_tableSizeNotChanged_alsoTesterCanSeeIfMethodIsProperlyPrintingTable() {
     int tableSize = 3;
-    Table table = Table.of(tableSize);
-    Consumer<String> stringConsumer = System.out::println;
+    Table table = Table.ofSquareTable(tableSize);
   
-    TablePrinter.printTable(table, stringConsumer);
+    TablePrinter.printTable(table, IOEntity.of(() -> null, System.out::println));
   
-    int actualGameTableSize = table.getGameTableSize();
-  
+    int actualGameTableSize = table.getTableSizeOnX();
+    
     assertEquals(actualGameTableSize, tableSize);
   }
   
   @Test
   public void printTable_tableSize_5_tableSizeNotChanged_alsoTesterCanSeeIfMethodIsProperlyPrintingTable() {
     int tableSize = 5;
-    Table table = Table.of(tableSize);
-    Consumer<String> stringConsumer = System.out::println;
-    
-    TablePrinter.printTable(table, stringConsumer);
-    
-    int actualGameTableSize = table.getGameTableSize();
+    Table table = Table.ofSquareTable(tableSize);
+  
+    TablePrinter.printTable(table, IOEntity.of(() -> null, System.out::println));
+  
+    int actualGameTableSize = table.getTableSizeOnX();
     
     assertEquals(actualGameTableSize, tableSize);
   }

@@ -4,9 +4,6 @@ import cell.Cell;
 import table.Table;
 import user.io.entity.IOEntity;
 
-import java.util.function.Consumer;
-import java.util.function.Supplier;
-
 public class StateStrategyAndTheWinnerIs extends StateStrategy {
   
   public StateStrategyAndTheWinnerIs(Table table, Cell currentCell) {
@@ -17,8 +14,8 @@ public class StateStrategyAndTheWinnerIs extends StateStrategy {
   public boolean stillPlaying(IOEntity ioEntity) {
   
     ioEntity.acceptOutput("Congratulations: " +
-                        currentCell.sign +
-                        " You win the game !" +
+                              currentCell.sign +
+                              " You win the game !" +
                               "Would you like to play again [Y/N] ?");
   
     return yesOrNo(ioEntity);

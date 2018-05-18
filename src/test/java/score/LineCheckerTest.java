@@ -1,12 +1,12 @@
 package score;
 
 import cell.Cell;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import player.Player;
 import service.MoveService;
 import table.Table;
 import user.io.entity.IOEntity;
+import user.output.printer.TablePrinter;
 
 import static org.testng.Assert.*;
 
@@ -15,17 +15,6 @@ public class LineCheckerTest {
   Table table;
   Player currentPlayer;
   Cell lastCell;
-  
-  @Test(dataProvider = "getData")
-  public void instanceDbProvider(int p1, String p2) {
-    System.out.println("Instance DataProvider Example: Data(" + p1 + ", " + p2 + ")");
-  }
-  
-  @DataProvider
-  public Object[][] getData() {
-    return new Object[][]{{5, "five"}, {6, "six"}};
-  }
-  
   
   @Test()
   public void isThereWinningLine_twoXMovesOnHorizontal_thenNoWinner(/*boolean result, String playerSign, int...movePositions*/) {
@@ -41,6 +30,7 @@ public class LineCheckerTest {
   public void isThereWinningLine_threeXMovesOnHorizontal_thenThereIsWinner() {
     
     makeMoves("X", 1, 2, 3);
+    TablePrinter.printTable(table, IOEntity.of(null, System.out::println));
     
     boolean isThereWinningRow = LineChecker.isThereWinningLine(table, lastCell);
     
@@ -64,7 +54,15 @@ public class LineCheckerTest {
     
     boolean isThereWinningRow = LineChecker.isThereWinningLine(table, lastCell);
     
-    System.out.println(lastCell.getCellNumber());
+    assertTrue(isThereWinningRow);
+  }
+  
+  @Test
+  public void isThereWinningLine_threeXMovesOnDiagonalRight_thenThereIsWinner() {
+    
+    makeMoves("X", 7, 5, 3);
+    
+    boolean isThereWinningRow = LineChecker.isThereWinningLine(table, lastCell);
     
     assertTrue(isThereWinningRow);
   }
@@ -93,11 +91,11 @@ public class LineCheckerTest {
   
   @Test
   public void prepareRegexForWinner_playerX_() {
-    
-    table = Table.of(3);
+  
+    table = Table.ofSquareTable(3);
     lastCell = Cell.of(1, "X");
-    
-    LineChecker.prepareRegexForWinner(table, lastCell);
+  
+    LineChecker.prepareChecker(table, lastCell);
     
     String regexForWinner = LineChecker.getRegexForWinner();
     
@@ -106,11 +104,11 @@ public class LineCheckerTest {
   
   @Test
   public void prepareRegexForWinner_playerO_() {
-    
-    table = Table.of(3);
+  
+    table = Table.ofSquareTable(3);
     lastCell = Cell.of(1, "O");
-    
-    LineChecker.prepareRegexForWinner(table, lastCell);
+  
+    LineChecker.prepareChecker(table, lastCell);
     
     String regexForWinner = LineChecker.getRegexForWinner();
     
@@ -118,15 +116,15 @@ public class LineCheckerTest {
   }
   
   private void makeMoves(String playerSign, int... movesPositions) {
-    table = Table.of(3);
-    Cell cell = Cell.of(1, "X");
+    table = Table.ofSquareTable(3);
+    Cell cell = Cell.of(1, playerSign);
     currentPlayer = Player.valueOf(playerSign);
-    
-    LineChecker.prepareRegexForWinner(table, cell);
+  
+    LineChecker.prepareChecker(table, cell);
     
     for (int movesPosition : movesPositions) {
       MoveService.makeMove(table, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), null));
-      lastCell = Cell.of(movesPosition, "X");
+      lastCell = Cell.of(movesPosition, playerSign);
     }
   }
 }

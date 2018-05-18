@@ -10,11 +10,11 @@ import table.move.strategy.MoveStrategyPossible;
 public class MoveValidator {
   
   public static MoveStrategy checkMoveAction(Table table, Cell cell) {
-    
-    int xPosition = cell.getXPosition(table.getGameTableSize());
-    int yPosition = cell.getYPosition(table.getGameTableSize());
-    
-    int gameTableSize = table.getGameTableSize();
+  
+    int xPosition = cell.getXPosition(table.getTableSizeOnX());
+    int yPosition = cell.getYPosition(table.getTableSizeOnX());
+  
+    int gameTableSize = table.getTableSizeOnX();
     
     //TODO Question?? Would it be better if I do :moveStrategy= new MoveStrategyPossible(table, cell) here ? instead in else statement?
     MoveStrategy moveStrategy;

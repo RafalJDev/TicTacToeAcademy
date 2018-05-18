@@ -19,7 +19,7 @@ public class MoveValidatorTest {
   
   @BeforeMethod
   public void setUp() {
-    table = Table.of(3);
+    table = Table.ofSquareTable(3);
   }
   
   @Test

@@ -43,6 +43,7 @@ public class JudgeServiceTest {
   @BeforeMethod
   public void setUp() {
     MockitoAnnotations.initMocks(this);
+    table = Table.ofSquareTable(3);
   }
   
   @Test(dataProvider = "allWinningCombinations_allYerOrNoCombinations")
@@ -53,9 +54,8 @@ public class JudgeServiceTest {
     makeMoves(currentPlayer.toString(), positionsToMakeMove);
     
     boolean isThisEndOfTheGame = JudgeService.checkGameState(table, lastCell, getIoEntity(userInput));
-    
-    TablePrinter.printTable(table, s -> System.out.println(s));
-    
+  
+    TablePrinter.printTable(table, IOEntity.of(null, System.out::println));
     assertEquals(isThisEndOfTheGame, expectedResult);
   }
   
@@ -64,19 +64,16 @@ public class JudgeServiceTest {
   }
   
   private void makeMoves(String playerSign, int... movesPositions) {
-    //TODO WET this method is copied from LineCheckerTest, double Table.of to prevent Intellij to highlight it
-    table = Table.of(3);
-    table = Table.of(3);
-    table = Table.of(3);
-    
-    Cell cell = Cell.of(1, "X");
+    //TODO WET this method is copied from LineCheckerTest, double Table.ofSquareTable to prevent Intellij to highlight it
+  
+    Cell cell = Cell.of(1, playerSign);
     currentPlayer = Player.valueOf(playerSign);
-    
-    LineChecker.prepareRegexForWinner(table, cell);
+  
+    LineChecker.prepareChecker(table, cell);
     
     for (int movesPosition : movesPositions) {
       MoveService.makeMove(table, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), null));
-      lastCell = Cell.of(movesPosition, "X");
+      lastCell = Cell.of(movesPosition, playerSign);
     }
   }
 }

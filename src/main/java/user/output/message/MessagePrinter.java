@@ -26,7 +26,6 @@ public class MessagePrinter {
     System.out.println(message + " " + additionalMessage);
   }
   
-  
   public static void printWhoIsNextPlayer(Player whoIsnextPlayer) {
     System.out.println(Messages.NEXT_PLAYER_IS + " " + whoIsnextPlayer);
   }

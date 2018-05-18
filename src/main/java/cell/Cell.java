@@ -1,12 +1,14 @@
 package cell;
 
+import table.TableSize;
+
 /**
  * Created by Jaszczynski.Rafal on 27.04.2018.
  */
 public class Cell {
   
-  private int cellNumber;
   public String sign;
+  private int cellNumber;
   
   private Cell(int cellNumber, String sign) {
     this.cellNumber = cellNumber;
@@ -17,12 +19,19 @@ public class Cell {
     return new Cell(cellNumber, sign);
   }
   
-  public int getXPosition(int tableSize) {
-    return (cellNumber - 1) / tableSize;
+  public static Cell[][] ofArray(TableSize tableSize) {
+    int tableSizeOnX = tableSize.getTableSizeOnX();
+    int tableSizeOnY = tableSize.getTableSizeOnY();
+    return new Cell[tableSizeOnX][tableSizeOnY];
   }
   
-  public int getYPosition(int tableSize) {
-    return (cellNumber - 1) % tableSize;
+  public int getXPosition(int tableSizeOnX) {
+    return (cellNumber - 1) % tableSizeOnX;
+  }
+  
+  public int getYPosition(int tableSizeOnY) {
+    
+    return (cellNumber - 1) / tableSizeOnY;
   }
   
   public int getCellNumber() {

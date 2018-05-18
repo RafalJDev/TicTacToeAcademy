@@ -13,7 +13,7 @@ public class CellTest {
   
   @BeforeMethod
   public void setUp() {
-    table = Table.of(3);
+    table = Table.ofSquareTable(3);
   }
   
   @Test
@@ -29,30 +29,8 @@ public class CellTest {
     Cell cell = Cell.of(3, "X");
     
     int xPosition = cell.getXPosition(getSize());
-    
-    int expectedXPosition = getExpectedXPosition(cell);
-    assertEquals(xPosition, expectedXPosition);
-  }
   
-  @Test
-  public void getXPosition_negativeCellNumbernegativeIsPossible_causeThereIsSeparateClassForCheckingInput() {
-    
-    Cell cell = Cell.of(-1, "X");
-    
-    int xPosition = cell.getXPosition(getSize());
-    
-    int expectedXPosition = getExpectedXPosition(cell);
-    assertEquals(xPosition, expectedXPosition);
-  }
-  
-  @Test
-  public void getXPosition_cellNumberBiggerThenTableSize_causeThereIsSeparateClassForCheckingInput() {
-    
-    Cell cell = Cell.of(10, "X");
-    
-    int xPosition = cell.getXPosition(getSize());
-    
-    int expectedXPosition = getExpectedXPosition(cell);
+    int expectedXPosition = 2;
     assertEquals(xPosition, expectedXPosition);
   }
   
@@ -62,35 +40,13 @@ public class CellTest {
     Cell cell = Cell.of(3, "X");
     
     int yPosition = cell.getYPosition(getSize());
-    
-    int expectedYPosition = getExpectedYPosition(cell);
-    assertEquals(yPosition, expectedYPosition);
-  }
   
-  @Test
-  public void getYPosition_negativeCellNumbernegativeIsPossible_causeThereIsSeparateClassForCheckingInput() {
-    
-    Cell cell = Cell.of(-1, "X");
-    
-    int yPosition = cell.getYPosition(getSize());
-    
-    int expectedYPosition = getExpectedYPosition(cell);
-    assertEquals(yPosition, expectedYPosition);
-  }
-  
-  @Test
-  public void getYPosition_cellNumberBiggerThenTableSize_causeThereIsSeparateClassForCheckingInput() {
-    
-    Cell cell = Cell.of(10, "X");
-    
-    int yPosition = cell.getYPosition(getSize());
-    
-    int expectedYPosition = getExpectedYPosition(cell);
+    int expectedYPosition = 0;
     assertEquals(yPosition, expectedYPosition);
   }
   
   private int getSize() {
-    return table.getGameTableSize();
+    return table.getTableSizeOnX();
   }
   
   private int getExpectedXPosition(Cell cell) {

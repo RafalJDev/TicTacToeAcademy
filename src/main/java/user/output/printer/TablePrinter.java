@@ -1,30 +1,30 @@
 package user.output.printer;
 
 import table.Table;
-
-import java.util.function.Consumer;
+import user.io.entity.IOEntity;
 
 public class TablePrinter {
   
-  public static void printTable(final Table table, final Consumer<String> printer) {
+  public static void printTable(final Table table, final IOEntity ioEntity) {
     
-    final int gameTableSize = table.getGameTableSize();
+    final int tableSizeOnX = table.getTableSizeOnX();
+    final int tableSizeOnY = table.getTableSizeOnY();
     
-    int maxCountOfNumbers = getMaxCountOfNumbers(gameTableSize);
+    final int maxCountOfNumbers = getMaxCountOfNumbers(tableSizeOnY);
     
-    final int realCountOfSigns = getRealCountOfSigns(gameTableSize, maxCountOfNumbers);
+    final int realCountOfSigns = getRealCountOfSigns(tableSizeOnY, maxCountOfNumbers);
     final StringBuilder emptyLine = createLineWithHorizontalBars(realCountOfSigns);
     
-    for (int x = 0; x < gameTableSize; x++) {
+    for (int y = tableSizeOnY - 1; y >= 0; y--) {
       StringBuilder rowToPrint = new StringBuilder(realCountOfSigns);
-      for (int y = 0; y < gameTableSize; y++) {
+      for (int x = 0; x < tableSizeOnX; x++) {
         String cellToPrint = prepareCellToPrint(table, maxCountOfNumbers, x, y);
         rowToPrint.append(cellToPrint);
       }
       rowToPrint.deleteCharAt(rowToPrint.length() - 1);
-      printer.accept(rowToPrint.toString());
-      if (x != (gameTableSize - 1)) {
-        printer.accept(emptyLine.toString());
+      ioEntity.acceptOutput(rowToPrint.toString());
+      if (y != 0) {
+        ioEntity.acceptOutput(emptyLine.toString());
       }
     }
   }

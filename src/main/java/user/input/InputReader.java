@@ -4,8 +4,6 @@ import user.input.valid.strategy.ValidStrategy;
 import user.input.valid.strategy.ValidStrategyNumber;
 import user.io.entity.IOEntity;
 
-import java.util.function.Supplier;
-
 public class InputReader {
   
   public static String readLine(IOEntity ioEntity) {

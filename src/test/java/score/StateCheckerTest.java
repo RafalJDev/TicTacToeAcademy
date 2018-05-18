@@ -1,6 +1,7 @@
 package score;
 
 import cell.Cell;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import player.Player;
 import score.strategy.StateStrategy;
@@ -19,10 +20,15 @@ public class StateCheckerTest {
   private Cell lastCell;
   private Player currentPlayer;
   
+  @BeforeMethod
+  public void setUp() {
+    table = Table.ofSquareTable(3);
+  }
+  
   @Test
   public void moveResult_firstMove_thenFalse() {
-    
-    table = Table.of(3);
+  
+    table = Table.ofSquareTable(3);
     currentPlayer = Player.X;
     lastCell = Cell.of(5, currentPlayer.toString());
   
@@ -33,47 +39,41 @@ public class StateCheckerTest {
   
   @Test
   public void moveResult_someMovesWithWinningLineOnHorizontalWithO_thenThereIsWinner() {
-    
-    table = Table.of(3);
+  
+    table = Table.ofSquareTable(3);
     currentPlayer = Player.X;
     lastCell = Cell.of(5, currentPlayer.toString());
     makeMoves(currentPlayer.toString(), 1, 3, 7, 9);
-    makeMoves(currentPlayer.toString(), 2, 4, 5, 6, 8);
+    makeMoves(currentPlayer.getOppositePlayer().toString(), 2, 4, 5, 8, 6);
     
     StateStrategy stateStrategy = StateChecker.moveResult(table, lastCell);
     
-    System.out.println(stateStrategy);
     assertTrue(stateStrategy instanceof StateStrategyAndTheWinnerIs);
   }
   
   @Test
   public void moveResult_someMovesToDraw_thenDraw() {
-    
-    table = Table.of(3);
+  
+    table = Table.ofSquareTable(3);
     currentPlayer = Player.X;
     lastCell = Cell.of(5, currentPlayer.toString());
     makeMoves(currentPlayer.toString(), 1, 3, 5, 6, 7);
-    makeMoves(currentPlayer.toString(), 2, 4, 8, 9);
+    makeMoves(currentPlayer.getOppositePlayer().toString(), 2, 4, 8, 9);
     
     StateStrategy stateStrategy = StateChecker.moveResult(table, lastCell);
     
-    System.out.println(stateStrategy);
     assertTrue(stateStrategy instanceof StateStrategyDraw);
   }
   
   private void makeMoves(String playerSign, int... movesPositions) {
-    //TODO WET this method is copied from LineCheckerTest, double Table.of to prevent Intellij to highlight it
-    table = Table.of(3);
-    table = Table.of(3);
-    
-    Cell cell = Cell.of(1, "X");
+    Cell cell = Cell.of(1, playerSign);
     currentPlayer = Player.valueOf(playerSign);
-    
-    LineChecker.prepareRegexForWinner(table, cell);
+  
+    LineChecker.prepareChecker(table, cell);
     
     for (int movesPosition : movesPositions) {
       MoveService.makeMove(table, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), null));
-      lastCell = Cell.of(movesPosition, "X");
+      lastCell = Cell.of(movesPosition, playerSign);
     }
   }
 }

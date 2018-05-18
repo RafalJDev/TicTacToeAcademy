@@ -12,20 +12,22 @@ public class TableTest {
   Cell cell;
   String playerChar;
   
+  TableParser tableParser;
+  
   @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Table can't be: " + 2)
   public void createNewTable_withIllegalArgument_thenException() {
     
     int toSmallTableSize = 2;
-    table = Table.of(toSmallTableSize);
+    table = Table.ofSquareTable(toSmallTableSize);
   }
   
   @Test()
   public void createNewTable_correctSize() {
     
     int standardSize = 3;
-    table = Table.of(standardSize);
-    
-    int gameTableSize = table.getGameTableSize();
+    table = Table.ofSquareTable(standardSize);
+  
+    int gameTableSize = table.getTableSizeOnX();
     
     int expectedSize = 3;
     assertEquals(gameTableSize, expectedSize);
@@ -35,14 +37,14 @@ public class TableTest {
   public void createNewTable_try() {
     
     int standardSize = 3;
-    table = Table.of(standardSize);
+    table = Table.ofSquareTable(standardSize);
   }
   
   @Test
   public void createNewTable_shouldContainUnderscore_inTheMiddle() {
     
     int standardSize = 3;
-    table = Table.of(standardSize);
+    table = Table.ofSquareTable(standardSize);
     
     String numberInTheMiddleOfTable = table.getSignAt(1, 1);
     
@@ -67,8 +69,9 @@ public class TableTest {
   public void getHorizontalRow_typicalSituation_provideInt() {
     
     prepareTypicalTableAndMakeMove();
-    
-    String horizontalRow = table.getHorizontalRow(1);
+    tableParser = new TableParser(table);
+  
+    String horizontalRow = tableParser.getHorizontalRow(1);
     
     String expectedRow = "4X6";
     assertEquals(horizontalRow, expectedRow);
@@ -78,8 +81,9 @@ public class TableTest {
   public void getHorizontalRow_typicalSituation_provideCoordinate() {
     
     prepareTableAndMakeMovesAsX(3, 3);
-    
-    String horizontalRow = table.getHorizontalRow(cell);
+    tableParser = new TableParser(table);
+  
+    String horizontalRow = tableParser.getHorizontalRow(cell);
     
     String expectedRow = "12X";
     assertEquals(horizontalRow, expectedRow);
@@ -89,31 +93,20 @@ public class TableTest {
   public void getVerticalColumn_typicalSituation_provideInt() {
     
     prepareTableAndMakeMovesAsX(3, 3);
-    
-    String verticalColumn = table.getVerticalColumn(1);
+    tableParser = new TableParser(table);
+  
+    String verticalColumn = tableParser.getVerticalColumn(1);
     
     String expectedRow = "258";
     assertEquals(verticalColumn, expectedRow);
   }
   
   @Test
-  public void getHorizontalColumn_typicalSituation_provideCoordinate() {
-    
-    prepareTableAndMakeMovesAsX(3, 3);
-    
-    String horizontalRow = table.getHorizontalRow(cell);
-    
-    String expectedRow = "12X";
-    
-    assertEquals(horizontalRow, expectedRow);
-  }
-  
-  @Test
   public void getLeftDiagonalLine_threeMoves_123() {
     prepareTableAndMakeMovesAsX(3, 1, 2, 3);
+    tableParser = new TableParser(table);
   
-  
-    String leftDiagonalLine = table.getLeftDiagonalLine(cell);
+    String leftDiagonalLine = tableParser.getLeftDiagonalLine(cell);
     
     assertEquals(leftDiagonalLine, "X");
   }
@@ -121,8 +114,9 @@ public class TableTest {
   @Test
   public void getLeftDiagonalLine_threeMoves_456() {
     prepareTableAndMakeMovesAsX(3, 4, 5, 6);
-    
-    String rightDiagonalLine = table.getLeftDiagonalLine(cell);
+    tableParser = new TableParser(table);
+  
+    String rightDiagonalLine = tableParser.getLeftDiagonalLine(cell);
     
     assertEquals(rightDiagonalLine, "2X");
   }
@@ -130,8 +124,9 @@ public class TableTest {
   @Test
   public void getLeftDiagonalLine_threeMoves_789() {
     prepareTableAndMakeMovesAsX(3, 7, 8, 9);
-    
-    String rightDiagonalLine = table.getLeftDiagonalLine(cell);
+    tableParser = new TableParser(table);
+  
+    String rightDiagonalLine = tableParser.getLeftDiagonalLine(cell);
     
     assertEquals(rightDiagonalLine, "15X");
   }
@@ -139,32 +134,35 @@ public class TableTest {
   @Test
   public void getRightDiagonalLine_threeMoves_123() {
     prepareTableAndMakeMovesAsX(3, 1, 2, 3);
-    
-    String rightDiagonalLine = table.getRightDiagonalLine(cell);
-    
-    assertEquals(rightDiagonalLine, "X57");
+    tableParser = new TableParser(table);
+  
+    String rightDiagonalLine = tableParser.getRightDiagonalLine(cell);
+  
+    assertEquals(rightDiagonalLine, "75X");
   }
   
   @Test
   public void getRightDiagonalLine_threeMoves_456() {
     prepareTableAndMakeMovesAsX(3, 4, 5, 6);
-    
-    String rightDiagonalLine = table.getRightDiagonalLine(cell);
-    
-    assertEquals(rightDiagonalLine, "X8");
+    tableParser = new TableParser(table);
+  
+    String rightDiagonalLine = tableParser.getRightDiagonalLine(cell);
+  
+    assertEquals(rightDiagonalLine, "8X");
   }
   
   @Test
   public void getRightDiagonalLine_threeMoves_789() {
     prepareTableAndMakeMovesAsX(3, 7, 8, 9);
-    
-    String rightDiagonalLine = table.getRightDiagonalLine(cell);
+    tableParser = new TableParser(table);
+  
+    String rightDiagonalLine = tableParser.getRightDiagonalLine(cell);
     
     assertEquals(rightDiagonalLine, "X");
   }
   
   void prepareTableAndMakeMovesAsPlayer(Player currentPlayer, int tableSize, int... positions) {
-    table = Table.of(tableSize);
+    table = Table.ofSquareTable(tableSize);
     
     Player player = currentPlayer;
     
