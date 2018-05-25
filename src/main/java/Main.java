@@ -1,13 +1,14 @@
 import service.game.TicTacToe;
-import user.io.entity.IOEntity;
+import user.io.wrapper.IOEntity;
 
 import java.util.Scanner;
 
-public class Main {
+class Main {
   
   public static void main(String[] args) {
-
-//    TicTacToe ticTacToe = new T?f(new Scanner(System.in)::nextLine, System.out::println));
+  
+    TicTacToe ticTacToe = new TicTacToe();
+    ticTacToe.letsPlay(IOEntity.of(new Scanner(System.in)::nextLine, System.out::println));
     
 //    System.out.println(13 / 4);
 //    System.out.println(13 % 4);

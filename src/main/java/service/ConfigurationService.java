@@ -1,24 +1,25 @@
 package service;
 
-import table.Table;
-import table.TableSize;
+import table.TableArray;
+import table.wrapper.TableSize;
 import user.input.InputReader;
-import user.io.entity.IOEntity;
+import user.io.wrapper.IOEntity;
 
-public class ConfigurationService {
+class ConfigurationService {
   
   private IOEntity localIO;
   
-  public Table configureGame(IOEntity ioEntity) {
+  public TableArray configureGame(IOEntity ioEntity) {
     localIO = ioEntity;
     
     TableSize tableSize = askForTableSizes();
     
     int howMuchSignsToWin = askForHowMuchSignsToWin();
     
-    return Table.of(tableSize, howMuchSignsToWin);
+    return TableArray.of(tableSize, howMuchSignsToWin);
   }
   
+  //TODO to akser
   private TableSize askForTableSizes() {
     printMessage("Do you want to play on square table ? [Y/N]");
     boolean yesOrNo = yesOrNo();

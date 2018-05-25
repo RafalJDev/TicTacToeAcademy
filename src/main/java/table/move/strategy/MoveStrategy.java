@@ -2,22 +2,22 @@ package table.move.strategy;
 
 import cell.Cell;
 import player.Player;
-import table.Table;
+import table.TableArray;
 import user.output.message.MessagePrinter;
 
 public abstract class MoveStrategy {
   
-  protected Table table;
-  protected Cell cell;
+  TableArray tableArray;
+  Cell cell;
   
-  public MoveStrategy(Table table, Cell cell) {
-    this.table = table;
+  MoveStrategy(TableArray tableArray, Cell cell) {
+    this.tableArray = tableArray;
     this.cell = cell;
   }
   
-  abstract public boolean action(Player nextPlayer);
+  public abstract void action(Player nextPlayer);
   
-  protected void printMessage(String message) {
+  void printMessage(String message) {
     MessagePrinter.printMessage(message);
   }
 }

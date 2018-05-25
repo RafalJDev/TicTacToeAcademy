@@ -1,13 +1,12 @@
 package score.strategy;
 
 import cell.Cell;
-import table.Table;
-import user.io.entity.IOEntity;
+import user.io.wrapper.IOEntity;
 
 public class StateStrategyAndTheWinnerIs extends StateStrategy {
   
-  public StateStrategyAndTheWinnerIs(Table table, Cell currentCell) {
-    super(table, currentCell);
+  public StateStrategyAndTheWinnerIs(Cell currentCell) {
+    super(currentCell);
   }
   
   @Override

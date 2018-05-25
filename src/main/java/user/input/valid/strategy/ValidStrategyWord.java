@@ -1,5 +1,6 @@
 package user.input.valid.strategy;
 
+import user.io.wrapper.IOEntity;
 import user.output.message.Messages;
 
 public class ValidStrategyWord extends ValidStrategy {
@@ -9,8 +10,8 @@ public class ValidStrategyWord extends ValidStrategy {
   }
   
   @Override
-  public void action() {
-    message.accept("Entered input " + userInput + " is not a number!");
-    message.accept(Messages.PLEASE_ENTER_AGAIN);
+  public void action(IOEntity ioEntity) {
+    ioEntity.acceptOutput("Entered input " + userInput + " is not a number!");
+    ioEntity.acceptOutput(Messages.PLEASE_ENTER_AGAIN.toString());
   }
 }

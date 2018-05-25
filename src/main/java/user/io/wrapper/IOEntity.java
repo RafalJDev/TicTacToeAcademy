@@ -1,4 +1,4 @@
-package user.io.entity;
+package user.io.wrapper;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;

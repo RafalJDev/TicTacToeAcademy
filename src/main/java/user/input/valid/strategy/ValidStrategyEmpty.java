@@ -1,5 +1,6 @@
 package user.input.valid.strategy;
 
+import user.io.wrapper.IOEntity;
 import user.output.message.Messages;
 
 public class ValidStrategyEmpty extends ValidStrategy {
@@ -9,8 +10,8 @@ public class ValidStrategyEmpty extends ValidStrategy {
   }
   
   @Override
-  public void action() {
-    message.accept("Entered input is empty!");
-    message.accept(Messages.PLEASE_ENTER_AGAIN);
+  public void action(IOEntity ioEntity) {
+    ioEntity.acceptOutput("Entered input is empty!");
+    ioEntity.acceptOutput(Messages.PLEASE_ENTER_AGAIN.toString());
   }
 }

@@ -11,7 +11,7 @@ import static org.testng.Assert.assertTrue;
 
 public class InputValidatorTest {
   
-  InputValidator inputValidator;
+  private InputValidator inputValidator;
   
   @BeforeMethod
   public void setUp() {

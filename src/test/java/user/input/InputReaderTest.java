@@ -3,7 +3,7 @@ package user.input;
 import org.testng.annotations.Test;
 import user.input.valid.strategy.ValidStrategyNumber;
 import user.input.valid.strategy.ValidStrategyWord;
-import user.io.entity.IOEntity;
+import user.io.wrapper.IOEntity;
 
 import java.util.Random;
 import java.util.function.Supplier;
@@ -12,7 +12,7 @@ import static org.testng.Assert.*;
 
 public class InputReaderTest {
   
-  Random random = new Random();
+  private Random random = new Random();
   
   @Test
   public void readLine_supplierAsRandomGenerator_positiveInput_thenReturnedLineGreaterThanZero() {
@@ -25,7 +25,7 @@ public class InputReaderTest {
   }
   
   //TODO TestNG timeout doesn't work, so I do some magic
-  volatile String returnedLine;
+  private volatile String returnedLine;
   
   @Test()
   public void readLine_supplierAsRandomGenerator_negativeInput_thenReturnedBigNegative() throws InterruptedException {

@@ -1,14 +1,14 @@
 package user.output.printer;
 
-import table.Table;
-import user.io.entity.IOEntity;
+import table.TableArray;
+import user.io.wrapper.IOEntity;
 
 public class TablePrinter {
   
-  public static void printTable(final Table table, final IOEntity ioEntity) {
+  public static void printTable(final TableArray tableArray, final IOEntity ioEntity) {
     
-    final int tableSizeOnX = table.getTableSizeOnX();
-    final int tableSizeOnY = table.getTableSizeOnY();
+    final int tableSizeOnX = tableArray.getTableSizeOnX();
+    final int tableSizeOnY = tableArray.getTableSizeOnY();
     
     final int maxCountOfNumbers = getMaxCountOfNumbers(tableSizeOnY);
     
@@ -18,7 +18,7 @@ public class TablePrinter {
     for (int y = tableSizeOnY - 1; y >= 0; y--) {
       StringBuilder rowToPrint = new StringBuilder(realCountOfSigns);
       for (int x = 0; x < tableSizeOnX; x++) {
-        String cellToPrint = prepareCellToPrint(table, maxCountOfNumbers, x, y);
+        String cellToPrint = prepareCellToPrint(tableArray, maxCountOfNumbers, x, y);
         rowToPrint.append(cellToPrint);
       }
       rowToPrint.deleteCharAt(rowToPrint.length() - 1);
@@ -39,10 +39,10 @@ public class TablePrinter {
     return countToString.length();
   }
   
-  public static String prepareCellToPrint(final Table table, final int maxCountOfNumbers, int x, int y) {
+  private static String prepareCellToPrint(final TableArray tableArray, final int maxCountOfNumbers, int x, int y) {
     
     String cellToPrint = "";
-    String signAt = table.getSignAt(x, y);
+    String signAt = tableArray.getSignAt(x, y);
     
     int signAtLength = signAt.length();
     for (int i = signAtLength; i < maxCountOfNumbers; i++) {

@@ -1,4 +1,4 @@
-package table;
+package table.wrapper;
 
 public final class TableSize {
   

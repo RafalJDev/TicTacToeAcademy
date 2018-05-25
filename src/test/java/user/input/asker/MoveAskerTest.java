@@ -4,7 +4,7 @@ import cell.Cell;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import player.Player;
-import user.io.entity.IOEntity;
+import user.io.wrapper.IOEntity;
 
 import java.util.Random;
 

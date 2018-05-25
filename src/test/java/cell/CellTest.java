@@ -2,18 +2,18 @@ package cell;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import table.Table;
+import table.TableArray;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
 
 public class CellTest {
   
-  Table table;
+  private TableArray tableArray;
   
   @BeforeMethod
   public void setUp() {
-    table = Table.ofSquareTable(3);
+    tableArray = TableArray.ofSquareTable(3);
   }
   
   @Test
@@ -46,7 +46,7 @@ public class CellTest {
   }
   
   private int getSize() {
-    return table.getTableSizeOnX();
+    return tableArray.getTableSizeOnX();
   }
   
   private int getExpectedXPosition(Cell cell) {

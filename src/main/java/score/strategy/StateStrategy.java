@@ -1,22 +1,19 @@
 package score.strategy;
 
 import cell.Cell;
-import table.Table;
-import user.io.entity.IOEntity;
+import user.io.wrapper.IOEntity;
 
 public abstract class StateStrategy {
   
-  protected Table table;
-  protected Cell currentCell;
+  Cell currentCell;
   
-  public StateStrategy(Table table, Cell currentCell) {
-    this.table = table;
+  StateStrategy(Cell currentCell) {
     this.currentCell = currentCell;
   }
   
   public abstract boolean stillPlaying(IOEntity ioEntity);
   
-  protected boolean yesOrNo(IOEntity ioEntity) {
+  boolean yesOrNo(IOEntity ioEntity) {
     while (true) {
       String input = ioEntity.getInput();
       if (input.equals("Y")) {

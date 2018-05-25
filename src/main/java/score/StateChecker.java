@@ -5,18 +5,18 @@ import score.strategy.StateStrategy;
 import score.strategy.StateStrategyAndTheWinnerIs;
 import score.strategy.StateStrategyDraw;
 import score.strategy.StateStrategyNoWinner;
-import table.Table;
+import table.TableArray;
 
 public class StateChecker {
   
-  public static StateStrategy moveResult(Table table, Cell lastCell) {
+  public static StateStrategy moveResult(TableArray tableArray, Cell lastCell) {
     
-    StateStrategy stateStrategy = new StateStrategyNoWinner(table, lastCell);
+    StateStrategy stateStrategy = new StateStrategyNoWinner(lastCell);
     
-    if (LineChecker.isThereWinningLine(table, lastCell)) {
-      stateStrategy = new StateStrategyAndTheWinnerIs(table, lastCell);
-    } else if ((table.getFilledCells() >= table.getCountOfSigns())) {
-      stateStrategy = new StateStrategyDraw(table, lastCell);
+    if (LineChecker.isThereWinningLine(tableArray, lastCell)) {
+      stateStrategy = new StateStrategyAndTheWinnerIs(lastCell);
+    } else if (tableArray.isTableFilled()) {
+      stateStrategy = new StateStrategyDraw(lastCell);
     }
     return stateStrategy;
   }

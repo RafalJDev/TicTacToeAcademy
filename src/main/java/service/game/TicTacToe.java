@@ -4,10 +4,10 @@ import cell.Cell;
 import player.Player;
 import service.JudgeService;
 import service.MoveService;
-import table.Table;
-import table.TableSize;
+import table.TableArray;
+import table.wrapper.TableSize;
 import user.input.InputReader;
-import user.io.entity.IOEntity;
+import user.io.wrapper.IOEntity;
 import user.output.message.MessagePrinter;
 import user.output.message.Messages;
 import user.output.printer.TablePrinter;
@@ -21,35 +21,35 @@ public final class TicTacToe {
     MessagePrinter.printMessage(Messages.WELCOME);
     
     boolean stillPlaying = true;
-    
-    Table table =
+  
+    TableArray tableArray =
         
         askUserForTable(ioEntity);
     
     while (stillPlaying) {
   
-      Cell cell = MoveService.makeMove(table, nextPlayer, ioEntity);
+      Cell cell = MoveService.makeMove(tableArray, nextPlayer, ioEntity);
   
-      TablePrinter.printTable(table, ioEntity);
+      TablePrinter.printTable(tableArray, ioEntity);
       
       stillPlaying =
-          JudgeService.checkGameState(table, cell, ioEntity);
+          JudgeService.checkGameState(tableArray, cell, ioEntity);
   
       nextPlayer = nextPlayer.getOppositePlayer();
     }
     MessagePrinter.printMessage(Messages.FAREWELL);
   }
   
-  private Table askUserForTable(IOEntity ioEntity) {
+  private TableArray askUserForTable(IOEntity ioEntity) {
     ioEntity.acceptOutput("How big table you wish to play on ?");
     final int tableSizeFromUser = readLineToInt(ioEntity);
     
     TableSize tableSize;
     
-    return Table.ofSquareTable(tableSizeFromUser);
+    return TableArray.ofSquareTable(tableSizeFromUser);
   }
   
-  public int readLineToInt(IOEntity ioEntity) {
+  private int readLineToInt(IOEntity ioEntity) {
     String s = InputReader.readLine(ioEntity);
     return Integer.parseInt(s);
   }

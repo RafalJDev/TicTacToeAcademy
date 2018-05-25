@@ -1,5 +1,7 @@
 package user.input.valid.strategy;
 
+import user.io.wrapper.IOEntity;
+
 public class ValidStrategyNumber extends ValidStrategy {
   
   public ValidStrategyNumber(String userInput) {
@@ -7,7 +9,7 @@ public class ValidStrategyNumber extends ValidStrategy {
   }
   
   @Override
-  public void action() {
+  public void action(IOEntity ioEntity) {
   
   }
 }

@@ -1,7 +1,7 @@
 package score;
 
 import cell.Cell;
-import table.Table;
+import table.TableArray;
 import table.TableParser;
 
 public class LineChecker {
@@ -10,46 +10,49 @@ public class LineChecker {
   
   private static TableParser tableParser;
   
-  public static boolean isThereWinningLine(Table table, Cell currentCell) {
+  private LineChecker() {
+  }
   
-    prepareChecker(table, currentCell);
+  public static boolean isThereWinningLine(TableArray tableArray, Cell currentCell) {
     
-    return isThereWinnerOnVertical(table, currentCell) ||
-        isThereWinnerOnHorizontal(table, currentCell) ||
-        isThereWinnerOnLeftDiagonal(table, currentCell) ||
-        isThereWinnerOnRightDiagonal(table, currentCell);
+    prepareChecker(tableArray, currentCell);
+    
+    return isThereWinnerOnVertical(currentCell) ||
+        isThereWinnerOnHorizontal(currentCell) ||
+        isThereWinnerOnLeftDiagonal(currentCell) ||
+        isThereWinnerOnRightDiagonal(currentCell);
   }
   
-  public static void prepareChecker(Table table, Cell currentCell) {
-    prepareRegexForWinner(table, currentCell);
-    tableParser = new TableParser(table);
+  public static void prepareChecker(TableArray tableArray, Cell currentCell) {
+    prepareRegexForWinner(tableArray, currentCell);
+    tableParser = new TableParser(tableArray);
   }
   
-  public static void prepareRegexForWinner(Table table, Cell currentCell) {
+  private static void prepareRegexForWinner(TableArray tableArray, Cell currentCell) {
     String playerSign = currentCell.sign;
     String anything = ".*";
-    String numberOfSignToWin = String.valueOf(table.getHowMuchSignsToWin());
+    String numberOfSignToWin = String.valueOf(tableArray.getHowMuchSignsToWin());
     String winningSequence = playerSign + "{" + numberOfSignToWin + "}";
     regexForWinner = anything + winningSequence + anything;
   }
   
-  public static boolean isThereWinnerOnVertical(Table table, Cell cell) {
+  public static boolean isThereWinnerOnVertical(Cell cell) {
     String verticalColumn = tableParser.getVerticalColumn(cell);
     return isWinnerOnThisLine(verticalColumn);
   }
   
-  public static boolean isThereWinnerOnHorizontal(Table table, Cell cell) {
+  private static boolean isThereWinnerOnHorizontal(Cell cell) {
     String horizontalRow = tableParser.getHorizontalRow(cell);
     
     return isWinnerOnThisLine(horizontalRow);
   }
   
-  public static boolean isThereWinnerOnLeftDiagonal(Table table, Cell cell) {
+  private static boolean isThereWinnerOnLeftDiagonal(Cell cell) {
     String diagonalRow = tableParser.getLeftDiagonalLine(cell);
     return isWinnerOnThisLine(diagonalRow);
   }
   
-  public static boolean isThereWinnerOnRightDiagonal(Table table, Cell cell) {
+  private static boolean isThereWinnerOnRightDiagonal(Cell cell) {
     String diagonalRow = tableParser.getRightDiagonalLine(cell);
     return isWinnerOnThisLine(diagonalRow);
   }
@@ -58,6 +61,7 @@ public class LineChecker {
     return lineToString.matches(regexForWinner);
   }
   
+  //TODO maybe check here regex and return boolean ?
   public static String getRegexForWinner() {
     return regexForWinner;
   }

@@ -3,7 +3,7 @@ package user.input.asker;
 import cell.Cell;
 import player.Player;
 import user.input.InputReader;
-import user.io.entity.IOEntity;
+import user.io.wrapper.IOEntity;
 import user.output.message.MessagePrinter;
 
 public class MoveAsker {

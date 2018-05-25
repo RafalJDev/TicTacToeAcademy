@@ -1,11 +1,11 @@
 package cell;
 
-import table.TableSize;
+import table.wrapper.TableSize;
 
 /**
  * Created by Jaszczynski.Rafal on 27.04.2018.
  */
-public class Cell {
+public final class Cell {
   
   public String sign;
   private int cellNumber;

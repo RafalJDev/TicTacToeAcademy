@@ -2,17 +2,16 @@ package table.move.strategy;
 
 import cell.Cell;
 import player.Player;
-import table.Table;
+import table.TableArray;
 
 public class MoveStrategyOccupied extends MoveStrategy {
   
-  public MoveStrategyOccupied(Table table, Cell cell) {
-    super(table, cell);
+  public MoveStrategyOccupied(TableArray tableArray, Cell cell) {
+    super(tableArray, cell);
   }
   
   @Override
-  public boolean action(Player nextPlayer) {
+  public void action(Player nextPlayer) {
     printMessage("STUPID ! This cell are already occupied! ");
-    return false;
   }
 }

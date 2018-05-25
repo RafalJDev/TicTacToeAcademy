@@ -2,7 +2,7 @@ package user.input;
 
 import user.input.valid.strategy.*;
 
-public class InputValidator {
+class InputValidator {
   
   public static ValidStrategy checkInput(String userInput) {
   

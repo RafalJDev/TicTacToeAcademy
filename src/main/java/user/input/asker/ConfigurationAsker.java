@@ -1,6 +1,6 @@
 package user.input.asker;
 
-public class ConfigurationAsker {
+class ConfigurationAsker {
   
   public int askForTableSize() {
     return 0;

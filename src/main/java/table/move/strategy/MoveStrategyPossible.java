@@ -2,17 +2,16 @@ package table.move.strategy;
 
 import cell.Cell;
 import player.Player;
-import table.Table;
+import table.TableArray;
 
 public class MoveStrategyPossible extends MoveStrategy {
   
-  public MoveStrategyPossible(Table table, Cell cell) {
-    super(table, cell);
+  public MoveStrategyPossible(TableArray tableArray, Cell cell) {
+    super(tableArray, cell);
   }
   
   @Override
-  public boolean action(Player nextPlayer) {
-    table.ticTacMove(cell, nextPlayer);
-    return true;
+  public void action(Player nextPlayer) {
+    tableArray.ticTacMove(cell, nextPlayer);
   }
 }

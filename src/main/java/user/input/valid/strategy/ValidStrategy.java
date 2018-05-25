@@ -1,17 +1,14 @@
 package user.input.valid.strategy;
 
-import user.output.message.MessagePrinter;
-
-import java.util.function.Consumer;
+import user.io.wrapper.IOEntity;
 
 public abstract class ValidStrategy {
   
-  protected String userInput;
-  Consumer<Object> message = MessagePrinter::printMessage;
+  String userInput;
   
-  public ValidStrategy(String userInput) {
+  ValidStrategy(String userInput) {
     this.userInput = userInput;
   }
   
-  public abstract void action();
+  public abstract void action(IOEntity ioEntity);
 }
