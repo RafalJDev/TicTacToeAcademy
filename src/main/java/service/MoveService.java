@@ -2,7 +2,7 @@ package service;
 
 import cell.Cell;
 import player.Player;
-import table.TableArray;
+import table.Table;
 import table.move.MoveValidator;
 import table.move.strategy.MoveStrategy;
 import table.move.strategy.MoveStrategyPossible;
@@ -11,7 +11,7 @@ import user.io.wrapper.IOEntity;
 
 public class MoveService {
   
-  public static Cell makeMove(TableArray tableArray, Player currentPlayer, IOEntity ioEntity) {
+  public static Cell makeMove(Table table, Player currentPlayer, IOEntity ioEntity) {
     
     MoveAsker moveAsker = new MoveAsker(ioEntity);
     
@@ -20,7 +20,7 @@ public class MoveService {
     do {
       cell = moveAsker.askForCoordinates(currentPlayer);
   
-      moveStrategy = MoveValidator.checkMoveAction(tableArray, cell);
+      moveStrategy = MoveValidator.checkMoveAction(table, cell);
   
       moveStrategy.action(currentPlayer, ioEntity);
       

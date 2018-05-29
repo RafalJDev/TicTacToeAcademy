@@ -1,4 +1,4 @@
-package table.wrapper;
+package table.entity.wrapper;
 
 public final class TableConfiguration {
   

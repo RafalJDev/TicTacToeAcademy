@@ -1,7 +1,5 @@
 package cell;
 
-import table.wrapper.TableSize;
-
 /**
  * Created by Jaszczynski.Rafal on 27.04.2018.
  */
@@ -18,12 +16,12 @@ public final class Cell {
   public static Cell of(int cellNumber, String sign) {
     return new Cell(cellNumber, sign);
   }
-  
-  public static Cell[][] ofArray(TableSize tableSize) {
-    int tableSizeOnX = tableSize.getTableSizeOnX();
-    int tableSizeOnY = tableSize.getTableSizeOnY();
-    return new Cell[tableSizeOnX][tableSizeOnY];
-  }
+
+//  public static Cell[][] ofArray(TableSize tableSize) {
+//    int tableSizeOnX = tableSize.getTableSizeOnX();
+//    int tableSizeOnY = tableSize.getTableSizeOnY();
+//    return new Cell[tableSizeOnX][tableSizeOnY];
+//  }
   
   public int getXPosition(int tableSizeOnX) {
     return (cellNumber - 1) % tableSizeOnX;

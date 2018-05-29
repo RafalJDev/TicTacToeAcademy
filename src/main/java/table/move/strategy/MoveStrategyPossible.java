@@ -2,17 +2,18 @@ package table.move.strategy;
 
 import cell.Cell;
 import player.Player;
-import table.TableArray;
+import table.Table;
 import user.io.wrapper.IOEntity;
 
 public class MoveStrategyPossible extends MoveStrategy {
   
-  public MoveStrategyPossible(TableArray tableArray, Cell cell) {
-    super(tableArray, cell);
+  public MoveStrategyPossible(Table table, Cell cell) {
+    super(table, cell);
   }
   
   @Override
   public void action(Player nextPlayer, IOEntity ioEntity) {
-    tableArray.ticTacMove(cell, nextPlayer);
+    String playerToString = nextPlayer.toString();
+    table.ticTacMove(cell, playerToString);
   }
 }

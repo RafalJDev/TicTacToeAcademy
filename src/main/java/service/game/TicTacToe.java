@@ -5,7 +5,7 @@ import player.Player;
 import service.ConfigurationService;
 import service.JudgeService;
 import service.MoveService;
-import table.TableArray;
+import table.Table;
 import user.io.wrapper.IOEntity;
 import user.output.message.Messages;
 import user.output.printer.TablePrinter;
@@ -20,16 +20,16 @@ public final class TicTacToe {
     
     boolean stillPlaying = true;
   
-    TableArray tableArray = ConfigurationService.configureGame(ioEntity);
+    Table table = ConfigurationService.configureGame(ioEntity);
     
     while (stillPlaying) {
   
-      Cell cell = MoveService.makeMove(tableArray, nextPlayer, ioEntity);
+      Cell cell = MoveService.makeMove(table, nextPlayer, ioEntity);
   
-      TablePrinter.printTable(tableArray, ioEntity);
+      TablePrinter.printTable(table, ioEntity);
       
       stillPlaying =
-          JudgeService.checkGameState(tableArray, cell, ioEntity);
+          JudgeService.checkGameState(table, cell, ioEntity);
   
       nextPlayer = nextPlayer.getOppositePlayer();
     }

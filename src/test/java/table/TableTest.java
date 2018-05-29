@@ -6,9 +6,9 @@ import player.Player;
 
 import static org.testng.Assert.assertEquals;
 
-public class TableArrayTest {
+public class TableTest {
   
-  private TableArray tableArray;
+  private Table table;
   private Cell cell;
   private String playerChar;
   
@@ -18,9 +18,9 @@ public class TableArrayTest {
   public void createNewTable_correctSize() {
     
     int standardSize = 3;
-    tableArray = TableArray.ofSquareTable(standardSize);
+    table = Table.ofSquareTable(standardSize);
   
-    int gameTableSize = tableArray.getTableSizeOnX();
+    int gameTableSize = table.getTableSizeOnX();
     
     int expectedSize = 3;
     assertEquals(gameTableSize, expectedSize);
@@ -30,16 +30,16 @@ public class TableArrayTest {
   public void createNewTable_try() {
     
     int standardSize = 3;
-    tableArray = TableArray.ofSquareTable(standardSize);
+    table = Table.ofSquareTable(standardSize);
   }
   
   @Test
   public void createNewTable_shouldContainUnderscore_inTheMiddle() {
     
     int standardSize = 3;
-    tableArray = TableArray.ofSquareTable(standardSize);
+    table = Table.ofSquareTable(standardSize);
   
-    String numberInTheMiddleOfTable = tableArray.getSignAt(1, 1);
+    String numberInTheMiddleOfTable = table.getSignAt(1, 1);
     
     int countOfNumberInTable = standardSize * standardSize;
     String expectedNumber = String.valueOf((countOfNumberInTable / 2) + 1);
@@ -52,7 +52,7 @@ public class TableArrayTest {
     
     prepareTypicalTableAndMakeMove();
   
-    String signAt = tableArray.getSignAt(cell);
+    String signAt = table.getSignAt(cell);
     
     playerChar = "X";
     assertEquals(signAt, playerChar);
@@ -62,7 +62,7 @@ public class TableArrayTest {
   public void getHorizontalRow_typicalSituation_provideInt() {
     
     prepareTypicalTableAndMakeMove();
-    tableParser = new TableParser(tableArray);
+    tableParser = new TableParser(table);
   
     String horizontalRow = tableParser.getHorizontalRow(1);
     
@@ -74,7 +74,7 @@ public class TableArrayTest {
   public void getHorizontalRow_typicalSituation_provideCoordinate() {
     
     prepareTableAndMakeMovesAsX(3, 3);
-    tableParser = new TableParser(tableArray);
+    tableParser = new TableParser(table);
   
     String horizontalRow = tableParser.getHorizontalRow(cell);
     
@@ -86,7 +86,7 @@ public class TableArrayTest {
   public void getVerticalColumn_typicalSituation_provideInt() {
     
     prepareTableAndMakeMovesAsX(3, 3);
-    tableParser = new TableParser(tableArray);
+    tableParser = new TableParser(table);
   
     String verticalColumn = tableParser.getVerticalColumn(1);
     
@@ -97,7 +97,7 @@ public class TableArrayTest {
   @Test
   public void getLeftDiagonalLine_threeMoves_123() {
     prepareTableAndMakeMovesAsX(3, 1, 2, 3);
-    tableParser = new TableParser(tableArray);
+    tableParser = new TableParser(table);
   
     String leftDiagonalLine = tableParser.getLeftDiagonalLine(cell);
     
@@ -107,7 +107,7 @@ public class TableArrayTest {
   @Test
   public void getLeftDiagonalLine_threeMoves_456() {
     prepareTableAndMakeMovesAsX(3, 4, 5, 6);
-    tableParser = new TableParser(tableArray);
+    tableParser = new TableParser(table);
   
     String rightDiagonalLine = tableParser.getLeftDiagonalLine(cell);
     
@@ -117,7 +117,7 @@ public class TableArrayTest {
   @Test
   public void getLeftDiagonalLine_threeMoves_789() {
     prepareTableAndMakeMovesAsX(3, 7, 8, 9);
-    tableParser = new TableParser(tableArray);
+    tableParser = new TableParser(table);
   
     String rightDiagonalLine = tableParser.getLeftDiagonalLine(cell);
     
@@ -127,7 +127,7 @@ public class TableArrayTest {
   @Test
   public void getRightDiagonalLine_threeMoves_123() {
     prepareTableAndMakeMovesAsX(3, 1, 2, 3);
-    tableParser = new TableParser(tableArray);
+    tableParser = new TableParser(table);
   
     String rightDiagonalLine = tableParser.getRightDiagonalLine(cell);
   
@@ -137,7 +137,7 @@ public class TableArrayTest {
   @Test
   public void getRightDiagonalLine_threeMoves_456() {
     prepareTableAndMakeMovesAsX(3, 4, 5, 6);
-    tableParser = new TableParser(tableArray);
+    tableParser = new TableParser(table);
   
     String rightDiagonalLine = tableParser.getRightDiagonalLine(cell);
   
@@ -147,7 +147,7 @@ public class TableArrayTest {
   @Test
   public void getRightDiagonalLine_threeMoves_789() {
     prepareTableAndMakeMovesAsX(3, 7, 8, 9);
-    tableParser = new TableParser(tableArray);
+    tableParser = new TableParser(table);
   
     String rightDiagonalLine = tableParser.getRightDiagonalLine(cell);
     
@@ -155,14 +155,14 @@ public class TableArrayTest {
   }
   
   private void prepareTableAndMakeMovesAsPlayer(Player currentPlayer, int tableSize, int... positions) {
-    tableArray = TableArray.ofSquareTable(tableSize);
+    table = Table.ofSquareTable(tableSize);
     
     Player player = currentPlayer;
     
     for (int currentPosition : positions) {
       cell = Cell.of(currentPosition, player.toString());
   
-      tableArray.ticTacMove(cell, player);
+      table.ticTacMove(cell, player.toString());
     }
   }
   

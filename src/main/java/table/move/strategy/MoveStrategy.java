@@ -2,16 +2,16 @@ package table.move.strategy;
 
 import cell.Cell;
 import player.Player;
-import table.TableArray;
+import table.Table;
 import user.io.wrapper.IOEntity;
 
 public abstract class MoveStrategy {
   
-  TableArray tableArray;
+  Table table;
   Cell cell;
   
-  MoveStrategy(TableArray tableArray, Cell cell) {
-    this.tableArray = tableArray;
+  MoveStrategy(Table table, Cell cell) {
+    this.table = table;
     this.cell = cell;
   }
   

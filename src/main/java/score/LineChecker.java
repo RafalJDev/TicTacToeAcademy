@@ -1,7 +1,7 @@
 package score;
 
 import cell.Cell;
-import table.TableArray;
+import table.Table;
 import table.TableParser;
 
 public class LineChecker {
@@ -13,9 +13,9 @@ public class LineChecker {
   private LineChecker() {
   }
   
-  public static boolean isThereWinningLine(TableArray tableArray, Cell currentCell) {
+  public static boolean isThereWinningLine(Table table, Cell currentCell) {
     
-    prepareChecker(tableArray, currentCell);
+    prepareChecker(table, currentCell);
     
     return isThereWinnerOnVertical(currentCell) ||
         isThereWinnerOnHorizontal(currentCell) ||
@@ -23,15 +23,15 @@ public class LineChecker {
         isThereWinnerOnRightDiagonal(currentCell);
   }
   
-  public static void prepareChecker(TableArray tableArray, Cell currentCell) {
-    prepareRegexForWinner(tableArray, currentCell);
-    tableParser = new TableParser(tableArray);
+  public static void prepareChecker(Table table, Cell currentCell) {
+    prepareRegexForWinner(table, currentCell);
+    tableParser = new TableParser(table);
   }
   
-  private static void prepareRegexForWinner(TableArray tableArray, Cell currentCell) {
+  private static void prepareRegexForWinner(Table table, Cell currentCell) {
     String playerSign = currentCell.sign;
     String anything = ".*";
-    String numberOfSignToWin = String.valueOf(tableArray.getHowMuchSignsToWin());
+    String numberOfSignToWin = String.valueOf(table.getHowMuchSignsToWin());
     String winningSequence = playerSign + "{" + numberOfSignToWin + "}";
     regexForWinner = anything + winningSequence + anything;
   }
@@ -61,7 +61,6 @@ public class LineChecker {
     return lineToString.matches(regexForWinner);
   }
   
-  //TODO maybe check here regex and return boolean ?
   public static String getRegexForWinner() {
     return regexForWinner;
   }

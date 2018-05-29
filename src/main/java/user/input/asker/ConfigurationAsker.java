@@ -1,6 +1,6 @@
 package user.input.asker;
 
-import table.wrapper.TableSize;
+import table.entity.wrapper.TableSize;
 import user.io.wrapper.IOEntity;
 
 public class ConfigurationAsker extends Asker {

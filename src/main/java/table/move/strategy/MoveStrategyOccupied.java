@@ -2,13 +2,13 @@ package table.move.strategy;
 
 import cell.Cell;
 import player.Player;
-import table.TableArray;
+import table.Table;
 import user.io.wrapper.IOEntity;
 
 public class MoveStrategyOccupied extends MoveStrategy {
   
-  public MoveStrategyOccupied(TableArray tableArray, Cell cell) {
-    super(tableArray, cell);
+  public MoveStrategyOccupied(Table table, Cell cell) {
+    super(table, cell);
   }
   
   @Override

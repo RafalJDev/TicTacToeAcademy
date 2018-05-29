@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import player.Player;
 import score.LineChecker;
-import table.TableArray;
+import table.Table;
 import user.io.wrapper.IOEntity;
 import user.output.printer.TablePrinter;
 
@@ -16,7 +16,7 @@ import static org.testng.Assert.assertEquals;
 
 public class JudgeServiceTest {
   
-  private TableArray tableArray;
+  private Table table;
   private Cell lastCell;
   private Player currentPlayer;
   
@@ -43,7 +43,7 @@ public class JudgeServiceTest {
   @BeforeMethod
   public void setUp() {
     MockitoAnnotations.initMocks(this);
-    tableArray = TableArray.ofSquareTable(3);
+    table = Table.ofSquareTable(3);
   }
   
   @Test(dataProvider = "allWinningCombinations_allYerOrNoCombinations")
@@ -53,9 +53,9 @@ public class JudgeServiceTest {
     
     makeMoves(currentPlayer.toString(), positionsToMakeMove);
   
-    boolean isThisEndOfTheGame = JudgeService.checkGameState(tableArray, lastCell, getIoEntity(userInput));
+    boolean isThisEndOfTheGame = JudgeService.checkGameState(table, lastCell, getIoEntity(userInput));
   
-    TablePrinter.printTable(tableArray, IOEntity.of(() -> null, (s) -> {
+    TablePrinter.printTable(table, IOEntity.of(() -> null, (s) -> {
     }));
     assertEquals(isThisEndOfTheGame, expectedResult);
   }
@@ -65,15 +65,15 @@ public class JudgeServiceTest {
   }
   
   private void makeMoves(String playerSign, int... movesPositions) {
-    //TODO WET this method is copied from LineCheckerTest, double TableArray.ofSquareTable to prevent Intellij to highlight it
+    //TODO WET this method is copied from LineCheckerTest, double Table.ofSquareTable to prevent Intellij to highlight it
   
     Cell cell = Cell.of(1, playerSign);
     currentPlayer = Player.valueOf(playerSign);
   
-    LineChecker.prepareChecker(tableArray, cell);
+    LineChecker.prepareChecker(table, cell);
     
     for (int movesPosition : movesPositions) {
-      MoveService.makeMove(tableArray, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), s -> {
+      MoveService.makeMove(table, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), s -> {
       }));
       lastCell = Cell.of(movesPosition, playerSign);
     }

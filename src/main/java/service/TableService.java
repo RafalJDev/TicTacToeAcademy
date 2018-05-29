@@ -2,7 +2,7 @@ package service;
 
 import cell.Cell;
 import player.Player;
-import table.wrapper.TableData;
+import table.entity.wrapper.TableData;
 
 public class TableService {
   
