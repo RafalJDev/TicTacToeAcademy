@@ -29,7 +29,6 @@ public class TableParser {
     StringBuilder line = new StringBuilder();
   
     for (int i = 0; i < tableArray.getTableSizeOnX(); i++) {
-    
       line.append(tableArray.getSignAt(i, yPosition));
     }
     
@@ -55,27 +54,38 @@ public class TableParser {
   private String getDiagonal(final Cell cell, final ToIntBiFunction<Integer, Integer> currentYPositionFunction) {
     final int xPosition = cell.getXPosition(tableArray.getTableSizeOnX());
     final int yPosition = cell.getYPosition(tableArray.getTableSizeOnY());
-  
+    
     final int leftBoundaryOfSignsToWin = -tableArray.getHowMuchSignsToWin() + 1;
-  
+    
     final int signCountAroundProvidedCell = tableArray.getHowMuchSignsToWin() * 2 - 1;
     StringBuilder diagonalLine = new StringBuilder(signCountAroundProvidedCell);
     for (int position = leftBoundaryOfSignsToWin; position < tableArray.getHowMuchSignsToWin(); position++) {
       int currentXPosition = xPosition + position;
       int currentYPosition = currentYPositionFunction.applyAsInt(yPosition, position);
       
-      if (checkIfPositionIsCorrectOnX(currentXPosition) && checkIfPositionIsCorrectOnY(currentYPosition)) {
-        diagonalLine.append(tableArray.getSignAt(currentXPosition, currentYPosition));
-      }
+      appendSignIfCorrect(diagonalLine, currentXPosition, currentYPosition);
     }
     return diagonalLine.toString();
   }
   
+  private void appendSignIfCorrect(StringBuilder diagonalLine, int currentXPosition, int currentYPosition) {
+    if (checkIfPositionsAreCorrect(currentXPosition, currentYPosition)) {
+      diagonalLine.append(tableArray.getSignAt(currentXPosition, currentYPosition));
+    }
+  }
+  
+  private boolean checkIfPositionsAreCorrect(int currentXPosition, int currentYPosition) {
+    return checkIfPositionIsCorrectOnX(currentXPosition)
+        && checkIfPositionIsCorrectOnY(currentYPosition);
+  }
+  
   private boolean checkIfPositionIsCorrectOnX(int positionOnX) {
-    return positionOnX >= 0 && positionOnX < tableArray.getTableSizeOnX();
+    return (positionOnX >= 0)
+        && (positionOnX < tableArray.getTableSizeOnX());
   }
   
   private boolean checkIfPositionIsCorrectOnY(int positionOnY) {
-    return positionOnY >= 0 && positionOnY < tableArray.getTableSizeOnY();
+    return (positionOnY >= 0)
+        && (positionOnY < tableArray.getTableSizeOnY());
   }
 }
