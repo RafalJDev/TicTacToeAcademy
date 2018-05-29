@@ -3,6 +3,7 @@ package table.move.strategy;
 import cell.Cell;
 import player.Player;
 import table.TableArray;
+import user.io.wrapper.IOEntity;
 
 public class MoveStrategyPossible extends MoveStrategy {
   
@@ -11,7 +12,7 @@ public class MoveStrategyPossible extends MoveStrategy {
   }
   
   @Override
-  public void action(Player nextPlayer) {
+  public void action(Player nextPlayer, IOEntity ioEntity) {
     tableArray.ticTacMove(cell, nextPlayer);
   }
 }

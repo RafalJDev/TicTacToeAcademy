@@ -55,7 +55,8 @@ public class JudgeServiceTest {
   
     boolean isThisEndOfTheGame = JudgeService.checkGameState(tableArray, lastCell, getIoEntity(userInput));
   
-    TablePrinter.printTable(tableArray, IOEntity.of(null, System.out::println));
+    TablePrinter.printTable(tableArray, IOEntity.of(() -> null, (s) -> {
+    }));
     assertEquals(isThisEndOfTheGame, expectedResult);
   }
   
@@ -72,7 +73,8 @@ public class JudgeServiceTest {
     LineChecker.prepareChecker(tableArray, cell);
     
     for (int movesPosition : movesPositions) {
-      MoveService.makeMove(tableArray, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), null));
+      MoveService.makeMove(tableArray, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), s -> {
+      }));
       lastCell = Cell.of(movesPosition, playerSign);
     }
   }

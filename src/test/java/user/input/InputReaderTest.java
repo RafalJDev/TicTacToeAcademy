@@ -36,7 +36,8 @@ public class InputReaderTest {
     Thread input = new Thread(() -> {
       Supplier<String> supplier = () -> String.valueOf(random.nextInt(100) - 101);
   
-      returnedLine = InputReader.readLine(IOEntity.of(supplier, null));
+      returnedLine = InputReader.readLine(IOEntity.of(supplier, s -> {
+      }));
       
       fail("STUPID! You can't return any value! STUPID!");
     });

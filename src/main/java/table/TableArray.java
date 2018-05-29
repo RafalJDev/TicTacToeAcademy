@@ -54,11 +54,11 @@ public final class TableArray {
     gameTable[xPosition][yPosition].sign = currentPlayerSign;
     tableData.incrementFilledCells();
   }
-
+  
   public int getTableSizeOnX() {
     return tableData.getTableSizeOnX();
   }
-
+  
   public int getTableSizeOnY() {
     return tableData.getTableSizeOnY();
   }
@@ -66,7 +66,7 @@ public final class TableArray {
   public boolean isTableFilled() {
     return tableData.isTableFilled();
   }
-
+  
   public int getHowMuchSignsToWin() {
     return tableData.getHowMuchSignsToWin();
   }

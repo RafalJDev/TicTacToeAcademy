@@ -25,38 +25,42 @@ public class MoveServiceTest {
     player = Player.X;
     supplier = () -> "1";
   
-    Cell cell = MoveService.makeMove(tableArray, player, IOEntity.of(supplier, null));
+    Cell cell = MoveService.makeMove(tableArray, player, IOEntity.of(supplier, s -> {
+    }));
     
     assertNotNull(cell);
   }
   
-  @Test()
+  @Test
   public void makeMove_typicalSituation_twoMoves_thenMoveDidntHappened() throws InterruptedException {
     tableArray = TableArray.ofSquareTable(6);
     player = Player.X;
     supplier = () -> "1";
     
     Thread input = new Thread(() -> {
-      MoveService.makeMove(tableArray, player, IOEntity.of(supplier, null));
-      returnedCell = MoveService.makeMove(tableArray, player, IOEntity.of(supplier, null));
-  
+      MoveService.makeMove(tableArray, player, IOEntity.of(supplier, s -> {
+      }));
+      returnedCell = MoveService.makeMove(tableArray, player, IOEntity.of(supplier, s -> {
+      }));
+      
       fail("STUPID! You can't return any value! STUPID!");
     });
     input.start();
-  
+    
     input.join(300);
-  
+    
     assertNull(returnedCell);
   }
   
-  @Test()
+  @Test
   public void makeMove_moveOutOfArray_thenMoveDidntHappened() throws InterruptedException {
     tableArray = TableArray.ofSquareTable(3);
     player = Player.X;
     supplier = () -> "10";
     
     Thread input = new Thread(() -> {
-      returnedCell = MoveService.makeMove(tableArray, player, IOEntity.of(supplier, null));
+      returnedCell = MoveService.makeMove(tableArray, player, IOEntity.of(supplier, s -> {
+      }));
       
       fail("STUPID! You can't return any value! STUPID!");
     });

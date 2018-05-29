@@ -9,7 +9,7 @@ class Main {
   
     TicTacToe ticTacToe = new TicTacToe();
     ticTacToe.letsPlay(IOEntity.of(new Scanner(System.in)::nextLine, System.out::println));
-    
+
 //    System.out.println(13 / 4);
 //    System.out.println(13 % 4);
 //

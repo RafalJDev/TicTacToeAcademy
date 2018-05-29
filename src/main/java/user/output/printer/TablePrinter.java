@@ -6,7 +6,6 @@ import user.io.wrapper.IOEntity;
 public class TablePrinter {
   
   public static void printTable(final TableArray tableArray, final IOEntity ioEntity) {
-    
     final int tableSizeOnX = tableArray.getTableSizeOnX();
     final int tableSizeOnY = tableArray.getTableSizeOnY();
     
@@ -40,7 +39,6 @@ public class TablePrinter {
   }
   
   private static String prepareCellToPrint(final TableArray tableArray, final int maxCountOfNumbers, int x, int y) {
-    
     String cellToPrint = "";
     String signAt = tableArray.getSignAt(x, y);
     

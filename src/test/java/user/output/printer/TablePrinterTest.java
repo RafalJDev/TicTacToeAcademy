@@ -13,8 +13,9 @@ public class TablePrinterTest {
     int tableSize = 3;
     TableArray tableArray = TableArray.ofSquareTable(tableSize);
   
-    TablePrinter.printTable(tableArray, IOEntity.of(() -> null, System.out::println));
-  
+    TablePrinter.printTable(tableArray, IOEntity.of(() -> null, (s) -> {
+    }));
+    
     int actualGameTableSize = tableArray.getTableSizeOnX();
     
     assertEquals(actualGameTableSize, tableSize);
@@ -25,8 +26,9 @@ public class TablePrinterTest {
     int tableSize = 5;
     TableArray tableArray = TableArray.ofSquareTable(tableSize);
   
-    TablePrinter.printTable(tableArray, IOEntity.of(() -> null, System.out::println));
-  
+    TablePrinter.printTable(tableArray, IOEntity.of(() -> null, (s) -> {
+    }));
+    
     int actualGameTableSize = tableArray.getTableSizeOnX();
     
     assertEquals(actualGameTableSize, tableSize);

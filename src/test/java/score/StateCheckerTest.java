@@ -66,13 +66,15 @@ public class StateCheckerTest {
   }
   
   private void makeMoves(String playerSign, int... movesPositions) {
+  
     Cell cell = Cell.of(1, playerSign);
     currentPlayer = Player.valueOf(playerSign);
   
     LineChecker.prepareChecker(tableArray, cell);
     
     for (int movesPosition : movesPositions) {
-      MoveService.makeMove(tableArray, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), null));
+      MoveService.makeMove(tableArray, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), s -> {
+      }));
       lastCell = Cell.of(movesPosition, playerSign);
     }
   }

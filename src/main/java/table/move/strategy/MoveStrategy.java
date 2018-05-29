@@ -3,7 +3,7 @@ package table.move.strategy;
 import cell.Cell;
 import player.Player;
 import table.TableArray;
-import user.output.message.MessagePrinter;
+import user.io.wrapper.IOEntity;
 
 public abstract class MoveStrategy {
   
@@ -15,9 +15,9 @@ public abstract class MoveStrategy {
     this.cell = cell;
   }
   
-  public abstract void action(Player nextPlayer);
+  public abstract void action(Player nextPlayer, IOEntity ioEntity);
   
-  void printMessage(String message) {
-    MessagePrinter.printMessage(message);
+  void printMessage(String message, IOEntity ioEntity) {
+    ioEntity.acceptOutput(message);
   }
 }

@@ -21,8 +21,8 @@ public class MoveService {
       cell = moveAsker.askForCoordinates(currentPlayer);
   
       moveStrategy = MoveValidator.checkMoveAction(tableArray, cell);
-      
-      moveStrategy.action(currentPlayer);
+  
+      moveStrategy.action(currentPlayer, ioEntity);
       
     } while (isMoveHappened(moveStrategy));
     return cell;

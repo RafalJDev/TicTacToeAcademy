@@ -45,15 +45,18 @@ public class MoveAskerTest {
   
   private IOEntity emulateRandomUserInput(int bound) {
     passedUserInput = random.nextInt(bound);
-    return IOEntity.of(() -> toString(passedUserInput), null);
+    return IOEntity.of(() -> toString(passedUserInput), s -> {
+    });
   }
   
   private IOEntity emulateSingleUserInput(int input) {
-    return IOEntity.of(() -> toString(input), null);
+    return IOEntity.of(() -> toString(input), s -> {
+    });
   }
   
   private IOEntity emulateUserInput_1(int i) {
-    return IOEntity.of(() -> "1", null);
+    return IOEntity.of(() -> "1", s -> {
+    });
   }
   
   private String toString(int i) {

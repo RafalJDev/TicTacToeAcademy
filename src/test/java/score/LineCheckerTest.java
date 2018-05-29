@@ -30,8 +30,9 @@ public class LineCheckerTest {
   public void isThereWinningLine_threeXMovesOnHorizontal_thenThereIsWinner() {
     
     makeMoves("X", 1, 2, 3);
-    TablePrinter.printTable(tableArray, IOEntity.of(null, System.out::println));
-  
+    TablePrinter.printTable(tableArray, IOEntity.of(() -> null, (s) -> {
+    }));
+    
     boolean isThereWinningRow = LineChecker.isThereWinningLine(tableArray, lastCell);
     
     assertTrue(isThereWinningRow);
@@ -71,8 +72,9 @@ public class LineCheckerTest {
   public void isThereWinnerOnVertical_XXX_column_thenThereIsWinner() {
     
     makeMoves("X", 6, 9);
-    MoveService.makeMove(tableArray, currentPlayer, IOEntity.of(() -> "3", null));
-  
+    MoveService.makeMove(tableArray, currentPlayer, IOEntity.of(() -> "3", s -> {
+    }));
+    
     boolean thereWinnerOnVertical = LineChecker.isThereWinnerOnVertical(lastCell);
     
     assertTrue(thereWinnerOnVertical);
@@ -82,8 +84,9 @@ public class LineCheckerTest {
   public void isThereWinnerOnVertical_XXO_column_thenNOWinner() {
     
     makeMoves("X", 1, 2);
-    MoveService.makeMove(tableArray, currentPlayer.getOppositePlayer(), IOEntity.of(() -> "3", null));
-  
+    MoveService.makeMove(tableArray, currentPlayer.getOppositePlayer(), IOEntity.of(() -> "3", s -> {
+    }));
+    
     boolean thereWinnerOnVertical = LineChecker.isThereWinnerOnVertical(lastCell);
     
     assertFalse(thereWinnerOnVertical);
@@ -123,7 +126,8 @@ public class LineCheckerTest {
     LineChecker.prepareChecker(tableArray, cell);
     
     for (int movesPosition : movesPositions) {
-      MoveService.makeMove(tableArray, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), null));
+      MoveService.makeMove(tableArray, currentPlayer, IOEntity.of(() -> String.valueOf(movesPosition), s -> {
+      }));
       lastCell = Cell.of(movesPosition, playerSign);
     }
   }
