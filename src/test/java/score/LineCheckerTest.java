@@ -74,10 +74,10 @@ public class LineCheckerTest {
     makeMoves("X", 6, 9);
     MoveService.makeMove(table, currentPlayer, IOEntity.of(() -> "3", s -> {
     }));
-    
-    boolean thereWinnerOnVertical = LineChecker.isThereWinnerOnVertical(lastCell);
-    
-    assertTrue(thereWinnerOnVertical);
+  
+    boolean winnerOnVertical = LineChecker.isThereWinnerOnVertical(lastCell);
+  
+    assertTrue(winnerOnVertical);
   }
   
   @Test

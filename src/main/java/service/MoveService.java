@@ -5,7 +5,6 @@ import player.Player;
 import table.Table;
 import table.move.MoveValidator;
 import table.move.strategy.MoveStrategy;
-import table.move.strategy.MoveStrategyPossible;
 import user.input.asker.MoveAsker;
 import user.io.wrapper.IOEntity;
 
@@ -22,13 +21,14 @@ public class MoveService {
   
       moveStrategy = MoveValidator.checkMoveAction(table, cell);
   
-      moveStrategy.action(currentPlayer, ioEntity);
+      moveStrategy.action(table, currentPlayer, cell, ioEntity);
       
     } while (isMoveHappened(moveStrategy));
     return cell;
   }
   
   private static boolean isMoveHappened(MoveStrategy moveStrategy) {
-    return !(moveStrategy instanceof MoveStrategyPossible);
+    MoveStrategy possible = MoveStrategy.POSSIBLE;
+    return !(moveStrategy.getClass().equals(possible.getClass()));
   }
 }
