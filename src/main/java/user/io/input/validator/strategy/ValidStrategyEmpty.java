@@ -1,7 +1,7 @@
-package user.input.valid.strategy;
+package user.io.input.validator.strategy;
 
+import user.io.output.message.Messages;
 import user.io.wrapper.IOEntity;
-import user.output.message.Messages;
 
 public class ValidStrategyEmpty extends ValidStrategy {
   

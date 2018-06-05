@@ -1,7 +1,7 @@
-package user.input;
+package user.io.input;
 
-import user.input.valid.strategy.ValidStrategy;
-import user.input.valid.strategy.ValidStrategyNumber;
+import user.io.input.validator.strategy.ValidStrategy;
+import user.io.input.validator.strategy.ValidStrategyNumber;
 import user.io.wrapper.IOEntity;
 
 public class InputReader {

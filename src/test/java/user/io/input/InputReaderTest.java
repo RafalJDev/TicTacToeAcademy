@@ -1,8 +1,8 @@
-package user.input;
+package user.io.input;
 
 import org.testng.annotations.Test;
-import user.input.valid.strategy.ValidStrategyNumber;
-import user.input.valid.strategy.ValidStrategyWord;
+import user.io.input.validator.strategy.ValidStrategyNumber;
+import user.io.input.validator.strategy.ValidStrategyWord;
 import user.io.wrapper.IOEntity;
 
 import java.util.Random;

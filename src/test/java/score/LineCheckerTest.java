@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 import player.Player;
 import service.MoveService;
 import table.Table;
+import user.io.output.printer.TablePrinter;
 import user.io.wrapper.IOEntity;
-import user.output.printer.TablePrinter;
 
 import static org.testng.Assert.*;
 

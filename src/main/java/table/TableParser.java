@@ -39,7 +39,7 @@ public class TableParser {
   }
   
   public String getHorizontalRow(Cell coordinates) {
-    int yPosition = coordinates.getYPosition(table.getTableSizeOnY());
+    int yPosition = coordinates.getYPosition(table.getTableSizeOnX());
     
     return getHorizontalRow(yPosition);
   }
@@ -56,7 +56,7 @@ public class TableParser {
   
   private String getDiagonal(final Cell cell, final ToIntBiFunction<Integer, Integer> currentYPositionFunction) {
     final int xPosition = cell.getXPosition(table.getTableSizeOnX());
-    final int yPosition = cell.getYPosition(table.getTableSizeOnY());
+    final int yPosition = cell.getYPosition(table.getTableSizeOnX());
   
     final int leftBoundaryOfSignsToWin = -howMuchSignsToWin + 1;
   

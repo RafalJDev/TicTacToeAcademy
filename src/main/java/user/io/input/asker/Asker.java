@@ -1,6 +1,6 @@
-package user.input.asker;
+package user.io.input.asker;
 
-import user.input.InputReader;
+import user.io.input.InputReader;
 import user.io.wrapper.IOEntity;
 
 public abstract class Asker {
@@ -14,5 +14,9 @@ public abstract class Asker {
   protected int readLineToInt() {
     String s = InputReader.readLine(localIO);
     return Integer.parseInt(s);
+  }
+  
+  protected String readLineToString() {
+    return localIO.getInput();
   }
 }

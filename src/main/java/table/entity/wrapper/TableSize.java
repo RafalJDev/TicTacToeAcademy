@@ -17,4 +17,25 @@ public final class TableSize {
   public int getTableSizeOnY() {
     return tableSizeOnY;
   }
+  
+  public boolean checkIfNumberIsMoreThanSizeOnX(int number) {
+    return number > tableSizeOnX;
+  }
+  
+  public boolean checkIfNumberIsMoreThanSizeOnY(int number) {
+    return number > tableSizeOnY;
+  }
+  
+  public boolean checkIfNumberIsMoreThanSize(int number) {
+    return checkIfNumberIsMoreThanSizeOnX(number)
+        && checkIfNumberIsMoreThanSizeOnY(number);
+  }
+  
+  public String sayToMeHowBigYouAre() {
+    return "Table is wide as: "
+        + tableSizeOnX
+        + " and tall as: "
+        + tableSizeOnY
+        + ".";
+  }
 }

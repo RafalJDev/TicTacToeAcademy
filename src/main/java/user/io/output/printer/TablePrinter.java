@@ -1,4 +1,4 @@
-package user.output.printer;
+package user.io.output.printer;
 
 import table.Table;
 import user.io.wrapper.IOEntity;

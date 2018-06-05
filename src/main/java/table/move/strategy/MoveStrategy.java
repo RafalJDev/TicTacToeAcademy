@@ -7,8 +7,8 @@ import user.io.wrapper.IOEntity;
 
 public enum MoveStrategy {
   
-  //TODO that enum, was created due to refactoring, but now it don't look to good.
-  //TODO so probably revert in not a bad (intellij)idea
+  //TODO That enum, was created due to refactoring, but now it don't look better.
+  //TODO so probably reverting it, wont be a bad (intellij)idea
   OCCUPIED {
     @Override
     public void action(Table table, Player currentPlayer, Cell cell, IOEntity ioEntity) {

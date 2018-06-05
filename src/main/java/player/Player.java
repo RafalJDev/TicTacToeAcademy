@@ -15,11 +15,15 @@ public enum Player {
     }
   };
   
+  private String playerSign;
   private String playerName;
   
-  Player(String playerName) {
-    this.playerName = playerName;
+  Player(String playerSign) {
+    this.playerSign = playerSign;
+    playerName = playerSign;
   }
+  
+  public abstract Player getOppositePlayer();
   
   public String getPlayerName() {
     return playerName;
@@ -29,9 +33,8 @@ public enum Player {
     this.playerName = playerName;
   }
   
-  public abstract Player getOppositePlayer();
-  
-  public char toChar() {
-    return name().charAt(0);
+  @Override
+  public String toString() {
+    return playerSign;
   }
 }

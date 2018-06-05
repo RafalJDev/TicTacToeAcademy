@@ -1,6 +1,6 @@
 package user.io.wrapper;
 
-import user.output.message.Messages;
+import user.io.output.message.Messages;
 
 import java.util.function.Consumer;
 import java.util.function.Supplier;

@@ -1,4 +1,4 @@
-package user.input.valid.strategy;
+package user.io.input.validator.strategy;
 
 import user.io.wrapper.IOEntity;
 

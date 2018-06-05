@@ -6,9 +6,9 @@ import service.ConfigurationService;
 import service.JudgeService;
 import service.MoveService;
 import table.Table;
+import user.io.output.message.Messages;
+import user.io.output.printer.TablePrinter;
 import user.io.wrapper.IOEntity;
-import user.output.message.Messages;
-import user.output.printer.TablePrinter;
 
 public final class TicTacToe {
   
@@ -20,7 +20,11 @@ public final class TicTacToe {
     
     boolean stillPlaying = true;
   
-    Table table = ConfigurationService.configureGame(ioEntity);
+    ConfigurationService configurationService = new ConfigurationService(ioEntity);
+  
+    Table table = configurationService.configureTable();
+  
+    Player nextPlayer = configurationService.configurePlayerName();
     
     while (stillPlaying) {
   

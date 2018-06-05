@@ -1,4 +1,4 @@
-package user.output.printer;
+package user.io.output.printer;
 
 import org.testng.annotations.Test;
 import table.Table;

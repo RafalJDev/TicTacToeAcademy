@@ -21,9 +21,8 @@ public final class Cell {
     return (cellNumber - 1) % tableSizeOnX;
   }
   
-  public int getYPosition(int tableSizeOnY) {
-    
-    return (cellNumber - 1) / tableSizeOnY;
+  public int getYPosition(int tableSizeOnX) {
+    return (cellNumber - 1) / tableSizeOnX;
   }
   
   public int getCellNumber() {

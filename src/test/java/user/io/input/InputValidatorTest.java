@@ -1,11 +1,11 @@
-package user.input;
+package user.io.input;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import user.input.valid.strategy.ValidStrategy;
-import user.input.valid.strategy.ValidStrategyNegativeNumber;
-import user.input.valid.strategy.ValidStrategyNumber;
-import user.input.valid.strategy.ValidStrategyWord;
+import user.io.input.validator.strategy.ValidStrategy;
+import user.io.input.validator.strategy.ValidStrategyNegativeNumber;
+import user.io.input.validator.strategy.ValidStrategyNumber;
+import user.io.input.validator.strategy.ValidStrategyWord;
 
 import static org.testng.Assert.assertTrue;
 

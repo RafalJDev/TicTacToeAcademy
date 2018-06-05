@@ -1,6 +1,6 @@
-package user.input;
+package user.io.input;
 
-import user.input.valid.strategy.*;
+import user.io.input.validator.strategy.*;
 
 class InputValidator {
   

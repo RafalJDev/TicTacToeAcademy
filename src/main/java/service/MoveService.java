@@ -5,7 +5,7 @@ import player.Player;
 import table.Table;
 import table.move.MoveValidator;
 import table.move.strategy.MoveStrategy;
-import user.input.asker.MoveAsker;
+import user.io.input.asker.MoveAsker;
 import user.io.wrapper.IOEntity;
 
 public class MoveService {

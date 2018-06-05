@@ -32,13 +32,13 @@ public final class Table {
   
   public String getSignAt(Cell cell) {
     int xPosition = cell.getXPosition(getTableSizeOnX());
-    int yPosition = cell.getYPosition(getTableSizeOnY());
+    int yPosition = cell.getYPosition(getTableSizeOnX());
     return tableArray.getSignAt(xPosition, yPosition);
   }
   
   public void ticTacMove(Cell cell, String currentPlayer) {
     int xPosition = cell.getXPosition(getTableSizeOnX());
-    int yPosition = cell.getYPosition(getTableSizeOnY());
+    int yPosition = cell.getYPosition(getTableSizeOnX());
     
     tableArray.assignPlayerToCell(xPosition, yPosition, currentPlayer);
     tableData.incrementFilledCells();

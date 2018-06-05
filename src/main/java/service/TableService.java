@@ -11,7 +11,7 @@ public class TableService {
   
   public void ticTacMove(Cell cell, Player currentPlayer) {
     int xPosition = cell.getXPosition(getTableSizeOnX());
-    int yPosition = cell.getYPosition(getTableSizeOnY());
+    int yPosition = cell.getYPosition(getTableSizeOnX());
     
     String currentPlayerSign = currentPlayer.toString();
     gameTable[xPosition][yPosition].sign = currentPlayerSign;
