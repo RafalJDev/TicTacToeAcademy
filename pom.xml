@@ -9,7 +9,7 @@
     </properties>
 
     <groupId>raf.proj.tic.tac.toe</groupId>
-    <artifactId>proj</artifactId>
+    <artifactId>TicTacToeAcadamy</artifactId>
     <version>0.2</version>
 
     <build>
@@ -39,6 +39,12 @@
                 </configuration>
             </plugin>
 
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.4.0.905</version>
+            </plugin>
+
         </plugins>
     </build>
 
@@ -49,6 +55,18 @@
             <version>6.11</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.sonar</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>5.1</version>
+        </dependency>
     </dependencies>
+
 
 </project>
